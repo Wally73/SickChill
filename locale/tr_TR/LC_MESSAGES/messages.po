@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  sickchill\n"
 "Report-Msgid-Bugs-To: miigotu@gmail.com\n"
-"POT-Creation-Date: 2018-10-17 02:05+0000\n"
+"POT-Creation-Date: 2018-12-20 05:54+0000\n"
 "PO-Revision-Date: 2018-10-10 07:48+0000\n"
 "Last-Translator: miigotu <miigotu@gmail.com>\n"
 "Language: tr_TR\n"
@@ -87,7 +87,7 @@ msgid "Biography"
 msgstr "Biyografi"
 
 #: gui/slick/views/config_general.mako:77 gui/slick/views/layouts/main.mako:167
-#: sickbeard/__init__.py:71 sickbeard/webserve.py:3822
+#: sickbeard/__init__.py:71 sickbeard/webserve.py:3814
 msgid "History"
 msgstr "Geçmiş"
 
@@ -100,7 +100,7 @@ msgid "Western"
 msgstr "Batılı"
 
 #: gui/slick/views/config_general.mako:78 gui/slick/views/layouts/main.mako:235
-#: sickbeard/__init__.py:72 sickbeard/webserve.py:2445
+#: sickbeard/__init__.py:72 sickbeard/webserve.py:2437
 msgid "News"
 msgstr "Haberler"
 
@@ -296,6 +296,290 @@ msgstr "Aynı anda hem tümü hem de sadece bir tanesi getirilemez!"
 msgid "Control dict to upsert cannot have values of None!"
 msgstr "Denetim dict upsert için None değeri olamaz!"
 
+#: sickbeard/helpers.py:90
+msgid "Patching socket to IPv4 only"
+msgstr ""
+
+#: sickbeard/helpers.py:241
+msgid "Invalid filename. Filename must be a string. {0}"
+msgstr ""
+
+#: sickbeard/helpers.py:317
+msgid "Trying to find {} on {}"
+msgstr ""
+
+#: sickbeard/helpers.py:452
+msgid "Failed to create hardlink of {0} at {1}. Error: {2}. Copying instead"
+msgstr ""
+
+#: sickbeard/helpers.py:489
+msgid "Failed to create symlink of {0} at {1}. Error: {2}. Copying instead"
+msgstr ""
+
+#: sickbeard/helpers.py:500
+msgid "Checking if the path {0} already exists"
+msgstr ""
+
+#: sickbeard/helpers.py:506 sickbeard/helpers.py:526
+msgid "Folder {0} didn't exist, creating it"
+msgstr ""
+
+#: sickbeard/helpers.py:509 sickbeard/helpers.py:533
+msgid "Failed creating {0} : {1}"
+msgstr ""
+
+#: sickbeard/helpers.py:574
+msgid "Renaming file from {0} to {1}"
+msgstr ""
+
+#: sickbeard/helpers.py:577
+msgid "Failed renaming {0} to {1} : {2}"
+msgstr ""
+
+#: sickbeard/helpers.py:597
+msgid "Trying to clean any empty folders under "
+msgstr ""
+
+#: sickbeard/helpers.py:607
+#, fuzzy
+msgid "Deleting empty folder: "
+msgstr "Boş klasörleri silme"
+
+#: sickbeard/helpers.py:613
+#, fuzzy
+msgid "Unable to delete {0}. Error: {1}"
+msgstr "Dizi güncelleştirilemedi: {error}"
+
+#: sickbeard/helpers.py:649
+msgid "No parent path provided in {location} unable to get permissions from it"
+msgstr ""
+
+#: sickbeard/helpers.py:672
+msgid "Not running as root or owner of {location}, not trying to set permissions"
+msgstr ""
+
+#: sickbeard/helpers.py:678
+msgid "Failed to set permission for {0} to {1:o}, parent directory has {2:o}"
+msgstr ""
+
+#: sickbeard/helpers.py:710
+msgid "Not running as root or owner of {}, not trying to set the set-group-ID"
+msgstr ""
+
+#: sickbeard/helpers.py:715
+msgid "Respecting the set-group-ID bit on the parent directory for {0}"
+msgstr ""
+
+#: sickbeard/helpers.py:760
+msgid "Found absolute number {absolute} for show {show} {ep}"
+msgstr ""
+
+#: sickbeard/helpers.py:764
+msgid "No entries for absolute number for show {show} {ep}"
+msgstr ""
+
+#: sickbeard/helpers.py:846
+msgid "pyopenssl module missing, please install for https access"
+msgstr ""
+
+#: sickbeard/helpers.py:870
+msgid "Error creating SSL key and certificate"
+msgstr ""
+
+#: sickbeard/helpers.py:891
+msgid "Not creating backup, {0} doesn't exist"
+msgstr ""
+
+#: sickbeard/helpers.py:895
+msgid "Trying to back up {0} to {1}"
+msgstr ""
+
+#: sickbeard/helpers.py:897
+msgid "Backup done"
+msgstr ""
+
+#: sickbeard/helpers.py:900
+msgid "Error while trying to back up {0} to {1} : {2}"
+msgstr ""
+
+#: sickbeard/helpers.py:903
+msgid "Trying again."
+msgstr ""
+
+#: sickbeard/helpers.py:906
+msgid "Unable to back up {0} to {1} please do it manually."
+msgstr ""
+
+#: sickbeard/helpers.py:927 sickbeard/helpers.py:942
+msgid "Not restoring, {0} doesn't exist"
+msgstr ""
+
+#: sickbeard/helpers.py:931
+msgid "Trying to backup {0} to {1}.r{2} before restoring backup"
+msgstr ""
+
+#: sickbeard/helpers.py:936
+msgid ""
+"Error while trying to backup DB file {0} before proceeding with restore: "
+"{1}"
+msgstr ""
+
+#: sickbeard/helpers.py:946
+msgid "Trying to restore file {0} to {1}"
+msgstr ""
+
+#: sickbeard/helpers.py:948
+#, fuzzy
+msgid "Restore done"
+msgstr "Geri Yükle"
+
+#: sickbeard/helpers.py:951
+msgid "Error while trying to restore file {0}. Error: {1}"
+msgstr ""
+
+#: sickbeard/helpers.py:954
+msgid "Trying again. Attempt #: {0}"
+msgstr ""
+
+#: sickbeard/helpers.py:957
+msgid "Unable to restore file {0} to {1}"
+msgstr ""
+
+#: sickbeard/helpers.py:1091
+msgid "Error when attempting to find show: {0} in SickChill. Error: {1} "
+msgstr ""
+
+#: sickbeard/helpers.py:1168
+msgid "Usage of anidb disabled. Skiping"
+msgstr ""
+
+#: sickbeard/helpers.py:1172
+msgid "anidb username and/or password are not set. Aborting anidb lookup."
+msgstr ""
+
+#: sickbeard/helpers.py:1177
+msgid "anidb: {0} "
+msgstr ""
+
+#: sickbeard/helpers.py:1182 sickbeard/helpers.py:1191
+msgid "anidb exception msg: {0} "
+msgstr ""
+
+#: sickbeard/helpers.py:1212 sickbeard/helpers.py:1265
+msgid "Zip creation error: {0} "
+msgstr ""
+
+#: sickbeard/helpers.py:1244
+msgid "Zip extraction error: {0} "
+msgstr ""
+
+#: sickbeard/helpers.py:1294
+msgid "Zip extraction error: {0}"
+msgstr ""
+
+#: sickbeard/helpers.py:1316
+msgid "Found indexer mapping in cache for show: "
+msgstr ""
+
+#: sickbeard/helpers.py:1334
+msgid "Unable to map {} -> {} for show: {}, skipping it"
+msgstr ""
+
+#: sickbeard/helpers.py:1339
+msgid "Mapping {} -> {} for show: {}"
+msgstr ""
+
+#: sickbeard/helpers.py:1344
+msgid "Adding indexer mapping to DB for show: {}"
+msgstr ""
+
+#: sickbeard/helpers.py:1391
+msgid "Using global proxy: {}"
+msgstr ""
+
+#: sickbeard/helpers.py:1471
+msgid "Requested a json response but response was not json, check the url: {0}"
+msgstr ""
+
+#: sickbeard/helpers.py:1510
+msgid ""
+"Problem downloading file, setting permissions or writing file to {0} - "
+"ERROR: {1}"
+msgstr ""
+
+#: sickbeard/helpers.py:1524
+msgid "Request failed: {0} ({1})"
+msgstr ""
+
+#: sickbeard/helpers.py:1529
+msgid ""
+"SSL Error requesting url: '{0}' You have {1}, try upgrading OpenSSL to "
+"1.0.1e+"
+msgstr ""
+
+#: sickbeard/helpers.py:1531
+msgid ""
+"SSL Error requesting url: '{0}' Try disabling Cert Verification on the "
+"advanced tab of /config/general"
+msgstr ""
+
+#: sickbeard/helpers.py:1571
+msgid "url is {0}"
+msgstr ""
+
+#: sickbeard/helpers.py:1598
+msgid "Unable to get size for file {0} because the link to the file is not valid"
+msgstr ""
+
+#: sickbeard/helpers.py:1604
+msgid "Unable to get size for file {0} Error: {1}"
+msgstr ""
+
+#: sickbeard/helpers.py:1611
+msgid "Generating New API key"
+msgstr ""
+
+#: sickbeard/helpers.py:1668
+msgid "Trying to determine free space on the destination drive"
+msgstr ""
+
+#: sickbeard/helpers.py:1671
+msgid "A path to a file is required for the source. {0} is not a file."
+msgstr ""
+
+#: sickbeard/helpers.py:1675
+msgid ""
+"A path is required for the destination. Check that the root dir and show "
+"locations are correct for {0} (I got '{1}')"
+msgstr ""
+
+#: sickbeard/helpers.py:1685
+msgid ""
+"Process method is 'move' and src and destination are on the same device, "
+"skipping free space check"
+msgstr ""
+
+#: sickbeard/helpers.py:1691
+msgid "Unable to determine free space, so I will assume there is enough."
+msgstr ""
+
+#: sickbeard/helpers.py:1692 sickbeard/helpers.py:1725
+msgid "Error: {error}"
+msgstr ""
+
+#: sickbeard/helpers.py:1710
+msgid "Not enough free space: Needed: {0} bytes ( {1} ), found: {2} bytes ( {3} )"
+msgstr ""
+
+#: sickbeard/helpers.py:1724
+#, fuzzy
+msgid "Unable to determine free space"
+msgstr "Anahtar doğrulanamadı"
+
+#: sickbeard/helpers.py:1847
+msgid "Show id {} not found on {}, not adding the show: {}"
+msgstr ""
+
 #: sickbeard/logger.py:473
 msgid "&lt;No Filter&gt;"
 msgstr "&lt;Filtre kullanma&gt;"
@@ -366,19 +650,19 @@ msgstr "Trakt Kontrolcüsü"
 msgid "Event"
 msgstr "Etkinlik"
 
-#: sickbeard/logger.py:490 sickbeard/webserve.py:1366
-#: sickbeard/webserve.py:1369 sickbeard/webserve.py:1554
-#: sickbeard/webserve.py:1561 sickbeard/webserve.py:1768
-#: sickbeard/webserve.py:1781 sickbeard/webserve.py:1804
-#: sickbeard/webserve.py:1817 sickbeard/webserve.py:1822
-#: sickbeard/webserve.py:1838 sickbeard/webserve.py:1843
-#: sickbeard/webserve.py:1907 sickbeard/webserve.py:1910
-#: sickbeard/webserve.py:1916 sickbeard/webserve.py:1919
-#: sickbeard/webserve.py:1926 sickbeard/webserve.py:1929
-#: sickbeard/webserve.py:1951 sickbeard/webserve.py:2056
-#: sickbeard/webserve.py:2061 sickbeard/webserve.py:2066
-#: sickbeard/webserve.py:2093 sickbeard/webserve.py:2097
-#: sickbeard/webserve.py:2102
+#: sickbeard/logger.py:490 sickbeard/webserve.py:1358
+#: sickbeard/webserve.py:1361 sickbeard/webserve.py:1546
+#: sickbeard/webserve.py:1553 sickbeard/webserve.py:1760
+#: sickbeard/webserve.py:1773 sickbeard/webserve.py:1796
+#: sickbeard/webserve.py:1809 sickbeard/webserve.py:1814
+#: sickbeard/webserve.py:1830 sickbeard/webserve.py:1835
+#: sickbeard/webserve.py:1899 sickbeard/webserve.py:1902
+#: sickbeard/webserve.py:1908 sickbeard/webserve.py:1911
+#: sickbeard/webserve.py:1918 sickbeard/webserve.py:1921
+#: sickbeard/webserve.py:1943 sickbeard/webserve.py:2048
+#: sickbeard/webserve.py:2053 sickbeard/webserve.py:2058
+#: sickbeard/webserve.py:2085 sickbeard/webserve.py:2089
+#: sickbeard/webserve.py:2094
 msgid "Error"
 msgstr "Hata"
 
@@ -473,52 +757,52 @@ msgstr ""
 "hiç kullanmadıysanız şu anki sürüm ayarlanamamış olabilir. &mdash; <a "
 "href=\"{update_url}\">Şimdi Güncelle</a>"
 
-#: sickbeard/webserve.py:164
+#: sickbeard/webserve.py:163
 msgid "Mako Error"
 msgstr "Mako hatası"
 
-#: sickbeard/webserve.py:193
+#: sickbeard/webserve.py:192
 msgid "Oops"
 msgstr "Oops"
 
-#: sickbeard/webserve.py:195
+#: sickbeard/webserve.py:194
 msgid "Wrong API key used"
 msgstr "Yanlış API anahtarı kullanıldı"
 
-#: gui/slick/views/login.mako:36 sickbeard/webserve.py:305
+#: gui/slick/views/login.mako:36 sickbeard/webserve.py:306
 msgid "Login"
 msgstr "Giriş"
 
-#: sickbeard/webserve.py:380
+#: sickbeard/webserve.py:381
 msgid "API Key not generated"
 msgstr "API anahtarı üretilmedi"
 
-#: sickbeard/webserve.py:383
+#: sickbeard/webserve.py:384
 msgid "API Builder"
 msgstr "API Kurucu"
 
 #: gui/slick/views/config_general.mako:76 gui/slick/views/layouts/main.mako:163
-#: sickbeard/webserve.py:492
+#: sickbeard/webserve.py:493
 msgid "Schedule"
 msgstr "Zamanlama"
 
-#: sickbeard/webserve.py:605
+#: sickbeard/webserve.py:606
 msgid "Test 1"
 msgstr "Deneme 1"
 
-#: sickbeard/webserve.py:605
+#: sickbeard/webserve.py:606
 msgid "This is test number 1"
 msgstr "1 numaralı denemedir"
 
-#: sickbeard/webserve.py:606
+#: sickbeard/webserve.py:607
 msgid "Test 2"
 msgstr "Deneme 2"
 
-#: sickbeard/webserve.py:606
+#: sickbeard/webserve.py:607
 msgid "This is test number 2"
 msgstr "2 numaralı denemedir"
 
-#: sickbeard/webserve.py:631
+#: sickbeard/webserve.py:632
 msgid ""
 "You're using the {branch} branch. Please use 'master' unless specifically"
 " asked"
@@ -526,28 +810,28 @@ msgstr ""
 "{branch} kanalını kullanmaktasınız. Özel olarak istenmedikçe lütfen "
 "'master' kanalını kullanınız"
 
-#: sickbeard/webserve.py:696 sickbeard/webserve.py:701
+#: sickbeard/webserve.py:697 sickbeard/webserve.py:702
 msgid "Invalid show parameters"
 msgstr "Geçersiz dizi değişkenleri"
 
-#: sickbeard/webserve.py:708
+#: sickbeard/webserve.py:709
 msgid "Invalid parameters"
 msgstr "Geçersiz değişkenler"
 
-#: sickbeard/webserve.py:711 sickbeard/webserve.py:1951
+#: sickbeard/webserve.py:712 sickbeard/webserve.py:1943
 msgid "Episode couldn't be retrieved"
 msgstr "Bölüm getirilemedi"
 
-#: sickbeard/webserve.py:759 sickbeard/webserve.py:1273
-#: sickbeard/webserve.py:1303
+#: sickbeard/webserve.py:760 sickbeard/webserve.py:1265
+#: sickbeard/webserve.py:1295
 msgid "Home"
 msgstr "Ana Sayfa"
 
-#: gui/slick/views/layouts/main.mako:149 sickbeard/webserve.py:759
+#: gui/slick/views/layouts/main.mako:149 sickbeard/webserve.py:760
 msgid "Show List"
 msgstr "Dizi Listesi"
 
-#: sickbeard/webserve.py:809
+#: sickbeard/webserve.py:810
 msgid ""
 "Error: Unsupported Request. Send jsonp request with 'callback' variable "
 "in the query string."
@@ -555,31 +839,31 @@ msgstr ""
 "Hata: Desteklenmeyen İstek. jsonp isteklerini sıralama dizesindeki "
 "'callback' değişkeniyle gönderin."
 
-#: sickbeard/webserve.py:854
+#: sickbeard/webserve.py:855
 msgid "Success. Connected and authenticated"
 msgstr "Başarılı. Bağlanıldı ve yetkilendirildi"
 
-#: sickbeard/webserve.py:856
+#: sickbeard/webserve.py:857
 msgid "Authentication failed. SABnzbd expects"
 msgstr "Yetkilendirme başarısız. SABnzbd beklentisi"
 
-#: sickbeard/webserve.py:856
+#: sickbeard/webserve.py:857
 msgid "as authentication method"
 msgstr "yetkilendirme yöntemi olarak"
 
-#: sickbeard/webserve.py:858
+#: sickbeard/webserve.py:859
 msgid "Unable to connect to host"
 msgstr "Sunucuya bağlanılamadı"
 
-#: sickbeard/webserve.py:878
+#: sickbeard/webserve.py:879
 msgid "SMS sent successfully"
 msgstr "SMS gönderimi başarılı"
 
-#: sickbeard/webserve.py:880
+#: sickbeard/webserve.py:881
 msgid "Problem sending SMS: {message}"
 msgstr "Problemi SMS ile ilet: {message}"
 
-#: sickbeard/webserve.py:887
+#: sickbeard/webserve.py:888
 msgid ""
 "Telegram notification succeeded. Check your Telegram clients to make sure"
 " it worked"
@@ -587,11 +871,11 @@ msgstr ""
 "Telegram bildirimi başarılı. Çalıştığından emin olmak için aygıtınızı "
 "kontrol edin"
 
-#: sickbeard/webserve.py:889
+#: sickbeard/webserve.py:890
 msgid "Error sending Telegram notification: {message}"
 msgstr "Telgram bildirim gönderme hatası: {message}"
 
-#: sickbeard/webserve.py:896
+#: sickbeard/webserve.py:897
 msgid ""
 "join notification succeeded. Check your join clients to make sure it "
 "worked"
@@ -599,31 +883,31 @@ msgstr ""
 "join bildirimi başarılı. Çalıştığından emin olmak için join "
 "katılımcılarınızı kontrol edin"
 
-#: sickbeard/webserve.py:898
+#: sickbeard/webserve.py:899
 msgid "Error sending join notification: {message}"
 msgstr "Katılım bildirimi gönderme hatası:{message}"
 
-#: sickbeard/webserve.py:908
+#: sickbeard/webserve.py:909
 msgid " with password"
 msgstr " şifre ile"
 
-#: sickbeard/webserve.py:910
+#: sickbeard/webserve.py:911
 msgid "Registered and Tested growl successfully {growl_host}"
 msgstr "Growl kaydı ve testi başarılı {growl_host}"
 
-#: sickbeard/webserve.py:912
+#: sickbeard/webserve.py:913
 msgid "Registration and Testing of growl failed {growl_host}"
 msgstr "Growl kaydı ve testi başarısız {growl_host}"
 
-#: sickbeard/webserve.py:919
+#: sickbeard/webserve.py:920
 msgid "Test prowl notice sent successfully"
 msgstr "Deneme amaçlı prowl bildirim gönderimi başarılı"
 
-#: sickbeard/webserve.py:921
+#: sickbeard/webserve.py:922
 msgid "Test prowl notice failed"
 msgstr "Deneme amaçlı prowl bildirim gönderimi başarısız"
 
-#: sickbeard/webserve.py:928
+#: sickbeard/webserve.py:929
 msgid ""
 "Boxcar2 notification succeeded. Check your Boxcar2 clients to make sure "
 "it worked"
@@ -631,11 +915,11 @@ msgstr ""
 "Boxcar2 bildirimi başarılı. Çalıştığından emin olmak için Boxcar2 "
 "katılımcılarınızı kontrol edin"
 
-#: sickbeard/webserve.py:930
+#: sickbeard/webserve.py:931
 msgid "Error sending Boxcar2 notification"
 msgstr "Boxcar2 bildirim gönderme hatası"
 
-#: sickbeard/webserve.py:937
+#: sickbeard/webserve.py:938
 msgid ""
 "Pushover notification succeeded. Check your Pushover clients to make sure"
 " it worked"
@@ -643,159 +927,151 @@ msgstr ""
 "Pushover bildirimi başarılı. Çalıştığından emin olmak için Pushover "
 "katılımcılarınızı kontrol edin"
 
-#: sickbeard/webserve.py:939
+#: sickbeard/webserve.py:940
 msgid "Error sending Pushover notification"
 msgstr "Pushover bildirim gönderimi başarısız"
 
-#: sickbeard/webserve.py:953
+#: sickbeard/webserve.py:954
 msgid "Key verification successful"
 msgstr "Anahtar doğrulaması başarılı"
 
-#: sickbeard/webserve.py:955
+#: sickbeard/webserve.py:956
 msgid "Unable to verify key"
 msgstr "Anahtar doğrulanamadı"
 
-#: sickbeard/webserve.py:962
+#: sickbeard/webserve.py:963
 msgid "Tweet successful, check your twitter to make sure it worked"
 msgstr "Tweet başarılı, çalıştığına emin olmak için twitter'ınıza bakın"
 
-#: sickbeard/webserve.py:964
+#: sickbeard/webserve.py:965
 msgid "Error sending tweet"
 msgstr "Tweet gönderimi başarısız"
 
-#: sickbeard/webserve.py:969
+#: sickbeard/webserve.py:970
 msgid "Please enter a valid account sid"
 msgstr "Lütfen geçerli bir hesap tanımlama kimliği girin"
 
-#: sickbeard/webserve.py:972
+#: sickbeard/webserve.py:973
 msgid "Please enter a valid auth token"
 msgstr "Lüfen geçerli bir yetkilendirme jetonu (auth token) girin"
 
-#: sickbeard/webserve.py:975
+#: sickbeard/webserve.py:976
 msgid "Please enter a valid phone sid"
 msgstr "Lütfen geçerli bir telefon tanımlama kimliği girin"
 
-#: sickbeard/webserve.py:978
+#: sickbeard/webserve.py:979
 msgid "Please format the phone number as \"+1-###-###-####\""
 msgstr "Lütfen telefon numaranızı şu şekilde biçimlendirin: \"+1-###-###-###\""
 
-#: sickbeard/webserve.py:982
+#: sickbeard/webserve.py:983
 msgid "Authorization successful and number ownership verified"
 msgstr "Yetkilendirme başarılı, numara sahibi doğrulandı"
 
-#: sickbeard/webserve.py:984
+#: sickbeard/webserve.py:985
 msgid "Error sending sms"
 msgstr "Sms gönderirken hata oluştu"
 
-#: sickbeard/webserve.py:990
+#: sickbeard/webserve.py:991
 msgid "Slack message successful"
 msgstr "Slack mesajı başarılı"
 
-#: sickbeard/webserve.py:992
+#: sickbeard/webserve.py:993
 msgid "Slack message failed"
 msgstr "Slack mesajı başarısız"
 
-#: sickbeard/webserve.py:998
+#: sickbeard/webserve.py:999
 msgid "Discord message successful"
 msgstr "Discord mesajı başarılı"
 
-#: sickbeard/webserve.py:1000
+#: sickbeard/webserve.py:1001
 msgid "Discord message failed"
 msgstr "Discord mesajı başarısız"
 
-#: sickbeard/webserve.py:1011
+#: sickbeard/webserve.py:1012
 msgid "Test KODI notice sent successfully to {kodi_host}"
 msgstr "KODI bildirisi gönderimi başarılı {kodi_host}"
 
-#: sickbeard/webserve.py:1013
+#: sickbeard/webserve.py:1014
 msgid "Test KODI notice failed to {kodi_host}"
 msgstr "Test KODI bildirimi {kodi_host} için başarısız oldu"
 
-#: sickbeard/webserve.py:1027
+#: sickbeard/webserve.py:1028
 msgid "Successful test notice sent to Plex Home Theater ... {plex_clients}"
 msgstr ""
 "Plex ev sineması için gönderilen test bildirimi başarılı ... "
 "{plex_clients}"
 
-#: sickbeard/webserve.py:1029
+#: sickbeard/webserve.py:1030
 msgid "Test failed for Plex Home Theater ... {plex_clients}"
 msgstr "Test Plex ev sineması için başarısız oldu... {plex_clients}"
 
-#: sickbeard/webserve.py:1032
+#: sickbeard/webserve.py:1033
 msgid "Tested Plex Home Theater(s)"
 msgstr "Test edilmiş Plex Ev Sinemaları"
 
-#: sickbeard/webserve.py:1045
+#: sickbeard/webserve.py:1046
 msgid "Successful test of Plex Media Server(s) ... {plex_servers}"
 msgstr "Plex ortam Sunucuları testi başarılı ... {plex_servers}"
 
-#: sickbeard/webserve.py:1047
+#: sickbeard/webserve.py:1048
 msgid "Test failed, No Plex Media Server host specified"
 msgstr "Test başarısız, hiçbir Plex Ortam Sunucusu adresi belirtilmemiş"
 
-#: sickbeard/webserve.py:1049
+#: sickbeard/webserve.py:1050
 msgid "Test failed for Plex Media Server(s) ... {plex_servers}"
 msgstr ""
 "Plex Medya Sunucuları için gerçekleştirilen deneme başarısız oldu ... "
 "{plex_servers}"
 
-#: sickbeard/webserve.py:1052
+#: sickbeard/webserve.py:1053
 msgid "Tested Plex Media Server host(s)"
 msgstr "Plex Medya Sunucuları Denendi"
 
-#: sickbeard/webserve.py:1060
+#: sickbeard/webserve.py:1061
 msgid "Tried sending desktop notification via libnotify"
 msgstr "Libnotify aracılığıyla masaüstüne bildirim gönderilmesi denendi"
 
-#: sickbeard/webserve.py:1069
+#: sickbeard/webserve.py:1070
 msgid "Test notice sent successfully to {emby_host}"
 msgstr "Test bildirimi gönderimi başarılı {emby_host}"
 
-#: sickbeard/webserve.py:1071
+#: sickbeard/webserve.py:1072
 msgid "Test notice failed to {emby_host}"
 msgstr "Test bildirimi {emby_host} için başarısız oldu"
 
-#: sickbeard/webserve.py:1079
+#: sickbeard/webserve.py:1080
 msgid "Successfully started the scan update"
 msgstr "Tarama güncelleştirmesi başarıyla başlatıldı"
 
-#: sickbeard/webserve.py:1081
+#: sickbeard/webserve.py:1082
 msgid "Test failed to start the scan update"
 msgstr "Tarama güncelleştirme testi başarısız"
 
-#: sickbeard/webserve.py:1101
+#: sickbeard/webserve.py:1102
 msgid "Test notice sent successfully to {nmj2_host}"
 msgstr "Test bildirimi gönderimi başarılı {nmj2_host}"
 
-#: sickbeard/webserve.py:1103
+#: sickbeard/webserve.py:1104
 msgid "Test notice failed to {nmj2_host}"
 msgstr "Test bildirimi {nmj2_host} için başarısız oldu"
 
-#: sickbeard/webserve.py:1124
+#: sickbeard/webserve.py:1125
 msgid "Trakt Authorized"
 msgstr "Trakt Yetkilendirildi"
 
-#: sickbeard/webserve.py:1125
+#: sickbeard/webserve.py:1126
 msgid "Trakt Not Authorized!"
 msgstr "Trakt Yetkilendirilmedi!"
 
-#: sickbeard/webserve.py:1189
+#: sickbeard/webserve.py:1190
 msgid "Test email sent successfully! Check inbox."
 msgstr "Deneme e-postası başarıyla gönderildi! gelen kutunuzu kontrol edin."
 
-#: sickbeard/webserve.py:1191
+#: sickbeard/webserve.py:1192
 msgid "ERROR: {last_error}"
 msgstr "HATA: {last_error}"
 
-#: sickbeard/webserve.py:1198
-msgid "Test NMA notice sent successfully"
-msgstr "NMA uyarı gönderimi başarılı"
-
-#: sickbeard/webserve.py:1200
-msgid "Test NMA notice failed"
-msgstr "NMA uyarı gönderimi başarısız"
-
-#: sickbeard/webserve.py:1207
+#: sickbeard/webserve.py:1199
 msgid ""
 "Pushalot notification succeeded. Check your Pushalot clients to make sure"
 " it worked"
@@ -803,11 +1079,11 @@ msgstr ""
 "Pushalot bildirim başarılı. Çalıştığından emin olmak için Pushalot "
 "müşterilerinizi kontrol ediniz"
 
-#: sickbeard/webserve.py:1209
+#: sickbeard/webserve.py:1201
 msgid "Error sending Pushalot notification"
 msgstr "Pushalot gönderimi başarısız"
 
-#: sickbeard/webserve.py:1216
+#: sickbeard/webserve.py:1208
 msgid ""
 "Pushbullet notification succeeded. Check your device to make sure it "
 "worked"
@@ -815,26 +1091,26 @@ msgstr ""
 "Pushbullet bildirimi başarılı. Çalıştığından emin olmak için aygıtınızı "
 "kontrol edin"
 
-#: sickbeard/webserve.py:1218 sickbeard/webserve.py:1228
-#: sickbeard/webserve.py:1237
+#: sickbeard/webserve.py:1210 sickbeard/webserve.py:1220
+#: sickbeard/webserve.py:1229
 msgid "Error sending Pushbullet notification"
 msgstr "Pushbullet gönderimi başarısız"
 
 #: gui/slick/views/displayShow.mako:435
 #: gui/slick/views/inc_home_showList.mako:178 gui/slick/views/manage.mako:49
-#: sickbeard/webserve.py:1254
+#: sickbeard/webserve.py:1246
 msgid "Status"
 msgstr "Durum"
 
-#: sickbeard/webserve.py:1273 sickbeard/webserve.py:1303
+#: sickbeard/webserve.py:1265 sickbeard/webserve.py:1295
 msgid "Restarting SickChill"
 msgstr "SickChill Yeniden Başlatılıyor"
 
-#: sickbeard/webserve.py:1306
+#: sickbeard/webserve.py:1298
 msgid "Update Failed"
 msgstr "Güncelleştirme Başarısız"
 
-#: sickbeard/webserve.py:1307
+#: sickbeard/webserve.py:1299
 msgid ""
 "Update wasn't successful, not restarting. Check your log for more "
 "information."
@@ -842,226 +1118,226 @@ msgstr ""
 "Güncelleştirme başarısız, yeniden başlatılamıyor. Ayrıntılı bilgi için "
 "günlüğü kontrol edin."
 
-#: sickbeard/webserve.py:1335
+#: sickbeard/webserve.py:1327
 msgid "Checking out branch"
 msgstr "Dal(branch) kontrol ediliyor"
 
-#: sickbeard/webserve.py:1338
+#: sickbeard/webserve.py:1330
 msgid "Already on branch"
 msgstr "Zaten dalda (branch)"
 
-#: sickbeard/webserve.py:1366
+#: sickbeard/webserve.py:1358
 msgid "Invalid show ID: {show}"
 msgstr "Geçersiz dizi kimliği: {show}"
 
-#: sickbeard/webserve.py:1369 sickbeard/webserve.py:1924
-#: sickbeard/webserve.py:2061 sickbeard/webserve.py:2097
+#: sickbeard/webserve.py:1361 sickbeard/webserve.py:1916
+#: sickbeard/webserve.py:2053 sickbeard/webserve.py:2089
 msgid "Show not in show list"
 msgstr "Dizi, dizi listesinde değil"
 
 #: gui/slick/views/inc_rootDirs.mako:31 gui/slick/views/manage.mako:38
-#: gui/slick/views/manage_massEdit.mako:74 sickbeard/webserve.py:1385
-#: sickbeard/webserve.py:2084
+#: gui/slick/views/manage_massEdit.mako:74 sickbeard/webserve.py:1377
+#: sickbeard/webserve.py:2076
 msgid "Edit"
 msgstr "Düzenle"
 
-#: sickbeard/webserve.py:1396
+#: sickbeard/webserve.py:1388
 msgid ""
 "This show is in the process of being downloaded - the info below is "
 "incomplete."
 msgstr "Bu dizi indirilme aşamasında - aşağıdaki bilgiler tam değil."
 
-#: sickbeard/webserve.py:1399
+#: sickbeard/webserve.py:1391
 msgid "The information on this page is in the process of being updated."
 msgstr "Bu sayfadaki bilgi güncelleştirme aşamasında."
 
-#: sickbeard/webserve.py:1402
+#: sickbeard/webserve.py:1394
 msgid "The episodes below are currently being refreshed from disk"
 msgstr "Aşağıdaki bölümler şu anda diskten alınarak yenileniyor"
 
-#: sickbeard/webserve.py:1405
+#: sickbeard/webserve.py:1397
 msgid "Currently downloading subtitles for this show"
 msgstr "Şu anda bu dizi için alt yazılar indiriliyor"
 
-#: sickbeard/webserve.py:1408
+#: sickbeard/webserve.py:1400
 msgid "This show is queued to be refreshed."
 msgstr "Bu dizi yenileme için kuyruğa alınmış."
 
-#: sickbeard/webserve.py:1411
+#: sickbeard/webserve.py:1403
 msgid "This show is queued and awaiting an update."
 msgstr "Bu dizi kuyruğa alınmış ve bir güncelleme için bekletiliyor."
 
-#: sickbeard/webserve.py:1414
+#: sickbeard/webserve.py:1406
 msgid "This show is queued and awaiting subtitles download."
 msgstr "Bu dizi kuyruğa alınmış ve alt yazı indirilmesi için bekletiliyor."
 
-#: gui/slick/js/core.js:3623 sickbeard/webserve.py:1419
+#: gui/slick/js/core.js:3602 sickbeard/webserve.py:1411
 msgid "Resume"
 msgstr "Devam et"
 
-#: gui/slick/js/core.js:3623 gui/slick/views/viewlogs.mako:12
-#: sickbeard/webserve.py:1421
+#: gui/slick/js/core.js:3602 gui/slick/views/viewlogs.mako:12
+#: sickbeard/webserve.py:1413
 msgid "Pause"
 msgstr "Duraksat"
 
 #: gui/slick/views/editShow.mako:368 gui/slick/views/inc_blackwhitelist.mako:40
 #: gui/slick/views/inc_blackwhitelist.mako:85 gui/slick/views/manage.mako:58
-#: gui/slick/views/manage_failedDownloads.mako:43 sickbeard/webserve.py:1424
+#: gui/slick/views/manage_failedDownloads.mako:43 sickbeard/webserve.py:1416
 msgid "Remove"
 msgstr "Kaldır"
 
-#: sickbeard/webserve.py:1425
+#: sickbeard/webserve.py:1417
 msgid "Re-scan files"
 msgstr "Dosyaları tekrar tara"
 
-#: sickbeard/webserve.py:1427
+#: sickbeard/webserve.py:1419
 msgid "Force Full Update"
 msgstr "Tam Güncellemeye Zorla"
 
-#: sickbeard/webserve.py:1429
+#: sickbeard/webserve.py:1421
 msgid "Update show in KODI"
 msgstr "KODI'de diziyi güncelle"
 
-#: sickbeard/webserve.py:1431
+#: sickbeard/webserve.py:1423
 msgid "Update show in Emby"
 msgstr "Emby'de diziyi güncelle"
 
-#: sickbeard/webserve.py:1435
+#: sickbeard/webserve.py:1427
 msgid "Hide specials"
 msgstr "Özelleri gizle"
 
-#: sickbeard/webserve.py:1438
+#: sickbeard/webserve.py:1430
 msgid "Show specials"
 msgstr "Dizi özel bölümleri"
 
-#: sickbeard/webserve.py:1440 sickbeard/webserve.py:2087
-#: sickbeard/webserve.py:2088
+#: sickbeard/webserve.py:1432 sickbeard/webserve.py:2079
+#: sickbeard/webserve.py:2080
 msgid "Preview Rename"
 msgstr "Yeniden Adlandırmayı Özizle"
 
-#: sickbeard/webserve.py:1444
+#: sickbeard/webserve.py:1436
 msgid "Download Subtitles"
 msgstr "Alt Yazıları İndir"
 
-#: sickbeard/webserve.py:1529
+#: sickbeard/webserve.py:1521
 msgid "No scene exceptions"
 msgstr "Sahne istisnası yok"
 
-#: sickbeard/webserve.py:1550 sickbeard/webserve.py:1817
-#: sickbeard/webserve.py:1838
+#: sickbeard/webserve.py:1542 sickbeard/webserve.py:1809
+#: sickbeard/webserve.py:1830
 msgid "Invalid show ID"
 msgstr "Geçersiz dizi kimliği"
 
-#: sickbeard/webserve.py:1557 sickbeard/webserve.py:1822
-#: sickbeard/webserve.py:1843
+#: sickbeard/webserve.py:1549 sickbeard/webserve.py:1814
+#: sickbeard/webserve.py:1835
 msgid "Unable to find the specified show"
 msgstr "Belirtilen dizi bulunamadı"
 
-#: sickbeard/webserve.py:1587
+#: sickbeard/webserve.py:1579
 msgid "Unable to retreive Fansub Groups from AniDB."
 msgstr "AniDB'den Fansub Grupları alınamadı."
 
-#: sickbeard/webserve.py:1596 sickbeard/webserve.py:1599
+#: sickbeard/webserve.py:1588 sickbeard/webserve.py:1591
 msgid "Edit Show"
 msgstr "Diziyi Düzenle"
 
-#: sickbeard/webserve.py:1685 sickbeard/webserve.py:1720
+#: sickbeard/webserve.py:1677 sickbeard/webserve.py:1712
 msgid "Unable to refresh this show: {error}"
 msgstr "Bu dizi güncelleştirilemedi: {error}"
 
-#: sickbeard/webserve.py:1712
+#: sickbeard/webserve.py:1704
 msgid "New location <tt>{location}</tt> does not exist"
 msgstr "Yeni <tt>{location}</tt> konumu mevcut değil"
 
-#: sickbeard/webserve.py:1738
+#: sickbeard/webserve.py:1730
 msgid "Unable to update show: {error}"
 msgstr "Dizi güncelleştirilemedi: {error}"
 
-#: sickbeard/webserve.py:1744
+#: sickbeard/webserve.py:1736
 msgid "Unable to force an update on scene exceptions of the show."
 msgstr "Gösteri özel durumlarını zorla güncelleme işlemi başarısız oldu."
 
-#: sickbeard/webserve.py:1751
+#: sickbeard/webserve.py:1743
 msgid "Unable to force an update on scene numbering of the show."
 msgstr "Gösteri sahne numaralandırmasını zorla güncelleme işlemi başarısız oldu."
 
-#: sickbeard/webserve.py:1758 sickbeard/webserve.py:3579
+#: sickbeard/webserve.py:1750 sickbeard/webserve.py:3571
 msgid "{num_errors:d} error{plural} while saving changes:"
 msgstr "Değişiklikler kaydedilirken {num_errors:d} hata{plural}:"
 
-#: sickbeard/webserve.py:1771
+#: sickbeard/webserve.py:1763
 msgid "{show_name} has been {paused_resumed}"
 msgstr "{show_name} isimli dizi {paused_resumed}"
 
-#: sickbeard/webserve.py:1771
+#: sickbeard/webserve.py:1763
 msgid "resumed"
 msgstr "devam ettirildi"
 
-#: sickbeard/webserve.py:1771
+#: sickbeard/webserve.py:1763
 msgid "paused"
 msgstr "duraksatıldı"
 
-#: sickbeard/webserve.py:1784
+#: sickbeard/webserve.py:1776
 msgid "{show_name} has been {deleted_trashed} {was_deleted}"
 msgstr "{show_name} isimli dizi {deleted_trashed} {was_deleted}"
 
-#: sickbeard/webserve.py:1786
+#: sickbeard/webserve.py:1778
 msgid "deleted"
 msgstr "silindi"
 
-#: sickbeard/webserve.py:1786
+#: sickbeard/webserve.py:1778
 msgid "trashed"
 msgstr "çöpe gönderildi"
 
-#: sickbeard/webserve.py:1787
+#: sickbeard/webserve.py:1779
 msgid "(media untouched)"
 msgstr "(ortama dokunulmadı)"
 
-#: sickbeard/webserve.py:1787
+#: sickbeard/webserve.py:1779
 msgid "(with all related media)"
 msgstr "(tüm ortamla)"
 
-#: sickbeard/webserve.py:1808
+#: sickbeard/webserve.py:1800
 msgid "Unable to refresh this show."
 msgstr "Bu dizi yenilenemedi."
 
-#: sickbeard/webserve.py:1828
+#: sickbeard/webserve.py:1820
 msgid "Unable to update this show."
 msgstr "Bu dizi güncellenemedi."
 
-#: sickbeard/webserve.py:1867
+#: sickbeard/webserve.py:1859
 msgid "Library update command sent to KODI host(s)): {kodi_hosts}"
 msgstr "Kütüphane güncelleme komutu gönderilen KODI sunucuları: {kodi_hosts}"
 
-#: sickbeard/webserve.py:1869
+#: sickbeard/webserve.py:1861
 msgid "Unable to contact one or more KODI host(s)): {kodi_hosts}"
 msgstr "Bir veya daha fazla KODI sunucusuyla bağlantı kurulamadı: {kodi_hosts}"
 
-#: sickbeard/webserve.py:1878
+#: sickbeard/webserve.py:1870
 msgid "Library update command sent to Plex Media Server host: {plex_server}"
 msgstr "Kütüphane güncelleme komutu gönderilen Plex sunucuları: {plex_server}"
 
-#: sickbeard/webserve.py:1881
+#: sickbeard/webserve.py:1873
 msgid "Unable to contact Plex Media Server host: {plex_server}"
 msgstr "Plex Media server bağlantısı kurulamadı:{plex_server}"
 
-#: sickbeard/webserve.py:1893
+#: sickbeard/webserve.py:1885
 msgid "Library update command sent to Emby host: {emby_host}"
 msgstr "Kütüphane güncelleştirme komutu Emby host'a gönderildi:{emby_host}"
 
-#: sickbeard/webserve.py:1895
+#: sickbeard/webserve.py:1887
 msgid "Unable to contact Emby host: {emby_host}"
 msgstr "Emby host'a bağlantı başarısız:{emby_host}"
 
-#: sickbeard/webserve.py:1905 sickbeard/webserve.py:2093
+#: sickbeard/webserve.py:1897 sickbeard/webserve.py:2085
 msgid "You must specify a show and at least one episode"
 msgstr "Bir dizi ve en az bir bölüm belirtmelisiniz"
 
-#: sickbeard/webserve.py:1914
+#: sickbeard/webserve.py:1906
 msgid "Invalid status"
 msgstr "Geçersiz durum"
 
-#: sickbeard/webserve.py:2013
+#: sickbeard/webserve.py:2005
 msgid ""
 "Backlog was automatically started for the following seasons of "
 "<b>{show_name}</b>"
@@ -1070,16 +1346,16 @@ msgstr ""
 "başlamıştır"
 
 #: gui/slick/views/displayShow.mako:73 gui/slick/views/displayShow.mako:78
-#: gui/slick/views/displayShow.mako:403 sickbeard/webserve.py:2020
-#: sickbeard/webserve.py:2039
+#: gui/slick/views/displayShow.mako:403 sickbeard/webserve.py:2012
+#: sickbeard/webserve.py:2031
 msgid "Season"
 msgstr "Sezon"
 
-#: sickbeard/webserve.py:2027
+#: sickbeard/webserve.py:2019
 msgid "Backlog started"
 msgstr "Biriktirme listesi başlatıldı"
 
-#: sickbeard/webserve.py:2032
+#: sickbeard/webserve.py:2024
 msgid ""
 "Retrying Search was automatically started for the following season of "
 "<b>{show_name}</b>"
@@ -1087,40 +1363,40 @@ msgstr ""
 "Yeniden arama işlemi takip eden sezondan sonra <b>{show_name}</b> "
 "otomatik olarak başlamıştır"
 
-#: sickbeard/webserve.py:2046
+#: sickbeard/webserve.py:2038
 msgid "Retry Search started"
 msgstr "Tekrar arama başlatıldı"
 
-#: sickbeard/webserve.py:2056
+#: sickbeard/webserve.py:2048
 msgid "You must specify a show"
 msgstr "Bir dizi belirtmelisiniz"
 
-#: sickbeard/webserve.py:2066 sickbeard/webserve.py:2102
+#: sickbeard/webserve.py:2058 sickbeard/webserve.py:2094
 msgid "Can't rename episodes when the show dir is missing."
 msgstr "Dizi klasörü kayıpken bölümler yeniden adlandırılmaz."
 
-#: sickbeard/webserve.py:2272 sickbeard/webserve.py:2293
+#: sickbeard/webserve.py:2264 sickbeard/webserve.py:2285
 msgid "New subtitles downloaded: {new_subtitle_languages}"
 msgstr "İndirilen yeni altyazılar: {new_subtitle_languages}"
 
-#: sickbeard/webserve.py:2275 sickbeard/webserve.py:2296
+#: sickbeard/webserve.py:2267 sickbeard/webserve.py:2288
 msgid "No subtitles downloaded"
 msgstr "Hiçbir altyazı indirilmedi"
 
 #: gui/slick/views/config_general.mako:79 gui/slick/views/layouts/main.mako:236
-#: sickbeard/webserve.py:2422
+#: sickbeard/webserve.py:2414
 msgid "IRC"
 msgstr "IRC"
 
-#: sickbeard/webserve.py:2436
+#: sickbeard/webserve.py:2428
 msgid "Could not load news from the repo. [Click here for news.md])({news_url})"
 msgstr "Haberler sunucudan alınamadı. [news.md için buraya tıklayın])({news_url})"
 
-#: sickbeard/webserve.py:2443 sickbeard/webserve.py:2464
+#: sickbeard/webserve.py:2435 sickbeard/webserve.py:2456
 msgid "The was a problem connecting to github, please refresh and try again"
 msgstr "Github'a bağlanılırken bir sorun oluştu, lütfen tekrar deneyin"
 
-#: sickbeard/webserve.py:2459
+#: sickbeard/webserve.py:2451
 msgid ""
 "Could not load changes from the repo. [Click here for "
 "CHANGES.md]({changes_url})"
@@ -1128,85 +1404,85 @@ msgstr ""
 "Repo değişiklikleri yüklenemedi. [changes.md için buraya "
 "tıklayın]({changes_url})"
 
-#: gui/slick/views/layouts/main.mako:237 sickbeard/webserve.py:2466
+#: gui/slick/views/layouts/main.mako:237 sickbeard/webserve.py:2458
 msgid "Changelog"
 msgstr "Değişim Günlüğü"
 
-#: gui/slick/views/layouts/main.mako:212 sickbeard/webserve.py:2477
-#: sickbeard/webserve.py:3870 sickbeard/webserve.py:4368
+#: gui/slick/views/layouts/main.mako:212 sickbeard/webserve.py:2469
+#: sickbeard/webserve.py:3862 sickbeard/webserve.py:4360
 msgid "Post Processing"
 msgstr "Son İşlem"
 
-#: gui/slick/views/layouts/main.mako:150 sickbeard/webserve.py:2509
+#: gui/slick/views/layouts/main.mako:150 sickbeard/webserve.py:2501
 msgid "Add Shows"
 msgstr "Dizi Ekle"
 
-#: sickbeard/webserve.py:2576
+#: sickbeard/webserve.py:2568
 msgid "No folders selected."
 msgstr "Hiçbir klasör seçilmedi."
 
-#: sickbeard/webserve.py:2700
+#: sickbeard/webserve.py:2692
 msgid "New Show"
 msgstr "Yeni Dizi"
 
-#: sickbeard/webserve.py:2715
+#: sickbeard/webserve.py:2707
 msgid "Trending Shows"
 msgstr "Yükselişteki Diziler"
 
-#: sickbeard/webserve.py:2717 sickbeard/webserve.py:2800
+#: sickbeard/webserve.py:2709 sickbeard/webserve.py:2792
 msgid "Popular Shows"
 msgstr "Popüler Diziler"
 
-#: sickbeard/webserve.py:2719 sickbeard/webserve.py:2733
+#: sickbeard/webserve.py:2711 sickbeard/webserve.py:2725
 msgid "Most Anticipated Shows"
 msgstr "En Çok Beklenen Diziler"
 
-#: sickbeard/webserve.py:2721
+#: sickbeard/webserve.py:2713
 msgid "Most Collected Shows"
 msgstr "En çok toplanan gösteriler"
 
-#: sickbeard/webserve.py:2723
+#: sickbeard/webserve.py:2715
 msgid "Most Watched Shows"
 msgstr "En çok izlenen gösteriler"
 
-#: sickbeard/webserve.py:2725
+#: sickbeard/webserve.py:2717
 msgid "Most Played Shows"
 msgstr "En çok oynatılan gösteriler"
 
-#: sickbeard/webserve.py:2727
+#: sickbeard/webserve.py:2719
 msgid "Recommended Shows"
 msgstr "Önerilen gösteriler"
 
-#: gui/slick/views/addShows_trendingShows.mako:60 sickbeard/webserve.py:2729
+#: gui/slick/views/addShows_trendingShows.mako:60 sickbeard/webserve.py:2721
 msgid "New Shows"
 msgstr "Yeni Diziler"
 
-#: gui/slick/views/addShows_trendingShows.mako:61 sickbeard/webserve.py:2731
+#: gui/slick/views/addShows_trendingShows.mako:61 sickbeard/webserve.py:2723
 msgid "Season Premieres"
 msgstr "Sezon Prömiyerleri"
 
-#: sickbeard/webserve.py:2820 sickbeard/webserve.py:2821
+#: sickbeard/webserve.py:2812 sickbeard/webserve.py:2813
 msgid "Existing Show"
 msgstr "Varolan Diziler"
 
-#: sickbeard/webserve.py:2900
+#: sickbeard/webserve.py:2892
 msgid "No root directories setup, please go back and add one."
 msgstr "Hiçbir kök dizin seçilmedi, lütfen geri dönün ve bir tane ekleyin."
 
-#: sickbeard/webserve.py:2906 sickbeard/webserve.py:2990
-#: sickbeard/webserve.py:3000
+#: sickbeard/webserve.py:2898 sickbeard/webserve.py:2982
+#: sickbeard/webserve.py:2992
 msgid "Unable to add show"
 msgstr "Dizi eklenemedi"
 
-#: sickbeard/webserve.py:2916 sickbeard/webserve.py:3035
+#: sickbeard/webserve.py:2908 sickbeard/webserve.py:3027
 msgid "Show added"
 msgstr "Dizi eklendi"
 
-#: sickbeard/webserve.py:2916
+#: sickbeard/webserve.py:2908
 msgid "Adding the specified show {show_name}"
 msgstr "{show_name} isimli dizi ekleniyor"
 
-#: sickbeard/webserve.py:2957
+#: sickbeard/webserve.py:2949
 msgid ""
 "Missing params, no Indexer ID or folder: {show_to_add} and "
 "{root_dir}/{show_path}"
@@ -1214,161 +1490,161 @@ msgstr ""
 "Kayıp parametre, dizinleyici kimliği veya klasörü yok: {show_to_add} ve "
 "{root_dir}/{show_path}"
 
-#: sickbeard/webserve.py:2966
+#: sickbeard/webserve.py:2958
 msgid "Unknown error. Unable to add show due to problem with show selection."
 msgstr ""
 "Bilinmeyen hata. Dizi seçiminden kaynaklanan bir sorun nedeniyle diziniz "
 "eklenemiyor."
 
-#: sickbeard/webserve.py:2990
+#: sickbeard/webserve.py:2982
 msgid "Folder {show_dir} exists already"
 msgstr "{show_dir} klasörü zaten mevcut"
 
-#: sickbeard/webserve.py:3001
+#: sickbeard/webserve.py:2993
 msgid "Unable to create the folder {show_dir}, can't add the show"
 msgstr "{show_dir} klasörü oluşturulamadı, dizi eklenemedi"
 
-#: sickbeard/webserve.py:3035
+#: sickbeard/webserve.py:3027
 msgid "Adding the specified show into {show_dir}"
 msgstr "Belirtilen dizi {show_dir} içine ekleniyor"
 
-#: sickbeard/webserve.py:3111
+#: sickbeard/webserve.py:3103
 msgid "Shows Added"
 msgstr "Eklenmiş Diziler"
 
-#: sickbeard/webserve.py:3112
+#: sickbeard/webserve.py:3104
 msgid "Automatically added {num_shows} from their existing metadata files"
 msgstr "Varolan metedata dosyalarından {num_shows} otomatik eklendi"
 
-#: gui/slick/views/layouts/main.mako:175 sickbeard/webserve.py:3129
+#: gui/slick/views/layouts/main.mako:175 sickbeard/webserve.py:3121
 msgid "Mass Update"
 msgstr "Toplu Güncelleme"
 
-#: sickbeard/webserve.py:3167 sickbeard/webserve.py:3194
-#: sickbeard/webserve.py:3270 sickbeard/webserve.py:3271
+#: sickbeard/webserve.py:3159 sickbeard/webserve.py:3186
+#: sickbeard/webserve.py:3262 sickbeard/webserve.py:3263
 msgid "Episode Overview"
 msgstr "Bölüme Genel Bakış"
 
-#: sickbeard/webserve.py:3303
+#: sickbeard/webserve.py:3295
 msgid "Missing Subtitles"
 msgstr "Eksik Altyazılar"
 
-#: gui/slick/views/layouts/main.mako:176 sickbeard/webserve.py:3389
-#: sickbeard/webserve.py:3390
+#: gui/slick/views/layouts/main.mako:176 sickbeard/webserve.py:3381
+#: sickbeard/webserve.py:3382
 msgid "Backlog Overview"
 msgstr "Sonradan İndirmeye Genel Bakış"
 
-#: sickbeard/webserve.py:3515
+#: sickbeard/webserve.py:3507
 msgid "Mass Edit"
 msgstr "Toplu Düzenleme"
 
-#: sickbeard/webserve.py:3626
+#: sickbeard/webserve.py:3618
 msgid "Unable to update show: {excption_format}"
 msgstr "Gösteri güncelleştirmesi olanaksız: {excption_format}"
 
-#: sickbeard/webserve.py:3634
+#: sickbeard/webserve.py:3626
 msgid "Unable to refresh show {show_name}: {excption_format}"
 msgstr "Gösteri yinelemesi olanaksız {show_name}: {excption_format}"
 
-#: sickbeard/webserve.py:3645
+#: sickbeard/webserve.py:3637
 msgid "Errors encountered"
 msgstr "Hatalarla karşılaşıldı"
 
-#: gui/slick/views/config_general.mako:260 sickbeard/webserve.py:3651
+#: gui/slick/views/config_general.mako:260 sickbeard/webserve.py:3643
 msgid "Updates"
 msgstr "Güncelleştirmeler"
 
-#: sickbeard/webserve.py:3656
+#: sickbeard/webserve.py:3648
 msgid "Refreshes"
 msgstr "Yenilemeler"
 
-#: sickbeard/webserve.py:3661
+#: sickbeard/webserve.py:3653
 msgid "Renames"
 msgstr "Yeniden adlandırılanlar"
 
 #: gui/slick/views/displayShow.mako:259 gui/slick/views/displayShow.mako:434
 #: gui/slick/views/editShow.mako:119 gui/slick/views/inc_addShowOptions.mako:20
-#: gui/slick/views/manage_massEdit.mako:262 sickbeard/webserve.py:3666
-#: sickbeard/webserve.py:5134
+#: gui/slick/views/manage_massEdit.mako:262 sickbeard/webserve.py:3658
+#: sickbeard/webserve.py:5118
 msgid "Subtitles"
 msgstr "Alt yazılar"
 
-#: sickbeard/webserve.py:3671
+#: sickbeard/webserve.py:3663
 msgid "The following actions were queued"
 msgstr "Takip eden işlemler sıraya alındı"
 
-#: gui/slick/views/layouts/main.mako:192 sickbeard/webserve.py:3695
+#: gui/slick/views/layouts/main.mako:192 sickbeard/webserve.py:3687
 msgid "Failed Downloads"
 msgstr "Başarısız İndirmeler"
 
-#: gui/slick/views/layouts/main.mako:177 sickbeard/webserve.py:3715
+#: gui/slick/views/layouts/main.mako:177 sickbeard/webserve.py:3707
 msgid "Manage Searches"
 msgstr "Aramaları Yönet"
 
-#: sickbeard/webserve.py:3723
+#: sickbeard/webserve.py:3715
 msgid "Backlog search started"
 msgstr "Biriktirme listesi araması başladı"
 
-#: sickbeard/webserve.py:3733
+#: sickbeard/webserve.py:3725
 msgid "Daily search started"
 msgstr "Günlük arama başladı"
 
-#: sickbeard/webserve.py:3742
+#: sickbeard/webserve.py:3734
 msgid "Find propers search started"
 msgstr "Uydun olanları ara aramsı başlatıldı"
 
-#: sickbeard/webserve.py:3751
+#: sickbeard/webserve.py:3743
 msgid "Subtitle search started"
 msgstr "Alt yazı arama başladı"
 
-#: sickbeard/webserve.py:3816
+#: sickbeard/webserve.py:3808
 msgid "Remove Selected"
 msgstr "Seçili olanı kaldır"
 
-#: sickbeard/webserve.py:3817
+#: sickbeard/webserve.py:3809
 msgid "Clear History"
 msgstr "Geçmişi Temizle"
 
-#: sickbeard/webserve.py:3818
+#: sickbeard/webserve.py:3810
 msgid "Trim History"
 msgstr "Geçmişi Düzenle"
 
-#: sickbeard/webserve.py:3838
+#: sickbeard/webserve.py:3830
 msgid "Selected history entries removed"
 msgstr "Seçilmiş geçmiş girişler kaldırıldı"
 
-#: sickbeard/webserve.py:3845
+#: sickbeard/webserve.py:3837
 msgid "History cleared"
 msgstr "Geçmiş temizlendi"
 
-#: sickbeard/webserve.py:3852
+#: sickbeard/webserve.py:3844
 msgid "Removed history entries older than 30 days"
 msgstr "30 günden daha eski geçmiş girdileri kaldırıldı"
 
-#: gui/slick/views/layouts/main.mako:207 sickbeard/webserve.py:3865
+#: gui/slick/views/layouts/main.mako:207 sickbeard/webserve.py:3857
 msgid "General"
 msgstr "Genel"
 
-#: sickbeard/webserve.py:3866 sickbeard/webserve.py:4166
+#: sickbeard/webserve.py:3858 sickbeard/webserve.py:4158
 msgid "Backup/Restore"
 msgstr "Yedekle/Geri Yükle"
 
-#: gui/slick/views/layouts/main.mako:209 sickbeard/webserve.py:3867
-#: sickbeard/webserve.py:4230
+#: gui/slick/views/layouts/main.mako:209 sickbeard/webserve.py:3859
+#: sickbeard/webserve.py:4222
 msgid "Search Settings"
 msgstr "Arama Ayarları"
 
-#: gui/slick/views/layouts/main.mako:210 sickbeard/webserve.py:3868
-#: sickbeard/webserve.py:4546
+#: gui/slick/views/layouts/main.mako:210 sickbeard/webserve.py:3860
+#: sickbeard/webserve.py:4538
 msgid "Search Providers"
 msgstr "Arama Sağlayıcılar"
 
-#: gui/slick/views/layouts/main.mako:211 sickbeard/webserve.py:3869
+#: gui/slick/views/layouts/main.mako:211 sickbeard/webserve.py:3861
 msgid "Subtitles Settings"
 msgstr "Alt Yazı Ayarları"
 
-#: gui/slick/views/layouts/main.mako:213 sickbeard/webserve.py:3871
-#: sickbeard/webserve.py:4854
+#: gui/slick/views/layouts/main.mako:213 sickbeard/webserve.py:3863
+#: sickbeard/webserve.py:4846
 msgid "Notifications"
 msgstr "Bildirimler"
 
@@ -1376,92 +1652,92 @@ msgstr "Bildirimler"
 #: gui/slick/views/home.mako:35 gui/slick/views/inc_addShowOptions.mako:79
 #: gui/slick/views/inc_home_showList.mako:183
 #: gui/slick/views/layouts/main.mako:214 gui/slick/views/manage.mako:44
-#: gui/slick/views/manage_massEdit.mako:202 sickbeard/webserve.py:3872
-#: sickbeard/webserve.py:5205
+#: gui/slick/views/manage_massEdit.mako:202 sickbeard/webserve.py:3864
+#: sickbeard/webserve.py:5189
 msgid "Anime"
 msgstr "Anime"
 
-#: sickbeard/webserve.py:3912 sickbeard/webserve.py:3913
+#: sickbeard/webserve.py:3904 sickbeard/webserve.py:3905
 msgid "SickChill Configuration"
 msgstr "SickChill Ayarları"
 
-#: sickbeard/webserve.py:3928
+#: sickbeard/webserve.py:3920
 msgid "Config - Shares"
 msgstr "Görünüm - Hisse"
 
-#: sickbeard/webserve.py:3928
+#: sickbeard/webserve.py:3920
 msgid "Windows Shares Configuration"
 msgstr "Windows hisse yapılandırması"
 
-#: sickbeard/webserve.py:3956
+#: sickbeard/webserve.py:3948
 msgid "Saved Shares"
 msgstr "Kaydedilmiş hisseler"
 
-#: sickbeard/webserve.py:3956
+#: sickbeard/webserve.py:3948
 msgid "Your Windows share settings have been saved"
 msgstr "Windows'unuzun paylaşım arayları kaydedildi"
 
-#: sickbeard/webserve.py:3968
+#: sickbeard/webserve.py:3960
 msgid "Config - General"
 msgstr "Ayarlar - Genel"
 
-#: sickbeard/webserve.py:3968
+#: sickbeard/webserve.py:3960
 msgid "General Configuration"
 msgstr "Genel Ayarlar"
 
-#: sickbeard/webserve.py:4008
+#: sickbeard/webserve.py:4000
 msgid "Saved Defaults"
 msgstr "Kaydedilmiş Varsayılanlar"
 
-#: sickbeard/webserve.py:4008
+#: sickbeard/webserve.py:4000
 msgid "Your \"add show\" defaults have been set to your current selections."
 msgstr "\"Dizi ekle\" varsayılanınız geçerli seçimleriniz için belirlendi."
 
-#: sickbeard/webserve.py:4117
+#: sickbeard/webserve.py:4109
 msgid "Unable to create directory {directory}, log directory not changed."
 msgstr "{directory} isimli klasör oluşturulamadı, günlük dosyası değişmedi."
 
-#: sickbeard/webserve.py:4125
+#: sickbeard/webserve.py:4117
 msgid "Unable to create directory {directory}, https cert directory not changed."
 msgstr ""
 "{directory} klasörü oluşturulamıyor, https sertifika dizini "
 "değiştirilemedi."
 
-#: sickbeard/webserve.py:4129
+#: sickbeard/webserve.py:4121
 msgid "Unable to create directory {directory}, https key directory not changed."
 msgstr ""
 "{directory} klasörü oluşturulamıyor, https anahtar klasörü "
 "değiştirilemedi."
 
-#: sickbeard/webserve.py:4148 sickbeard/webserve.py:4350
-#: sickbeard/webserve.py:4483 sickbeard/webserve.py:5116
+#: sickbeard/webserve.py:4140 sickbeard/webserve.py:4342
+#: sickbeard/webserve.py:4475 sickbeard/webserve.py:5100
 msgid "Error(s) Saving Configuration"
 msgstr "Yapılandırma Kaydedilemedi"
 
-#: sickbeard/webserve.py:4151 sickbeard/webserve.py:4353
-#: sickbeard/webserve.py:4485 sickbeard/webserve.py:4839
-#: sickbeard/webserve.py:5119 sickbeard/webserve.py:5189
-#: sickbeard/webserve.py:5219
+#: sickbeard/webserve.py:4143 sickbeard/webserve.py:4345
+#: sickbeard/webserve.py:4477 sickbeard/webserve.py:4831
+#: sickbeard/webserve.py:5103 sickbeard/webserve.py:5173
+#: sickbeard/webserve.py:5203
 msgid "Configuration Saved"
 msgstr "Yapılandırma Kaydedildi"
 
-#: sickbeard/webserve.py:4165
+#: sickbeard/webserve.py:4157
 msgid "Config - Backup/Restore"
 msgstr "Ayarlar - Yedekle/Geri Yükle"
 
-#: sickbeard/webserve.py:4229
+#: sickbeard/webserve.py:4221
 msgid "Config - Episode Search"
 msgstr "Yapılandırma - Bölüm Arama"
 
-#: sickbeard/webserve.py:4367
+#: sickbeard/webserve.py:4359
 msgid "Config - Post Processing"
 msgstr "Yapılandırma - Son İşlem"
 
-#: sickbeard/webserve.py:4407
+#: sickbeard/webserve.py:4399
 msgid "Unpacking Not Supported, disabling unpack setting"
 msgstr "Arşiv Açma Desteklenmiyor, arşivden çıkar seçeneği etkisizleştiriliyor"
 
-#: sickbeard/webserve.py:4458
+#: sickbeard/webserve.py:4450
 msgid ""
 "You tried saving an invalid normal naming config, not saving your naming "
 "settings"
@@ -1469,7 +1745,7 @@ msgstr ""
 "Geçerli olmayan normal adlandırma yapılandırmasını kaydetmeye çalıştınız,"
 " adlandırma yapılandırmanız kaydedilmeyecek"
 
-#: sickbeard/webserve.py:4466
+#: sickbeard/webserve.py:4458
 msgid ""
 "You tried saving an invalid anime naming config, not saving your naming "
 "settings"
@@ -1477,55 +1753,55 @@ msgstr ""
 "Geçerli olmayan anime adlandırma yapılandırmasını kaydetmeye çalıştınız, "
 "adlandırma yapılandırmanız kaydedilmeyecek"
 
-#: sickbeard/webserve.py:4545
+#: sickbeard/webserve.py:4537
 msgid "Config - Providers"
 msgstr "Yapılandırma - Sağlayıcılar"
 
-#: sickbeard/webserve.py:4575
+#: sickbeard/webserve.py:4567
 msgid "No Provider Name specified"
 msgstr "Hiçbir Sağlayıcı İsmi belirtilmedi"
 
-#: sickbeard/webserve.py:4577
+#: sickbeard/webserve.py:4569
 msgid "No Provider Url specified"
 msgstr "Hiçbir Sağlayıcı Url'si belirtilmedi"
 
-#: sickbeard/webserve.py:4579
+#: sickbeard/webserve.py:4571
 msgid "No Provider Api key specified"
 msgstr "Hiçbir Sağlayıcı Api anahtarı belirtilmedi"
 
-#: sickbeard/webserve.py:4853
+#: sickbeard/webserve.py:4845
 msgid "Config - Notifications"
 msgstr "Yapılandırma - Bildirimler"
 
-#: sickbeard/webserve.py:5133
+#: sickbeard/webserve.py:5117
 msgid "Config - Subtitles"
 msgstr "Yapılandırma - Altyazılar"
 
-#: sickbeard/webserve.py:5204
+#: sickbeard/webserve.py:5188
 msgid "Config - Anime"
 msgstr "Yapılandırma - Anime"
 
-#: sickbeard/webserve.py:5232
+#: sickbeard/webserve.py:5216
 msgid "Clear Errors"
 msgstr "Hataları Temizle"
 
-#: sickbeard/webserve.py:5238
+#: sickbeard/webserve.py:5222
 msgid "Clear Warnings"
 msgstr "Uyarıları Temizle"
 
-#: sickbeard/webserve.py:5244
+#: sickbeard/webserve.py:5228
 msgid "Submit Errors"
 msgstr "Hataları Bildir"
 
-#: sickbeard/webserve.py:5260
+#: sickbeard/webserve.py:5244
 msgid "Logs &amp; Errors"
 msgstr "Günlükler &amp; Hatalar"
 
-#: sickbeard/webserve.py:5285
+#: sickbeard/webserve.py:5269
 msgid "Log File"
 msgstr "Günlük Dosyası"
 
-#: sickbeard/webserve.py:5285
+#: sickbeard/webserve.py:5269
 msgid "Logs"
 msgstr "Günlükler"
 
@@ -1591,8 +1867,7 @@ msgstr "Geri yüklenecek yedek dosyaları seçin"
 #: gui/slick/js/core.js:630 gui/slick/js/core.js:650 gui/slick/js/core.js:695
 #: gui/slick/js/core.js:774 gui/slick/js/core.js:834 gui/slick/js/core.js:854
 #: gui/slick/js/core.js:884 gui/slick/js/core.js:914 gui/slick/js/core.js:974
-#: gui/slick/js/core.js:1048 gui/slick/js/core.js:1068
-#: gui/slick/js/core.js:1087
+#: gui/slick/js/core.js:1047 gui/slick/js/core.js:1066
 msgid "Please fill out the necessary fields above."
 msgstr "Lütfen yukarıdaki gerekli alanları doldurun."
 
@@ -1608,29 +1883,29 @@ msgstr "Kara liste adını denetle; değerinin bir trakt sülüğü olması gere
 msgid "You must provide a recipient email address!"
 msgstr "Bir alıcı e-posta adresi sağlamanız gerekiyor!"
 
-#: gui/slick/js/core.js:1111
+#: gui/slick/js/core.js:1090
 msgid "You didn't supply a Pushbullet api key"
 msgstr "Pushbullet API anahtarı tedarik etmediniz"
 
-#: gui/slick/js/core.js:1139 gui/slick/js/core.js:1168
+#: gui/slick/js/core.js:1118 gui/slick/js/core.js:1147
 msgid "Don't forget to save your new pushbullet settings."
 msgstr "Yeni pushbullet ayarlarınızı kaydetmeyi unutmayın."
 
-#: gui/slick/js/core.js:1277
+#: gui/slick/js/core.js:1256
 msgid "Select TV Download Directory"
 msgstr "TV İndirme Klasörü Seçiniz"
 
-#: gui/slick/js/core.js:1278
+#: gui/slick/js/core.js:1257
 msgid "Select Unpack Directory"
 msgstr "Arşivden Çıkarma Klasörü Seçiniz"
 
-#: gui/slick/js/core.js:1341 gui/slick/js/core.js:1390
-#: gui/slick/js/core.js:1439 gui/slick/js/core.js:1505
+#: gui/slick/js/core.js:1320 gui/slick/js/core.js:1369
+#: gui/slick/js/core.js:1418 gui/slick/js/core.js:1484
 msgid "This pattern is invalid."
 msgstr "Bu kalıp geçerli değil."
 
-#: gui/slick/js/core.js:1349 gui/slick/js/core.js:1398
-#: gui/slick/js/core.js:1447 gui/slick/js/core.js:1513
+#: gui/slick/js/core.js:1328 gui/slick/js/core.js:1377
+#: gui/slick/js/core.js:1426 gui/slick/js/core.js:1492
 msgid ""
 "This pattern would be invalid without the folders, using it will force "
 "\"Season Folders\" on for all shows."
@@ -1638,52 +1913,52 @@ msgstr ""
 "Klasörler olmadan bu kalıp geçersizdir, bu kalıbı kullanmak tüm diziler "
 "için \"Sezon Klasörleri\" oluşturma seçeneğini aktifleştirir."
 
-#: gui/slick/js/core.js:1357 gui/slick/js/core.js:1406
-#: gui/slick/js/core.js:1455 gui/slick/js/core.js:1521
+#: gui/slick/js/core.js:1336 gui/slick/js/core.js:1385
+#: gui/slick/js/core.js:1434 gui/slick/js/core.js:1500
 msgid "This pattern is valid."
 msgstr "Bu kalıp geçerli."
 
-#: gui/slick/js/core.js:1799
+#: gui/slick/js/core.js:1778
 msgid "Select .nzb black hole/watch location"
 msgstr ".NZB kara delik/izleme konumunu seçin"
 
-#: gui/slick/js/core.js:1800
+#: gui/slick/js/core.js:1779
 msgid "Select .torrent black hole/watch location"
 msgstr ".Torrent kara delik/izleme konumunu seçin"
 
-#: gui/slick/js/core.js:1801
+#: gui/slick/js/core.js:1780
 msgid "Select .torrent download location"
 msgstr ".Torrent karşıdan yükleme konumunu seçin"
 
-#: gui/slick/js/core.js:1882
+#: gui/slick/js/core.js:1861
 msgid "Minimum seeding time is"
 msgstr "Asgari dağıtma süresi"
 
-#: gui/slick/js/core.js:1884
+#: gui/slick/js/core.js:1863
 msgid "URL to your uTorrent client (e.g. http://localhost:8000)"
 msgstr "uTorrent müteriniz için url (mesela http://localhost:8000)"
 
-#: gui/slick/js/core.js:1887
+#: gui/slick/js/core.js:1866
 msgid "Stop seeding when inactive for"
 msgstr "Aktif olmadığında tohumlamayı durdur"
 
-#: gui/slick/js/core.js:1893
+#: gui/slick/js/core.js:1872
 msgid "URL to your Transmission client (e.g. http://localhost:9091)"
 msgstr "İletim müşteriniz için url (mesela http://localhost:9091)"
 
-#: gui/slick/js/core.js:1903
+#: gui/slick/js/core.js:1882
 msgid "URL to your Deluge client (e.g. http://localhost:8112)"
 msgstr "Tufan müşteriniz için url (mesela http://localhost:8112)"
 
-#: gui/slick/js/core.js:1912
+#: gui/slick/js/core.js:1891
 msgid "IP or Hostname of your Deluge Daemon (e.g. scgi://localhost:58846)"
 msgstr "Tufan cininizin IP ya da sistem adı (mesela http://localhost:58846)"
 
-#: gui/slick/js/core.js:1919
+#: gui/slick/js/core.js:1898
 msgid "URL to your Synology DS client (e.g. http://localhost:5000)"
 msgstr "Synology DS müşteriniz için url (mesela http://localhost:5000)"
 
-#: gui/slick/js/core.js:1923
+#: gui/slick/js/core.js:1902
 msgid ""
 "URL to your rTorrent client (e.g. scgi://localhost:5000 <br> or "
 "https://localhost/rutorrent/plugins/httprpc/action.php)"
@@ -1692,77 +1967,77 @@ msgstr ""
 "https://localhost/rutorrent/plugins/httprpc/action.php) olarak adresi "
 "girin"
 
-#: gui/slick/js/core.js:1934
+#: gui/slick/js/core.js:1913
 msgid "URL to your qBittorrent client (e.g. http://localhost:8080)"
 msgstr "QBittorrent istemcinize (e.g. http://localhost:8080) olarak girin"
 
-#: gui/slick/js/core.js:1944
+#: gui/slick/js/core.js:1923
 msgid "URL to your MLDonkey (e.g. http://localhost:4080)"
 msgstr "MLDonkey'iniz için url (mesela http://localhost:4080)"
 
-#: gui/slick/js/core.js:1955
+#: gui/slick/js/core.js:1934
 msgid "URL to your putio client (e.g. http://localhost:8080)"
 msgstr "Putio istemciniz için url (mesela http://localhost:8080)"
 
-#: gui/slick/js/core.js:1958
+#: gui/slick/js/core.js:1937
 msgid "Create a new OAuth app for put.io"
 msgstr "Put.io için yeni bir OAuth uygulaması oluştur"
 
-#: gui/slick/js/core.js:1959
+#: gui/slick/js/core.js:1938
 msgid "Put.io Parent Folder"
 msgstr "Put.io esas klasörü"
 
-#: gui/slick/js/core.js:1960
+#: gui/slick/js/core.js:1939
 msgid "Put.io OAuth Token"
 msgstr "Put.io OAuth belirteci"
 
-#: gui/slick/js/core.js:2854 gui/slick/views/displayShow.mako:409
+#: gui/slick/js/core.js:2833 gui/slick/views/displayShow.mako:409
 msgid "Show Episodes"
 msgstr "Dizi Bölümleri"
 
-#: gui/slick/js/core.js:2859 gui/slick/views/displayShow.mako:407
+#: gui/slick/js/core.js:2838 gui/slick/views/displayShow.mako:407
 msgid "Hide Episodes"
 msgstr "Bölümleri gizle"
 
-#: gui/slick/js/core.js:2864
+#: gui/slick/js/core.js:2843
 msgid "Select Show Location"
 msgstr "Dizi konumu seç"
 
-#: gui/slick/js/core.js:2929 gui/slick/views/editShow.mako:362
+#: gui/slick/js/core.js:2908 gui/slick/views/editShow.mako:362
 msgid "None"
 msgstr "Hiçbiri"
 
-#: gui/slick/js/core.js:2939
+#: gui/slick/js/core.js:2918
 msgid "Select Unprocessed Episode Folder"
 msgstr "İşlenmemiş bölüm klasörünü seç"
 
-#: gui/slick/js/core.js:3327
+#: gui/slick/js/core.js:3306
 msgid "DELETED"
 msgstr "SİLİNDİ"
 
-#: gui/slick/js/core.js:3624
+#: gui/slick/js/core.js:3603
 msgid "Resume updating the log on this page."
 msgstr "Bu sayfada günlük güncelleştirmesine devam et."
 
-#: gui/slick/js/core.js:3624 gui/slick/views/viewlogs.mako:10
+#: gui/slick/js/core.js:3603 gui/slick/views/viewlogs.mako:10
 msgid "Pause updating the log on this page."
 msgstr "Bu sayfada günlük güncelleştirmesini duraklat."
 
-#: gui/slick/js/core.js:3955
+#: gui/slick/js/core.js:3934
 msgid " on  in "
 msgstr "üzerinde/içinde"
 
-#: gui/slick/js/core.js:3958
+#: gui/slick/js/core.js:3937
 msgid "searching {searchingFor}..."
 msgstr "{searchingFor} aranıyor..."
 
-#: gui/slick/js/core.js:3971
+#: gui/slick/js/core.js:3950
 msgid "search timed out, try again or try another indexer"
 msgstr ""
 "arama zaman aşımına uğradı, yeniden deneyin veya başka bir dizin "
 "oluşturucusu deneyin"
 
-#: gui/slick/js/core.js:4101
+#: gui/slick/js/core.js:4080
 msgid "loading folders..."
 msgstr "klasörler yükleniyor..."
 
@@ -2243,17 +2518,16 @@ msgstr "AniDB kar amacı olmayan halka açık ücretsiz anime bilgi veritabanıd
 #: gui/slick/views/config_notifications.mako:1389
 #: gui/slick/views/config_notifications.mako:1584
 #: gui/slick/views/config_notifications.mako:1677
-#: gui/slick/views/config_notifications.mako:1793
-#: gui/slick/views/config_notifications.mako:1886
-#: gui/slick/views/config_notifications.mako:2020
+#: gui/slick/views/config_notifications.mako:1770
+#: gui/slick/views/config_notifications.mako:1904
+#: gui/slick/views/config_notifications.mako:2015
 #: gui/slick/views/config_notifications.mako:2131
-#: gui/slick/views/config_notifications.mako:2247
-#: gui/slick/views/config_notifications.mako:2358
-#: gui/slick/views/config_notifications.mako:2510
-#: gui/slick/views/config_notifications.mako:2650
-#: gui/slick/views/config_notifications.mako:2898
-#: gui/slick/views/config_notifications.mako:3148
-#: gui/slick/views/config_notifications.mako:3225
+#: gui/slick/views/config_notifications.mako:2242
+#: gui/slick/views/config_notifications.mako:2394
+#: gui/slick/views/config_notifications.mako:2534
+#: gui/slick/views/config_notifications.mako:2782
+#: gui/slick/views/config_notifications.mako:3032
+#: gui/slick/views/config_notifications.mako:3119
 #: gui/slick/views/config_postProcessing.mako:36 gui/slick/views/status.mako:44
 msgid "Enable"
 msgstr "Etkinleştir"
@@ -2408,7 +2682,7 @@ msgstr ""
 #: gui/slick/views/config_notifications.mako:836
 #: gui/slick/views/config_notifications.mako:881
 #: gui/slick/views/config_notifications.mako:956
-#: gui/slick/views/config_notifications.mako:2521
+#: gui/slick/views/config_notifications.mako:2405
 #: gui/slick/views/config_postProcessing.mako:47
 #: gui/slick/views/config_postProcessing.mako:70
 #: gui/slick/views/config_postProcessing.mako:98
@@ -2523,18 +2797,17 @@ msgstr "dizi dosyalarının bulunduğu yer"
 #: gui/slick/views/config_notifications.mako:1362
 #: gui/slick/views/config_notifications.mako:1557
 #: gui/slick/views/config_notifications.mako:1650
-#: gui/slick/views/config_notifications.mako:1766
-#: gui/slick/views/config_notifications.mako:1859
-#: gui/slick/views/config_notifications.mako:1993
+#: gui/slick/views/config_notifications.mako:1743
+#: gui/slick/views/config_notifications.mako:1877
+#: gui/slick/views/config_notifications.mako:1988
 #: gui/slick/views/config_notifications.mako:2104
-#: gui/slick/views/config_notifications.mako:2220
-#: gui/slick/views/config_notifications.mako:2332
-#: gui/slick/views/config_notifications.mako:2483
-#: gui/slick/views/config_notifications.mako:2625
-#: gui/slick/views/config_notifications.mako:2875
-#: gui/slick/views/config_notifications.mako:3123
-#: gui/slick/views/config_notifications.mako:3200
-#: gui/slick/views/config_notifications.mako:3326
+#: gui/slick/views/config_notifications.mako:2216
+#: gui/slick/views/config_notifications.mako:2367
+#: gui/slick/views/config_notifications.mako:2509
+#: gui/slick/views/config_notifications.mako:2759
+#: gui/slick/views/config_notifications.mako:3007
+#: gui/slick/views/config_notifications.mako:3094
+#: gui/slick/views/config_notifications.mako:3220
 #: gui/slick/views/config_search.mako:825
 #: gui/slick/views/config_search.mako:902
 #: gui/slick/views/config_search.mako:1161 gui/slick/views/editShow.mako:398
@@ -2784,7 +3057,7 @@ msgid "these options require a manual restart to take effect."
 msgstr "bu seçeneklerin etkin olması için yeniden başlatma gerekir."
 
 #: gui/slick/views/config_general.mako:649
-#: gui/slick/views/config_notifications.mako:2307
+#: gui/slick/views/config_notifications.mako:2191
 #: gui/slick/views/config_providers.mako:164
 #: gui/slick/views/config_providers.mako:278
 #: gui/slick/views/config_providers.mako:815
@@ -3182,16 +3455,15 @@ msgstr "ulaşılamadığında hataları günlüğe kaydedelim mi?"
 #: gui/slick/views/config_notifications.mako:1401
 #: gui/slick/views/config_notifications.mako:1596
 #: gui/slick/views/config_notifications.mako:1689
-#: gui/slick/views/config_notifications.mako:1805
-#: gui/slick/views/config_notifications.mako:1898
-#: gui/slick/views/config_notifications.mako:2032
+#: gui/slick/views/config_notifications.mako:1782
+#: gui/slick/views/config_notifications.mako:1916
+#: gui/slick/views/config_notifications.mako:2027
 #: gui/slick/views/config_notifications.mako:2143
-#: gui/slick/views/config_notifications.mako:2259
-#: gui/slick/views/config_notifications.mako:2374
-#: gui/slick/views/config_notifications.mako:2531
-#: gui/slick/views/config_notifications.mako:2910
-#: gui/slick/views/config_notifications.mako:3164
-#: gui/slick/views/config_notifications.mako:3241
+#: gui/slick/views/config_notifications.mako:2258
+#: gui/slick/views/config_notifications.mako:2415
+#: gui/slick/views/config_notifications.mako:2794
+#: gui/slick/views/config_notifications.mako:3048
+#: gui/slick/views/config_notifications.mako:3135
 msgid "Notify on snatch"
 msgstr "Yakalandığında bildir"
 
@@ -3204,13 +3476,12 @@ msgstr "Yakalandığında bildir"
 #: gui/slick/views/config_notifications.mako:1405
 #: gui/slick/views/config_notifications.mako:1600
 #: gui/slick/views/config_notifications.mako:1693
-#: gui/slick/views/config_notifications.mako:1809
-#: gui/slick/views/config_notifications.mako:1902
-#: gui/slick/views/config_notifications.mako:2378
-#: gui/slick/views/config_notifications.mako:2535
-#: gui/slick/views/config_notifications.mako:2914
-#: gui/slick/views/config_notifications.mako:3168
-#: gui/slick/views/config_notifications.mako:3245
+#: gui/slick/views/config_notifications.mako:1786
+#: gui/slick/views/config_notifications.mako:2262
+#: gui/slick/views/config_notifications.mako:2419
+#: gui/slick/views/config_notifications.mako:2798
+#: gui/slick/views/config_notifications.mako:3052
+#: gui/slick/views/config_notifications.mako:3139
 msgid "send a notification when a download starts?"
 msgstr "bir indirme işi başladığında bildirim gönderilsin mi?"
 
@@ -3223,16 +3494,15 @@ msgstr "bir indirme işi başladığında bildirim gönderilsin mi?"
 #: gui/slick/views/config_notifications.mako:1411
 #: gui/slick/views/config_notifications.mako:1606
 #: gui/slick/views/config_notifications.mako:1699
-#: gui/slick/views/config_notifications.mako:1815
-#: gui/slick/views/config_notifications.mako:1908
-#: gui/slick/views/config_notifications.mako:2042
+#: gui/slick/views/config_notifications.mako:1792
+#: gui/slick/views/config_notifications.mako:1926
+#: gui/slick/views/config_notifications.mako:2037
 #: gui/slick/views/config_notifications.mako:2153
-#: gui/slick/views/config_notifications.mako:2269
-#: gui/slick/views/config_notifications.mako:2384
-#: gui/slick/views/config_notifications.mako:2541
-#: gui/slick/views/config_notifications.mako:2920
-#: gui/slick/views/config_notifications.mako:3174
-#: gui/slick/views/config_notifications.mako:3251
+#: gui/slick/views/config_notifications.mako:2268
+#: gui/slick/views/config_notifications.mako:2425
+#: gui/slick/views/config_notifications.mako:2804
+#: gui/slick/views/config_notifications.mako:3058
+#: gui/slick/views/config_notifications.mako:3145
 msgid "Notify on download"
 msgstr "İndirildiğinde bildir"
 
@@ -3245,13 +3515,12 @@ msgstr "İndirildiğinde bildir"
 #: gui/slick/views/config_notifications.mako:1415
 #: gui/slick/views/config_notifications.mako:1610
 #: gui/slick/views/config_notifications.mako:1703
-#: gui/slick/views/config_notifications.mako:1819
-#: gui/slick/views/config_notifications.mako:1912
-#: gui/slick/views/config_notifications.mako:2388
-#: gui/slick/views/config_notifications.mako:2545
-#: gui/slick/views/config_notifications.mako:2924
-#: gui/slick/views/config_notifications.mako:3178
-#: gui/slick/views/config_notifications.mako:3255
+#: gui/slick/views/config_notifications.mako:1796
+#: gui/slick/views/config_notifications.mako:2272
+#: gui/slick/views/config_notifications.mako:2429
+#: gui/slick/views/config_notifications.mako:2808
+#: gui/slick/views/config_notifications.mako:3062
+#: gui/slick/views/config_notifications.mako:3149
 msgid "send a notification when a download finishes?"
 msgstr "bir indirme işi tamamlandığında bildirim gönderilsin mi?"
 
@@ -3264,14 +3533,14 @@ msgstr "bir indirme işi tamamlandığında bildirim gönderilsin mi?"
 #: gui/slick/views/config_notifications.mako:1421
 #: gui/slick/views/config_notifications.mako:1616
 #: gui/slick/views/config_notifications.mako:1709
-#: gui/slick/views/config_notifications.mako:1825
-#: gui/slick/views/config_notifications.mako:1918
-#: gui/slick/views/config_notifications.mako:2052
+#: gui/slick/views/config_notifications.mako:1802
+#: gui/slick/views/config_notifications.mako:1936
+#: gui/slick/views/config_notifications.mako:2047
 #: gui/slick/views/config_notifications.mako:2163
-#: gui/slick/views/config_notifications.mako:2279
-#: gui/slick/views/config_notifications.mako:2394
-#: gui/slick/views/config_notifications.mako:2551
-#: gui/slick/views/config_notifications.mako:2930
+#: gui/slick/views/config_notifications.mako:2278
+#: gui/slick/views/config_notifications.mako:2435
+#: gui/slick/views/config_notifications.mako:2814
+#: gui/slick/views/config_notifications.mako:3068
 msgid "Notify on subtitle download"
 msgstr "Alt yazı indirildiğinde bildir"
 
@@ -3284,11 +3553,11 @@ msgstr "Alt yazı indirildiğinde bildir"
 #: gui/slick/views/config_notifications.mako:1425
 #: gui/slick/views/config_notifications.mako:1620
 #: gui/slick/views/config_notifications.mako:1713
-#: gui/slick/views/config_notifications.mako:1829
-#: gui/slick/views/config_notifications.mako:1922
-#: gui/slick/views/config_notifications.mako:2398
-#: gui/slick/views/config_notifications.mako:2555
-#: gui/slick/views/config_notifications.mako:2934
+#: gui/slick/views/config_notifications.mako:1806
+#: gui/slick/views/config_notifications.mako:2282
+#: gui/slick/views/config_notifications.mako:2439
+#: gui/slick/views/config_notifications.mako:2818
+#: gui/slick/views/config_notifications.mako:3072
 msgid "send a notification when subtitles are downloaded?"
 msgstr "bir alt yazı indirildiğinde bildirim gönderilsin mi?"
 
@@ -3331,7 +3600,7 @@ msgstr "(birden çok sunucu adresi virgülle ayrılmalıdır)"
 #: gui/slick/views/config_notifications.mako:140
 #: gui/slick/views/config_notifications.mako:248
 #: gui/slick/views/config_notifications.mako:419
-#: gui/slick/views/config_notifications.mako:2662
+#: gui/slick/views/config_notifications.mako:2546
 #: gui/slick/views/config_providers.mako:265
 #: gui/slick/views/config_providers.mako:435 gui/slick/views/login.mako:15
 #: gui/slick/views/login.mako:16 gui/slick/views/login.mako:17
@@ -3363,15 +3632,14 @@ msgstr "KODI sunucunuzun şifresi (yoksa boş bırakın)"
 #: gui/slick/views/config_notifications.mako:1356
 #: gui/slick/views/config_notifications.mako:1551
 #: gui/slick/views/config_notifications.mako:1644
-#: gui/slick/views/config_notifications.mako:1760
-#: gui/slick/views/config_notifications.mako:1853
-#: gui/slick/views/config_notifications.mako:1987
-#: gui/slick/views/config_notifications.mako:2476
-#: gui/slick/views/config_notifications.mako:2618
-#: gui/slick/views/config_notifications.mako:2868
-#: gui/slick/views/config_notifications.mako:3116
-#: gui/slick/views/config_notifications.mako:3193
-#: gui/slick/views/config_notifications.mako:3319
+#: gui/slick/views/config_notifications.mako:1737
+#: gui/slick/views/config_notifications.mako:1871
+#: gui/slick/views/config_notifications.mako:2360
+#: gui/slick/views/config_notifications.mako:2502
+#: gui/slick/views/config_notifications.mako:2752
+#: gui/slick/views/config_notifications.mako:3000
+#: gui/slick/views/config_notifications.mako:3087
+#: gui/slick/views/config_notifications.mako:3213
 msgid "Click below to test."
 msgstr "Denemek için aşağıya tıklayın."
 
@@ -3767,12 +4035,12 @@ msgid "(this field may be blank except when testing.)"
 msgstr "(test yapmadığınız zaman bu alan boş kalabilir.)"
 
 #: gui/slick/views/config_notifications.mako:1234
-#: gui/slick/views/config_notifications.mako:3082
+#: gui/slick/views/config_notifications.mako:2966
 msgid "Show notification list"
 msgstr "Dizi bildirim listesi"
 
 #: gui/slick/views/config_notifications.mako:1240
-#: gui/slick/views/config_notifications.mako:3088
+#: gui/slick/views/config_notifications.mako:2972
 msgid "-- Select a Show --"
 msgstr "-- Bir Dizi Seçin --"
 
@@ -3792,7 +4060,7 @@ msgstr ""
 " olun."
 
 #: gui/slick/views/config_notifications.mako:1260
-#: gui/slick/views/config_notifications.mako:3108
+#: gui/slick/views/config_notifications.mako:2992
 msgid "Save for this show"
 msgstr "Bu dizi için kaydet"
 
@@ -3802,33 +4070,28 @@ msgstr "Prowl önceliği"
 
 #: gui/slick/views/config_notifications.mako:1273
 #: gui/slick/views/config_notifications.mako:1533
-#: gui/slick/views/config_notifications.mako:1742
 msgid "Very Low"
 msgstr "Çok Düşük"
 
 #: gui/slick/views/config_notifications.mako:1274
 #: gui/slick/views/config_notifications.mako:1534
-#: gui/slick/views/config_notifications.mako:1743
 msgid "Moderate"
 msgstr "Yönet"
 
 #: gui/slick/views/config_notifications.mako:1275
 #: gui/slick/views/config_notifications.mako:1535
-#: gui/slick/views/config_notifications.mako:1744
 #: gui/slick/views/config_search.mako:709
 msgid "Normal"
 msgstr "Normal"
 
 #: gui/slick/views/config_notifications.mako:1276
 #: gui/slick/views/config_notifications.mako:1536
-#: gui/slick/views/config_notifications.mako:1745
 #: gui/slick/views/config_search.mako:710
 msgid "High"
 msgstr "Yüksek"
 
 #: gui/slick/views/config_notifications.mako:1277
 #: gui/slick/views/config_notifications.mako:1537
-#: gui/slick/views/config_notifications.mako:1746
 msgid "Emergency"
 msgstr "Acil Durum"
 
@@ -3884,7 +4147,7 @@ msgid "Pushover API key"
 msgstr "Pushover API anahtarı"
 
 #: gui/slick/views/config_notifications.mako:1459
-#: gui/slick/views/config_notifications.mako:2317
+#: gui/slick/views/config_notifications.mako:2201
 msgid "click here"
 msgstr "buraya tıkla"
 
@@ -4027,48 +4290,10 @@ msgid "access token for your Boxcar account."
 msgstr "yük vagonu hesabınız için erişim simgesi."
 
 #: gui/slick/views/config_notifications.mako:1666
-msgid "NMA"
-msgstr "NMA"
-
-#: gui/slick/views/config_notifications.mako:1667
-msgid "Notify My Android"
-msgstr "Benim Android'imi bildir"
-
-#: gui/slick/views/config_notifications.mako:1668
-msgid ""
-"Notify My Android is a Prowl-like Android App and API that offers an easy"
-" way to send notifications from your application directly to your Android"
-" device."
-msgstr ""
-"Benim Android'imi bildir, bildirimleri uygulamanızdan Android cihazınıza "
-"gönderme işlemine kolay bir yol sunan sinsi Android uygumalası ve "
-"API'dır."
-
-#: gui/slick/views/config_notifications.mako:1681
-msgid "send NMA notifications?"
-msgstr "NMA bildirimleri gönderilsin mi?"
-
-#: gui/slick/views/config_notifications.mako:1719
-msgid "NMA API key"
-msgstr "NMA API anahtarı"
-
-#: gui/slick/views/config_notifications.mako:1729
-msgid "(multiple keys must be separated by commas, up to a maximum of 5)"
-msgstr "(çoklu anahtarlar virgülle ayrılmalıdır, en fazla 5'e kadar)"
-
-#: gui/slick/views/config_notifications.mako:1736
-msgid "NMA priority"
-msgstr "NMA önceliği"
-
-#: gui/slick/views/config_notifications.mako:1752
-msgid "priority of NMA messages from SickChill."
-msgstr "SickChill'den NMA mesajlarına öncelik."
-
-#: gui/slick/views/config_notifications.mako:1782
 msgid "Pushalot"
 msgstr "Pushalot"
 
-#: gui/slick/views/config_notifications.mako:1784
+#: gui/slick/views/config_notifications.mako:1668
 msgid ""
 "Pushalot is a platform for receiving custom push notifications to "
 "connected devices running Windows Phone or Windows 8."
@@ -4076,23 +4301,23 @@ msgstr ""
 "Pushalot çalışmakta olan bağlanılmış Windows Phone veya Windows 8 "
 "aygıtlarından özel push bildirimlerini algılayan bir platformdur."
 
-#: gui/slick/views/config_notifications.mako:1797
+#: gui/slick/views/config_notifications.mako:1681
 msgid "send Pushalot notifications ?"
 msgstr "pushalot bildirimleri gönderilsin mi?"
 
-#: gui/slick/views/config_notifications.mako:1835
+#: gui/slick/views/config_notifications.mako:1719
 msgid "Pushalot authorization token"
 msgstr "Pushalot yetkilendirme belirteci"
 
-#: gui/slick/views/config_notifications.mako:1845
+#: gui/slick/views/config_notifications.mako:1729
 msgid "authorization token of your Pushalot account."
 msgstr "pushalot hesabınızın yetkilendirme belirteci."
 
-#: gui/slick/views/config_notifications.mako:1875
+#: gui/slick/views/config_notifications.mako:1759
 msgid "Pushbullet"
 msgstr "Pushbullet"
 
-#: gui/slick/views/config_notifications.mako:1877
+#: gui/slick/views/config_notifications.mako:1761
 msgid ""
 "Pushbullet is a platform for receiving custom push notifications to "
 "connected devices running Android/iOS and desktop browsers such as "
@@ -4102,35 +4327,35 @@ msgstr ""
 "Opera gibi masa üstü tarayıcılarından özel push bildirilerini algılayan "
 "bir platformdur."
 
-#: gui/slick/views/config_notifications.mako:1890
+#: gui/slick/views/config_notifications.mako:1774
 msgid "send Pushbullet notifications?"
 msgstr "pushbullet bildirimleri gönderilsin mi?"
 
-#: gui/slick/views/config_notifications.mako:1928
+#: gui/slick/views/config_notifications.mako:1812
 msgid "Pushbullet API key"
 msgstr "Pushbullet API anahtarı"
 
-#: gui/slick/views/config_notifications.mako:1938
+#: gui/slick/views/config_notifications.mako:1822
 msgid "API key of your Pushbullet account"
 msgstr "Pushbullet hesabınızın API anahtarı"
 
-#: gui/slick/views/config_notifications.mako:1946
+#: gui/slick/views/config_notifications.mako:1830
 msgid "Pushbullet devices"
 msgstr "Pushbullet aygıtları"
 
-#: gui/slick/views/config_notifications.mako:1961
+#: gui/slick/views/config_notifications.mako:1845
 msgid "Update device list"
 msgstr "Aygıt listesini güncelle"
 
-#: gui/slick/views/config_notifications.mako:1969
+#: gui/slick/views/config_notifications.mako:1853
 msgid "Pushbullet channels"
 msgstr "Pushbullet kanalları"
 
-#: gui/slick/views/config_notifications.mako:2009
+#: gui/slick/views/config_notifications.mako:1893
 msgid "Free Mobile"
 msgstr "Free Mobile"
 
-#: gui/slick/views/config_notifications.mako:2011
+#: gui/slick/views/config_notifications.mako:1895
 msgid ""
 "Free Mobile is a famous French cellular network provider.<br> It provides"
 " to their customer a free SMS API."
@@ -4138,81 +4363,81 @@ msgstr ""
 "Free Mobil ünlü bir fransız cep telefonu ağı sağlayıcısıdır. <br> "
 "Kullanıcılara ücretsiz SMS API sağlar."
 
-#: gui/slick/views/config_notifications.mako:2024
+#: gui/slick/views/config_notifications.mako:1908
 msgid "send SMS notifications?"
 msgstr "sms bildirimler gönderilsin mi?"
 
-#: gui/slick/views/config_notifications.mako:2036
+#: gui/slick/views/config_notifications.mako:1920
 msgid "send a SMS when a download starts?"
 msgstr "bir indirme başladığında SMS gönderilsin mi?"
 
-#: gui/slick/views/config_notifications.mako:2046
+#: gui/slick/views/config_notifications.mako:1930
 msgid "send a SMS when a download finishes?"
 msgstr "bir indirme tamamlandığında SMS gönderilsin mi?"
 
-#: gui/slick/views/config_notifications.mako:2056
+#: gui/slick/views/config_notifications.mako:1940
 msgid "send a SMS when subtitles are downloaded?"
 msgstr "atlyazılar indirildiğinde SMS gönderilsin mi?"
 
-#: gui/slick/views/config_notifications.mako:2062
+#: gui/slick/views/config_notifications.mako:1946
 msgid "Free Mobile customer ID"
 msgstr "Free Mobile müşteri ID'si"
 
-#: gui/slick/views/config_notifications.mako:2072
+#: gui/slick/views/config_notifications.mako:1956
 msgid "it's your Free Mobile customer ID (8 digits)"
 msgstr "bu sizin Free Mobile ID'niz (8 basamak)"
 
-#: gui/slick/views/config_notifications.mako:2080
+#: gui/slick/views/config_notifications.mako:1964
 msgid "Free Mobile API key"
 msgstr "Free Mobile API anahtarı"
 
-#: gui/slick/views/config_notifications.mako:2090
+#: gui/slick/views/config_notifications.mako:1974
 msgid "find your API key in your customer portal."
 msgstr "müşteri girişinizde API anahtarınız bulun."
 
+#: gui/slick/views/config_notifications.mako:1982
 #: gui/slick/views/config_notifications.mako:2098
-#: gui/slick/views/config_notifications.mako:2214
-#: gui/slick/views/config_notifications.mako:2326
+#: gui/slick/views/config_notifications.mako:2210
 msgid "Click below to test your settings."
 msgstr "Ayarlarınızı denemek için aşağıya tıklayın."
 
-#: gui/slick/views/config_notifications.mako:2120
-#: gui/slick/views/config_notifications.mako:2121
+#: gui/slick/views/config_notifications.mako:2004
+#: gui/slick/views/config_notifications.mako:2005
 msgid "Telegram"
 msgstr "Telegram"
 
-#: gui/slick/views/config_notifications.mako:2122
+#: gui/slick/views/config_notifications.mako:2006
 msgid "Telegram is a cloud-based instant messaging service."
 msgstr "Telegram bir bulut bazlı anlık mesajlaşma servisidir."
 
-#: gui/slick/views/config_notifications.mako:2135
+#: gui/slick/views/config_notifications.mako:2019
 msgid "send Telegram notifications?"
 msgstr "telegram bildirimi gönderilsin mi?"
 
+#: gui/slick/views/config_notifications.mako:2031
 #: gui/slick/views/config_notifications.mako:2147
-#: gui/slick/views/config_notifications.mako:2263
 msgid "send a message when a download starts?"
 msgstr "bir indirme başladığında mesaj gönderilsin mi?"
 
+#: gui/slick/views/config_notifications.mako:2041
 #: gui/slick/views/config_notifications.mako:2157
-#: gui/slick/views/config_notifications.mako:2273
 msgid "send a message when a download finishes?"
 msgstr "bir indirme işi tamamlandığında mesaj gönderilsin mi?"
 
+#: gui/slick/views/config_notifications.mako:2051
 #: gui/slick/views/config_notifications.mako:2167
-#: gui/slick/views/config_notifications.mako:2283
 msgid "send a message when subtitles are downloaded?"
 msgstr "atlyazılar indirildiğinde mesaj gönderilsin mi?"
 
-#: gui/slick/views/config_notifications.mako:2173
+#: gui/slick/views/config_notifications.mako:2057
 msgid "User/group ID"
 msgstr "Kullanıcı/grup Kimliği"
 
-#: gui/slick/views/config_notifications.mako:2183
+#: gui/slick/views/config_notifications.mako:2067
 msgid "contact @myidbot on Telegram to get an ID"
 msgstr "kimlik (ID) almak için Telegram üzerinden @myidbot'a ulaşın"
 
-#: gui/slick/views/config_notifications.mako:2188
+#: gui/slick/views/config_notifications.mako:2072
 msgid ""
 "Note: Don't forget to talk with your bot at least one time if you get a "
 "403 error."
@@ -4220,44 +4445,44 @@ msgstr ""
 "Not: Eğer bir 403 hatası alırsanız en azından bir defalığına botunuz ile "
 "(sanal yardımcı) konuşmayı unutmayın."
 
-#: gui/slick/views/config_notifications.mako:2196
+#: gui/slick/views/config_notifications.mako:2080
 msgid "Bot API token"
 msgstr "Bot API simgesi"
 
-#: gui/slick/views/config_notifications.mako:2206
+#: gui/slick/views/config_notifications.mako:2090
 msgid "contact @BotFather on Telegram to set up one"
 msgstr "telegram'da bir tanesini ayarlandırmak için @BotFather ile iletişime geç"
 
-#: gui/slick/views/config_notifications.mako:2236
-#: gui/slick/views/config_notifications.mako:2237
+#: gui/slick/views/config_notifications.mako:2120
+#: gui/slick/views/config_notifications.mako:2121
 msgid "Join"
 msgstr "Join"
 
-#: gui/slick/views/config_notifications.mako:2238
+#: gui/slick/views/config_notifications.mako:2122
 msgid "Join all of your devices together!"
 msgstr "Tüm aygıtlarınızı birleştirin!"
 
-#: gui/slick/views/config_notifications.mako:2251
+#: gui/slick/views/config_notifications.mako:2135
 msgid "send Join notifications?"
 msgstr "Join bildirimi gönderilsin mi?"
 
-#: gui/slick/views/config_notifications.mako:2289
+#: gui/slick/views/config_notifications.mako:2173
 msgid "Device ID"
 msgstr "Aygıt ID'si"
 
-#: gui/slick/views/config_notifications.mako:2299
+#: gui/slick/views/config_notifications.mako:2183
 msgid "per device specific id"
 msgstr "her aygıt için özel id"
 
-#: gui/slick/views/config_notifications.mako:2317
+#: gui/slick/views/config_notifications.mako:2201
 msgid " to create a Join API key"
 msgstr " Join API anahtarı oluşturmak için"
 
-#: gui/slick/views/config_notifications.mako:2348
+#: gui/slick/views/config_notifications.mako:2232
 msgid "Twilio"
 msgstr "Twilio"
 
-#: gui/slick/views/config_notifications.mako:2350
+#: gui/slick/views/config_notifications.mako:2234
 msgid ""
 "Twilio is a webservice API that allows you to communicate directly with a"
 " mobile number. This notifier will send a text directly to your mobile "
@@ -4266,46 +4491,46 @@ msgstr ""
 "Twilio direk telefon numarası ile iletişim kurmanızı sağlayan bir "
 "websunucu API'dır. Bu bildirici direk mobil aygıtınıza metin gönderir."
 
-#: gui/slick/views/config_notifications.mako:2364
+#: gui/slick/views/config_notifications.mako:2248
 msgid "should SickChill text your mobile device?"
 msgstr "SickChill mobil aygıtınıza metin göndersin mi?"
 
-#: gui/slick/views/config_notifications.mako:2404
+#: gui/slick/views/config_notifications.mako:2288
 msgid "Twilio Account SID"
 msgstr "Twilio hesap SID"
 
-#: gui/slick/views/config_notifications.mako:2414
-#: gui/slick/views/config_notifications.mako:2432
+#: gui/slick/views/config_notifications.mako:2298
+#: gui/slick/views/config_notifications.mako:2316
 msgid "account SID of your Twilio account."
 msgstr "Twilio hesabınızın hesap SID'si."
 
-#: gui/slick/views/config_notifications.mako:2422
+#: gui/slick/views/config_notifications.mako:2306
 msgid "Twilio Auth Token"
 msgstr "Twilio kimlik doğrulama belirteci"
 
-#: gui/slick/views/config_notifications.mako:2440
+#: gui/slick/views/config_notifications.mako:2324
 msgid "Twilio Phone SID"
 msgstr "Twilio telefon SID"
 
-#: gui/slick/views/config_notifications.mako:2450
+#: gui/slick/views/config_notifications.mako:2334
 msgid "phone SID that you would like to send the sms from"
 msgstr "sms gönderebileceğiniz telefon SID'si"
 
-#: gui/slick/views/config_notifications.mako:2458
+#: gui/slick/views/config_notifications.mako:2342
 msgid "Your phone number"
 msgstr "Telefon numaranız"
 
-#: gui/slick/views/config_notifications.mako:2468
+#: gui/slick/views/config_notifications.mako:2352
 msgid ""
 "phone number that will receive the sms. Please use the format "
 "+1-###-###-####"
 msgstr "sms alıcı telefon numarası. Lütfen +1-###-###-#### formatını kullanın"
 
-#: gui/slick/views/config_notifications.mako:2500
+#: gui/slick/views/config_notifications.mako:2384
 msgid "Twitter"
 msgstr "Twitter"
 
-#: gui/slick/views/config_notifications.mako:2502
+#: gui/slick/views/config_notifications.mako:2386
 msgid ""
 "A social networking and microblogging service, enabling its users to send"
 " and read other users' messages called tweets."
@@ -4313,41 +4538,41 @@ msgstr ""
 "Bir sosyal ağ ve mikroblog servisi, kullanıcılarına tweet adında ileti "
 "yayımlamak ve başka kullanıcıların iletilerini okuma imkanı sunar."
 
-#: gui/slick/views/config_notifications.mako:2516
+#: gui/slick/views/config_notifications.mako:2400
 msgid "should SickChill post tweets on Twitter?"
 msgstr "SickChill Twitter üzerinden tweet yayınlasın mı?"
 
-#: gui/slick/views/config_notifications.mako:2521
+#: gui/slick/views/config_notifications.mako:2405
 msgid "you may want to use a secondary account."
 msgstr "ikincil bir hesap kullanmak isteyebilirsiniz."
 
-#: gui/slick/views/config_notifications.mako:2561
+#: gui/slick/views/config_notifications.mako:2445
 msgid "send direct message"
 msgstr "doğrudan mesaj gönder"
 
-#: gui/slick/views/config_notifications.mako:2565
+#: gui/slick/views/config_notifications.mako:2449
 msgid "send a notification via Direct Message, not via status update"
 msgstr ""
 "bildirimleri doğrudan mesaj arkalı gönder, durum güncelleştirmesi arkalı "
 "değil"
 
-#: gui/slick/views/config_notifications.mako:2571
+#: gui/slick/views/config_notifications.mako:2455
 msgid "send DM to"
 msgstr "DM gönder"
 
-#: gui/slick/views/config_notifications.mako:2581
+#: gui/slick/views/config_notifications.mako:2465
 msgid "Twitter account to send Direct Messages to (must follow you)"
 msgstr "Doğrudan mesaj göndermek için twitter hesabı (sizi takip etmeli)"
 
-#: gui/slick/views/config_notifications.mako:2589
+#: gui/slick/views/config_notifications.mako:2473
 msgid "Step One"
 msgstr "İlk adım"
 
-#: gui/slick/views/config_notifications.mako:2592
+#: gui/slick/views/config_notifications.mako:2476
 msgid "Request Authorization"
 msgstr "Yetkilendirme talep etme"
 
-#: gui/slick/views/config_notifications.mako:2593
+#: gui/slick/views/config_notifications.mako:2477
 msgid ""
 "Click the \"Request Authorization\" button.<br> This will open a new page"
 " containing an auth key.<br> <b>note:</b> if nothing happens check your "
@@ -4357,21 +4582,21 @@ msgstr ""
 "anahtarı içeren yeni bir sayfa açar.<br><b>Not:</b>Eğer hiçbirşey "
 "açılmıyorsa pencere engelleyicinizi kontrol edin."
 
-#: gui/slick/views/config_notifications.mako:2599
+#: gui/slick/views/config_notifications.mako:2483
 msgid "Step Two"
 msgstr "İkinci adım"
 
-#: gui/slick/views/config_notifications.mako:2604
+#: gui/slick/views/config_notifications.mako:2488
 msgid "Enter the key Twitter gave you below, and click \"Verify Key\"."
 msgstr ""
 "Twitter'ın size verdiği anahtarı aşşağıya girin ve \"Anahtarı doğrula\" "
 "butonuna tıklayın."
 
-#: gui/slick/views/config_notifications.mako:2640
+#: gui/slick/views/config_notifications.mako:2524
 msgid "Trakt"
 msgstr "Trakt"
 
-#: gui/slick/views/config_notifications.mako:2642
+#: gui/slick/views/config_notifications.mako:2526
 msgid ""
 "Trakt helps keep a record of what TV shows and movies you are watching. "
 "Based on your favorites, Trakt recommends additional shows and movies "
@@ -4381,51 +4606,51 @@ msgstr ""
 " olur, Trakt ek olarak keyif alabileceğiniz t. v. programları ve filmleri"
 " de önerir!"
 
-#: gui/slick/views/config_notifications.mako:2654
+#: gui/slick/views/config_notifications.mako:2538
 msgid "send Trakt.tv notifications?"
 msgstr "trakt.tv bildirimleri gönderilsin mi?"
 
-#: gui/slick/views/config_notifications.mako:2672
+#: gui/slick/views/config_notifications.mako:2556
 msgid "username of your Trakt account."
 msgstr "trakt hesabınızın kullanıcı adı."
 
-#: gui/slick/views/config_notifications.mako:2680
+#: gui/slick/views/config_notifications.mako:2564
 msgid "Trakt PIN"
 msgstr "Trakt PIN"
 
-#: gui/slick/views/config_notifications.mako:2686
+#: gui/slick/views/config_notifications.mako:2570
 msgid "Get Trakt PIN"
 msgstr "Trakt PIN al"
 
-#: gui/slick/views/config_notifications.mako:2696
+#: gui/slick/views/config_notifications.mako:2580
 msgid "PIN code to authorize SickChill to access Trakt on your behalf."
 msgstr "SickChill'in sizin adınıza Trakt'e ulaşmasını onaylayan PIN kodu."
 
-#: gui/slick/views/config_notifications.mako:2710
+#: gui/slick/views/config_notifications.mako:2594
 msgid "API Timeout"
 msgstr "API zaman aşımı"
 
-#: gui/slick/views/config_notifications.mako:2720
+#: gui/slick/views/config_notifications.mako:2604
 msgid "seconds to wait for Trakt API to respond. (Use 0 to wait forever)"
 msgstr "Trakt API'ın yanıtlama saniyeleri. (sonsuza kadar beklemek için 0 kullan)"
 
-#: gui/slick/views/config_notifications.mako:2728
+#: gui/slick/views/config_notifications.mako:2612
 msgid "Default indexer"
 msgstr "Varsayılan dizin oluşturucu"
 
-#: gui/slick/views/config_notifications.mako:2741
+#: gui/slick/views/config_notifications.mako:2625
 msgid "Sync libraries"
 msgstr "Kütüphaneleri Eşitle"
 
-#: gui/slick/views/config_notifications.mako:2745
+#: gui/slick/views/config_notifications.mako:2629
 msgid "sync your SickChill show library with your trakt show library."
 msgstr "SickChill dizi kütüphanenizi trakt dizi kütüphanenizle eşitleyin."
 
-#: gui/slick/views/config_notifications.mako:2753
+#: gui/slick/views/config_notifications.mako:2637
 msgid "Remove Episodes From Collection"
 msgstr "Bölümleri Koleksiyondan Kaldır"
 
-#: gui/slick/views/config_notifications.mako:2757
+#: gui/slick/views/config_notifications.mako:2641
 msgid ""
 "remove an episode from your Trakt Collection if it is not in your "
 "SickChill Library."
@@ -4433,11 +4658,11 @@ msgstr ""
 "SickChill kütüphanenizde olmayan bir bölümü Trakt koleksiyonunuzdan "
 "kaldırın."
 
-#: gui/slick/views/config_notifications.mako:2765
+#: gui/slick/views/config_notifications.mako:2649
 msgid "Sync watchlist"
 msgstr "İzleme Listesini Eşitle"
 
-#: gui/slick/views/config_notifications.mako:2771
+#: gui/slick/views/config_notifications.mako:2655
 msgid ""
 "sync your SickChill show watchlist with your trakt show watchlist (either"
 " Show and Episode)."
@@ -4445,7 +4670,7 @@ msgstr ""
 "SickChill dizi izleme listenizi Trakt dizi izleme listeniz ile "
 "eşzamanlayın (hem dizi hem bölüm)."
 
-#: gui/slick/views/config_notifications.mako:2776
+#: gui/slick/views/config_notifications.mako:2660
 msgid ""
 "episode will be added on watch list when wanted or snatched and will be "
 "removed when downloaded "
@@ -4453,63 +4678,63 @@ msgstr ""
 "bölüm izleme listesine istenildiği zaman eklenebilir veya çıkartılabilir "
 "ve indirildiğinde kaldırılır "
 
-#: gui/slick/views/config_notifications.mako:2786
+#: gui/slick/views/config_notifications.mako:2670
 msgid "Watchlist add method"
 msgstr "İzleme listesi ekleme usulu"
 
-#: gui/slick/views/config_notifications.mako:2792
+#: gui/slick/views/config_notifications.mako:2676
 msgid "Skip All"
 msgstr "Tümünü Atla"
 
-#: gui/slick/views/config_notifications.mako:2793
+#: gui/slick/views/config_notifications.mako:2677
 msgid "Download Pilot Only"
 msgstr "Sadece pilot bölümü al"
 
-#: gui/slick/views/config_notifications.mako:2794
+#: gui/slick/views/config_notifications.mako:2678
 msgid "Get whole show"
 msgstr "Tüm diziyi al"
 
-#: gui/slick/views/config_notifications.mako:2800
+#: gui/slick/views/config_notifications.mako:2684
 msgid "method in which to download episodes for new shows."
 msgstr "yeni diziler için indirme tekniği."
 
-#: gui/slick/views/config_notifications.mako:2808
+#: gui/slick/views/config_notifications.mako:2692
 msgid "Remove episode"
 msgstr "Bölümü kaldır"
 
-#: gui/slick/views/config_notifications.mako:2812
+#: gui/slick/views/config_notifications.mako:2696
 msgid "remove an episode from your watchlist after it is downloaded."
 msgstr "bir bölüm indirildikten sonra izleme listenizden kaldırılacak."
 
-#: gui/slick/views/config_notifications.mako:2818
+#: gui/slick/views/config_notifications.mako:2702
 msgid "Remove series"
 msgstr "Serileri kaldır"
 
-#: gui/slick/views/config_notifications.mako:2822
+#: gui/slick/views/config_notifications.mako:2706
 msgid "remove the whole series from your watchlist after any download."
 msgstr "herhangi bir indirmeden sonra izleme listenizdeki tüm serileri kaldır."
 
-#: gui/slick/views/config_notifications.mako:2828
+#: gui/slick/views/config_notifications.mako:2712
 msgid "Remove watched show"
 msgstr "İzlenmiş diziyi kaldır"
 
-#: gui/slick/views/config_notifications.mako:2832
+#: gui/slick/views/config_notifications.mako:2716
 msgid "remove the show from sickchill if it's ended and completely watched"
 msgstr "biten ve izlenmesi tamamlanan diziyi sickchill'den kaldır"
 
-#: gui/slick/views/config_notifications.mako:2838
+#: gui/slick/views/config_notifications.mako:2722
 msgid "Start paused"
 msgstr "Duraklatılmışı başlat"
 
-#: gui/slick/views/config_notifications.mako:2842
+#: gui/slick/views/config_notifications.mako:2726
 msgid "shows grabbed from your trakt watchlist start paused."
 msgstr "trakt izleme listesinizden alınmış diziler duraklatılmış olarak başlar."
 
-#: gui/slick/views/config_notifications.mako:2850
+#: gui/slick/views/config_notifications.mako:2734
 msgid "Trakt blackList name"
 msgstr "Trakt karaliste adı"
 
-#: gui/slick/views/config_notifications.mako:2860
+#: gui/slick/views/config_notifications.mako:2744
 msgid ""
 "name (slug) of list on Trakt for blacklisting show on 'Add Trending Show'"
 " & 'Add Recommended Shows' pages"
@@ -4517,71 +4742,71 @@ msgstr ""
 "Trakt'de diziyi karalisteye alan liste adı (slug) \"Trend dizi ekle\" & "
 "\"Önerilen dizi ekle\" sayfalarında"
 
-#: gui/slick/views/config_notifications.mako:2889
+#: gui/slick/views/config_notifications.mako:2773
 msgid "Email"
 msgstr "E-posta"
 
-#: gui/slick/views/config_notifications.mako:2891
+#: gui/slick/views/config_notifications.mako:2775
 msgid "Allows configuration of email notifications on a per show basis."
 msgstr "E-posta bildirimlerinin dizi başına esaslı olarak yapılandır."
 
-#: gui/slick/views/config_notifications.mako:2902
+#: gui/slick/views/config_notifications.mako:2786
 msgid "send email notifications?"
 msgstr "e-posta bildirimleri gönderilsin mi?"
 
-#: gui/slick/views/config_notifications.mako:2940
+#: gui/slick/views/config_notifications.mako:2824
 msgid "SMTP host"
 msgstr "SMTP host"
 
-#: gui/slick/views/config_notifications.mako:2950
+#: gui/slick/views/config_notifications.mako:2834
 msgid "hostname of your SMTP email server."
 msgstr "SMTP e-posta sunucunuzun host adı."
 
-#: gui/slick/views/config_notifications.mako:2958
+#: gui/slick/views/config_notifications.mako:2842
 msgid "SMTP port"
 msgstr "SMTP portu"
 
-#: gui/slick/views/config_notifications.mako:2968
+#: gui/slick/views/config_notifications.mako:2852
 msgid "port number used to connect to your SMTP host."
 msgstr "port numarası SMTP host'unuza bağlanmak için kullanılır."
 
-#: gui/slick/views/config_notifications.mako:2976
+#: gui/slick/views/config_notifications.mako:2860
 msgid "SMTP from"
 msgstr "SMTP'den"
 
-#: gui/slick/views/config_notifications.mako:2986
+#: gui/slick/views/config_notifications.mako:2870
 msgid "sender email address, some hosts require a real address."
 msgstr "gönderici e-posta adresi, bazı hostlar gerçek bir adres talep edir."
 
-#: gui/slick/views/config_notifications.mako:2994
+#: gui/slick/views/config_notifications.mako:2878
 msgid "Use TLS"
 msgstr "TLS Kullan"
 
-#: gui/slick/views/config_notifications.mako:2998
+#: gui/slick/views/config_notifications.mako:2882
 msgid "check to use TLS encryption."
 msgstr "TLS şifrelendirmesini kullanmak için işaretleyin."
 
-#: gui/slick/views/config_notifications.mako:3004
+#: gui/slick/views/config_notifications.mako:2888
 msgid "SMTP user"
 msgstr "SMTP kullanıcısı"
 
-#: gui/slick/views/config_notifications.mako:3014
+#: gui/slick/views/config_notifications.mako:2898
 msgid "(optional) your SMTP server username."
 msgstr "(isteğe bağlı) SMTP sunucunuzun kullanıcı adı."
 
-#: gui/slick/views/config_notifications.mako:3022
+#: gui/slick/views/config_notifications.mako:2906
 msgid "SMTP password"
 msgstr "SMTP şifresi"
 
-#: gui/slick/views/config_notifications.mako:3035
+#: gui/slick/views/config_notifications.mako:2919
 msgid "(optional) your SMTP server password."
 msgstr "(isteğe bağlı) SMTP sunucunuzun şifresi."
 
-#: gui/slick/views/config_notifications.mako:3043
+#: gui/slick/views/config_notifications.mako:2927
 msgid "Global email list"
 msgstr "Küresel e-posta listesi"
 
-#: gui/slick/views/config_notifications.mako:3053
+#: gui/slick/views/config_notifications.mako:2937
 msgid ""
 "email addresses listed here, separated by commas if applicable, will<br> "
 "receive notifications for <b>all</b> shows."
@@ -4589,23 +4814,23 @@ msgstr ""
 "<b> tüm </b> dizilerden bildirim alacak <br> e-posta adresleri, "
 "uyarlanabilir şekilde virgüllerle ayrılarak, burada listelenmiştir."
 
-#: gui/slick/views/config_notifications.mako:3053
+#: gui/slick/views/config_notifications.mako:2937
 msgid "(This field may be blank except when testing.)"
 msgstr "(Bu alan test zamanı dışında boş olabilir.)"
 
-#: gui/slick/views/config_notifications.mako:3061
+#: gui/slick/views/config_notifications.mako:2945
 msgid "Email Subject"
 msgstr "E-Posta öznesi"
 
-#: gui/slick/views/config_notifications.mako:3072
+#: gui/slick/views/config_notifications.mako:2956
 msgid "use a custom subject for some privacy protection?"
 msgstr "gizlilik önlemleri için özel özneler kullanılsın mı?"
 
-#: gui/slick/views/config_notifications.mako:3073
+#: gui/slick/views/config_notifications.mako:2957
 msgid "(leave blank for the default SickChill subject)"
 msgstr "(varsayılan SickChill öznesi için boş bırakın)"
 
-#: gui/slick/views/config_notifications.mako:3100
+#: gui/slick/views/config_notifications.mako:2984
 msgid ""
 "configure per-show notifications here by entering email address(es), "
 "separated by commas,"
@@ -4613,7 +4838,7 @@ msgstr ""
 "e-posta adres(ler)inizi girerek, virgüllerle aryılmış olarak, dizi başı "
 "bildirimleri buradan yapılandırın,"
 
-#: gui/slick/views/config_notifications.mako:3101
+#: gui/slick/views/config_notifications.mako:2985
 msgid ""
 "after selecting a show in the drop-down box.  Be sure to activate the "
 "'Save for this show'"
@@ -4621,15 +4846,15 @@ msgstr ""
 "drop-down kutusundan bir dizi seçtikten sonra 'bu dizi için kaydet''in "
 "etkinleştirildiğinden emin olun"
 
-#: gui/slick/views/config_notifications.mako:3102
+#: gui/slick/views/config_notifications.mako:2986
 msgid "button below after each entry."
 msgstr "her girdiden sonra aşağı düğmesi."
 
-#: gui/slick/views/config_notifications.mako:3138
+#: gui/slick/views/config_notifications.mako:3022
 msgid "Slack"
 msgstr "Slack"
 
-#: gui/slick/views/config_notifications.mako:3140
+#: gui/slick/views/config_notifications.mako:3024
 msgid ""
 "Slack brings all your communication together in one place. It's real-time"
 " messaging, archiving and search for modern teams."
@@ -4637,19 +4862,19 @@ msgstr ""
 "Slack tüm iletişiminiz tek bir yerde buluşturuyor. Bu modern takımlar "
 "için gerçek zamanlı mesajlaşma, arşivleme ve aramadır."
 
-#: gui/slick/views/config_notifications.mako:3154
+#: gui/slick/views/config_notifications.mako:3038
 msgid "should SickChill post messages on Slack?"
 msgstr "SickChill Slack üzerinden mesaj yayınlasın mı?"
 
-#: gui/slick/views/config_notifications.mako:3184
+#: gui/slick/views/config_notifications.mako:3078
 msgid "Slack Incoming Webhook"
 msgstr "Gelen Webhook Slack"
 
-#: gui/slick/views/config_notifications.mako:3215
+#: gui/slick/views/config_notifications.mako:3109
 msgid "Discord"
 msgstr "Discord"
 
-#: gui/slick/views/config_notifications.mako:3217
+#: gui/slick/views/config_notifications.mako:3111
 msgid ""
 "All-in-one voice and text chat for gamers that's free, secure, and works "
 "on both your desktop and phone."
@@ -4657,39 +4882,39 @@ msgstr ""
 "Oyuncular için hem masa üstünde hem de telefonda çalışan ücretsiz ve "
 "güvenli hepsi-bir-arada ses ve metin sohbeti."
 
-#: gui/slick/views/config_notifications.mako:3231
+#: gui/slick/views/config_notifications.mako:3125
 msgid "Should SickChill post messages on Discord?"
 msgstr "SickChill Slack üzerinden mesaj yayınlasın mı?"
 
-#: gui/slick/views/config_notifications.mako:3261
+#: gui/slick/views/config_notifications.mako:3155
 msgid "Discord Incoming Webhook"
 msgstr "Gelen Webhook Discord"
 
-#: gui/slick/views/config_notifications.mako:3269
+#: gui/slick/views/config_notifications.mako:3163
 msgid "Create webhook under channel settings."
 msgstr "Kanal ayarları altında webhook oluştur."
 
-#: gui/slick/views/config_notifications.mako:3277
+#: gui/slick/views/config_notifications.mako:3171
 msgid "Discord Bot Name"
 msgstr "Discord bot adı"
 
-#: gui/slick/views/config_notifications.mako:3285
+#: gui/slick/views/config_notifications.mako:3179
 msgid "Blank will use webhook default Name."
 msgstr "Boşlu webhook varsayılan adı kullanacak."
 
-#: gui/slick/views/config_notifications.mako:3293
+#: gui/slick/views/config_notifications.mako:3187
 msgid "Discord Avatar URL"
 msgstr "Discord Avatar URL"
 
-#: gui/slick/views/config_notifications.mako:3301
+#: gui/slick/views/config_notifications.mako:3195
 msgid "Blank will use webhook default Avatar."
 msgstr "Boşluk webhook varsayılan avatar'ı kullanacak."
 
-#: gui/slick/views/config_notifications.mako:3309
+#: gui/slick/views/config_notifications.mako:3203
 msgid "Discord TTS"
 msgstr "Discord TTS"
 
-#: gui/slick/views/config_notifications.mako:3313
+#: gui/slick/views/config_notifications.mako:3207
 msgid "Send notifications using text-to-speech"
 msgstr "Bildirimleri metin için konuş özelliğini kullanarak gönder"
 

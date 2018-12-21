@@ -39,14 +39,13 @@ from dateutil import tz
 from github.GithubException import GithubException
 from libtrakt import TraktAPI
 from mako.exceptions import RichTraceback
-from mako.lookup import TemplateLookup
+from mako.lookup import Template, TemplateLookup
 from mako.runtime import UNDEFINED
 from mako.template import Template as MakoTemplate
-from requests.compat import urljoin
+# noinspection PyUnresolvedReferences
+from requests.compat import unquote_plus, urljoin
 # noinspection PyUnresolvedReferences
 from six.moves import urllib
-# noinspection PyUnresolvedReferences
-from six.moves.urllib.parse import unquote_plus
 from tornado.concurrent import run_on_executor
 from tornado.escape import utf8, xhtml_escape, xhtml_unescape
 from tornado.gen import coroutine
@@ -287,6 +286,8 @@ class WebHandler(BaseHandler):
 
             result = function(**kwargs)
             return result
+        except OSError as e:
+            return Template("Looks like we do not have enough disk space to render the page! {error}").render_unicode(data=e.message)
         except Exception:
             logger.log('Failed doing webui callback: {0}'.format((traceback.format_exc())), logger.ERROR)
             raise
@@ -1189,15 +1190,6 @@ class Home(WebRoot):
             return _('Test email sent successfully! Check inbox.')
         else:
             return _('ERROR: {last_error}').format(last_error=notifiers.email_notifier.last_err)
-
-    @staticmethod
-    def testNMA(nma_api=None, nma_priority=0):
-
-        result = notifiers.nma_notifier.test_notify(nma_api, nma_priority)
-        if result:
-            return _("Test NMA notice sent successfully")
-        else:
-            return _("Test NMA notice failed")
 
     @staticmethod
     def testPushalot(authorizationToken=None):
@@ -4898,8 +4890,6 @@ class ConfigNotifications(Config):
             use_pytivo=None, pytivo_notify_onsnatch=None, pytivo_notify_ondownload=None,
             pytivo_notify_onsubtitledownload=None, pytivo_update_library=None,
             pytivo_host=None, pytivo_share_name=None, pytivo_tivo_name=None,
-            use_nma=None, nma_notify_onsnatch=None, nma_notify_ondownload=None,
-            nma_notify_onsubtitledownload=None, nma_api=None, nma_priority=0,
             use_pushalot=None, pushalot_notify_onsnatch=None, pushalot_notify_ondownload=None,
             pushalot_notify_onsubtitledownload=None, pushalot_authorizationtoken=None,
             use_pushbullet=None, pushbullet_notify_onsnatch=None, pushbullet_notify_ondownload=None,
@@ -4908,7 +4898,7 @@ class ConfigNotifications(Config):
             use_email=None, email_notify_onsnatch=None, email_notify_ondownload=None,
             email_notify_onsubtitledownload=None, email_host=None, email_port=25, email_from=None,
             email_tls=None, email_user=None, email_password=None, email_list=None, email_subject=None, email_show_list=None,
-            email_show=None, use_slack=False, slack_notify_snatch=None, slack_notify_download=None, slack_webhook=None,
+            email_show=None, use_slack=False, slack_notify_snatch=None, slack_notify_download=None, slack_notify_subtitledownload=None, slack_webhook=None,
             use_discord=False, discord_notify_snatch=None, discord_notify_download=None, discord_webhook=None, discord_name=None,
             discord_avatar_url=None, discord_tts=False):
 
@@ -5001,6 +4991,7 @@ class ConfigNotifications(Config):
         sickbeard.USE_SLACK = config.checkbox_to_value(use_slack)
         sickbeard.SLACK_NOTIFY_SNATCH = config.checkbox_to_value(slack_notify_snatch)
         sickbeard.SLACK_NOTIFY_DOWNLOAD = config.checkbox_to_value(slack_notify_download)
+        sickbeard.SLACK_NOTIFY_SUBTITLEDOWNLOAD = config.checkbox_to_value(slack_notify_subtitledownload)
         sickbeard.SLACK_WEBHOOK = slack_webhook
 
         sickbeard.USE_DISCORD = config.checkbox_to_value(use_discord)
@@ -5086,13 +5077,6 @@ class ConfigNotifications(Config):
         sickbeard.PYTIVO_HOST = config.clean_host(pytivo_host)
         sickbeard.PYTIVO_SHARE_NAME = pytivo_share_name
         sickbeard.PYTIVO_TIVO_NAME = pytivo_tivo_name
-
-        sickbeard.USE_NMA = config.checkbox_to_value(use_nma)
-        sickbeard.NMA_NOTIFY_ONSNATCH = config.checkbox_to_value(nma_notify_onsnatch)
-        sickbeard.NMA_NOTIFY_ONDOWNLOAD = config.checkbox_to_value(nma_notify_ondownload)
-        sickbeard.NMA_NOTIFY_ONSUBTITLEDOWNLOAD = config.checkbox_to_value(nma_notify_onsubtitledownload)
-        sickbeard.NMA_API = nma_api
-        sickbeard.NMA_PRIORITY = nma_priority
 
         sickbeard.USE_PUSHALOT = config.checkbox_to_value(use_pushalot)
         sickbeard.PUSHALOT_NOTIFY_ONSNATCH = config.checkbox_to_value(pushalot_notify_onsnatch)

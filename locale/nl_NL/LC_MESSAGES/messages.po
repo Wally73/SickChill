@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  sickchill\n"
 "Report-Msgid-Bugs-To: miigotu@gmail.com\n"
-"POT-Creation-Date: 2018-10-17 02:05+0000\n"
+"POT-Creation-Date: 2018-12-20 05:54+0000\n"
 "PO-Revision-Date: 2018-10-10 07:46+0000\n"
 "Last-Translator: miigotu <miigotu@gmail.com>\n"
 "Language: nl_NL\n"
@@ -87,7 +87,7 @@ msgid "Biography"
 msgstr "Biografie"
 
 #: gui/slick/views/config_general.mako:77 gui/slick/views/layouts/main.mako:167
-#: sickbeard/__init__.py:71 sickbeard/webserve.py:3822
+#: sickbeard/__init__.py:71 sickbeard/webserve.py:3814
 msgid "History"
 msgstr "Geschiedenis"
 
@@ -100,7 +100,7 @@ msgid "Western"
 msgstr "Western"
 
 #: gui/slick/views/config_general.mako:78 gui/slick/views/layouts/main.mako:235
-#: sickbeard/__init__.py:72 sickbeard/webserve.py:2445
+#: sickbeard/__init__.py:72 sickbeard/webserve.py:2437
 msgid "News"
 msgstr "Nieuws"
 
@@ -295,6 +295,290 @@ msgstr "Kan niet alles en één per keer afvangen op hetzelfde moment!"
 msgid "Control dict to upsert cannot have values of None!"
 msgstr "Controleer dict to upsert; mogen geen waardes 'None' bevatten!"
 
+#: sickbeard/helpers.py:90
+msgid "Patching socket to IPv4 only"
+msgstr ""
+
+#: sickbeard/helpers.py:241
+msgid "Invalid filename. Filename must be a string. {0}"
+msgstr ""
+
+#: sickbeard/helpers.py:317
+msgid "Trying to find {} on {}"
+msgstr ""
+
+#: sickbeard/helpers.py:452
+msgid "Failed to create hardlink of {0} at {1}. Error: {2}. Copying instead"
+msgstr ""
+
+#: sickbeard/helpers.py:489
+msgid "Failed to create symlink of {0} at {1}. Error: {2}. Copying instead"
+msgstr ""
+
+#: sickbeard/helpers.py:500
+msgid "Checking if the path {0} already exists"
+msgstr ""
+
+#: sickbeard/helpers.py:506 sickbeard/helpers.py:526
+msgid "Folder {0} didn't exist, creating it"
+msgstr ""
+
+#: sickbeard/helpers.py:509 sickbeard/helpers.py:533
+msgid "Failed creating {0} : {1}"
+msgstr ""
+
+#: sickbeard/helpers.py:574
+msgid "Renaming file from {0} to {1}"
+msgstr ""
+
+#: sickbeard/helpers.py:577
+msgid "Failed renaming {0} to {1} : {2}"
+msgstr ""
+
+#: sickbeard/helpers.py:597
+msgid "Trying to clean any empty folders under "
+msgstr ""
+
+#: sickbeard/helpers.py:607
+#, fuzzy
+msgid "Deleting empty folder: "
+msgstr "Lege mappen niet verwijderen"
+
+#: sickbeard/helpers.py:613
+#, fuzzy
+msgid "Unable to delete {0}. Error: {1}"
+msgstr "Kan serie niet updaten: {error}"
+
+#: sickbeard/helpers.py:649
+msgid "No parent path provided in {location} unable to get permissions from it"
+msgstr ""
+
+#: sickbeard/helpers.py:672
+msgid "Not running as root or owner of {location}, not trying to set permissions"
+msgstr ""
+
+#: sickbeard/helpers.py:678
+msgid "Failed to set permission for {0} to {1:o}, parent directory has {2:o}"
+msgstr ""
+
+#: sickbeard/helpers.py:710
+msgid "Not running as root or owner of {}, not trying to set the set-group-ID"
+msgstr ""
+
+#: sickbeard/helpers.py:715
+msgid "Respecting the set-group-ID bit on the parent directory for {0}"
+msgstr ""
+
+#: sickbeard/helpers.py:760
+msgid "Found absolute number {absolute} for show {show} {ep}"
+msgstr ""
+
+#: sickbeard/helpers.py:764
+msgid "No entries for absolute number for show {show} {ep}"
+msgstr ""
+
+#: sickbeard/helpers.py:846
+msgid "pyopenssl module missing, please install for https access"
+msgstr ""
+
+#: sickbeard/helpers.py:870
+msgid "Error creating SSL key and certificate"
+msgstr ""
+
+#: sickbeard/helpers.py:891
+msgid "Not creating backup, {0} doesn't exist"
+msgstr ""
+
+#: sickbeard/helpers.py:895
+msgid "Trying to back up {0} to {1}"
+msgstr ""
+
+#: sickbeard/helpers.py:897
+msgid "Backup done"
+msgstr ""
+
+#: sickbeard/helpers.py:900
+msgid "Error while trying to back up {0} to {1} : {2}"
+msgstr ""
+
+#: sickbeard/helpers.py:903
+msgid "Trying again."
+msgstr ""
+
+#: sickbeard/helpers.py:906
+msgid "Unable to back up {0} to {1} please do it manually."
+msgstr ""
+
+#: sickbeard/helpers.py:927 sickbeard/helpers.py:942
+msgid "Not restoring, {0} doesn't exist"
+msgstr ""
+
+#: sickbeard/helpers.py:931
+msgid "Trying to backup {0} to {1}.r{2} before restoring backup"
+msgstr ""
+
+#: sickbeard/helpers.py:936
+msgid ""
+"Error while trying to backup DB file {0} before proceeding with restore: "
+"{1}"
+msgstr ""
+
+#: sickbeard/helpers.py:946
+msgid "Trying to restore file {0} to {1}"
+msgstr ""
+
+#: sickbeard/helpers.py:948
+#, fuzzy
+msgid "Restore done"
+msgstr "Herstellen"
+
+#: sickbeard/helpers.py:951
+msgid "Error while trying to restore file {0}. Error: {1}"
+msgstr ""
+
+#: sickbeard/helpers.py:954
+msgid "Trying again. Attempt #: {0}"
+msgstr ""
+
+#: sickbeard/helpers.py:957
+msgid "Unable to restore file {0} to {1}"
+msgstr ""
+
+#: sickbeard/helpers.py:1091
+msgid "Error when attempting to find show: {0} in SickChill. Error: {1} "
+msgstr ""
+
+#: sickbeard/helpers.py:1168
+msgid "Usage of anidb disabled. Skiping"
+msgstr ""
+
+#: sickbeard/helpers.py:1172
+msgid "anidb username and/or password are not set. Aborting anidb lookup."
+msgstr ""
+
+#: sickbeard/helpers.py:1177
+msgid "anidb: {0} "
+msgstr ""
+
+#: sickbeard/helpers.py:1182 sickbeard/helpers.py:1191
+msgid "anidb exception msg: {0} "
+msgstr ""
+
+#: sickbeard/helpers.py:1212 sickbeard/helpers.py:1265
+msgid "Zip creation error: {0} "
+msgstr ""
+
+#: sickbeard/helpers.py:1244
+msgid "Zip extraction error: {0} "
+msgstr ""
+
+#: sickbeard/helpers.py:1294
+msgid "Zip extraction error: {0}"
+msgstr ""
+
+#: sickbeard/helpers.py:1316
+msgid "Found indexer mapping in cache for show: "
+msgstr ""
+
+#: sickbeard/helpers.py:1334
+msgid "Unable to map {} -> {} for show: {}, skipping it"
+msgstr ""
+
+#: sickbeard/helpers.py:1339
+msgid "Mapping {} -> {} for show: {}"
+msgstr ""
+
+#: sickbeard/helpers.py:1344
+msgid "Adding indexer mapping to DB for show: {}"
+msgstr ""
+
+#: sickbeard/helpers.py:1391
+msgid "Using global proxy: {}"
+msgstr ""
+
+#: sickbeard/helpers.py:1471
+msgid "Requested a json response but response was not json, check the url: {0}"
+msgstr ""
+
+#: sickbeard/helpers.py:1510
+msgid ""
+"Problem downloading file, setting permissions or writing file to {0} - "
+"ERROR: {1}"
+msgstr ""
+
+#: sickbeard/helpers.py:1524
+msgid "Request failed: {0} ({1})"
+msgstr ""
+
+#: sickbeard/helpers.py:1529
+msgid ""
+"SSL Error requesting url: '{0}' You have {1}, try upgrading OpenSSL to "
+"1.0.1e+"
+msgstr ""
+
+#: sickbeard/helpers.py:1531
+msgid ""
+"SSL Error requesting url: '{0}' Try disabling Cert Verification on the "
+"advanced tab of /config/general"
+msgstr ""
+
+#: sickbeard/helpers.py:1571
+msgid "url is {0}"
+msgstr ""
+
+#: sickbeard/helpers.py:1598
+msgid "Unable to get size for file {0} because the link to the file is not valid"
+msgstr ""
+
+#: sickbeard/helpers.py:1604
+msgid "Unable to get size for file {0} Error: {1}"
+msgstr ""
+
+#: sickbeard/helpers.py:1611
+msgid "Generating New API key"
+msgstr ""
+
+#: sickbeard/helpers.py:1668
+msgid "Trying to determine free space on the destination drive"
+msgstr ""
+
+#: sickbeard/helpers.py:1671
+msgid "A path to a file is required for the source. {0} is not a file."
+msgstr ""
+
+#: sickbeard/helpers.py:1675
+msgid ""
+"A path is required for the destination. Check that the root dir and show "
+"locations are correct for {0} (I got '{1}')"
+msgstr ""
+
+#: sickbeard/helpers.py:1685
+msgid ""
+"Process method is 'move' and src and destination are on the same device, "
+"skipping free space check"
+msgstr ""
+
+#: sickbeard/helpers.py:1691
+msgid "Unable to determine free space, so I will assume there is enough."
+msgstr ""
+
+#: sickbeard/helpers.py:1692 sickbeard/helpers.py:1725
+msgid "Error: {error}"
+msgstr ""
+
+#: sickbeard/helpers.py:1710
+msgid "Not enough free space: Needed: {0} bytes ( {1} ), found: {2} bytes ( {3} )"
+msgstr ""
+
+#: sickbeard/helpers.py:1724
+#, fuzzy
+msgid "Unable to determine free space"
+msgstr "Niet in staat de sleutel te verifiëren"
+
+#: sickbeard/helpers.py:1847
+msgid "Show id {} not found on {}, not adding the show: {}"
+msgstr ""
+
 #: sickbeard/logger.py:473
 msgid "&lt;No Filter&gt;"
 msgstr "&lt;Geen Filter&gt;"
@@ -365,19 +649,19 @@ msgstr "Trakt Checker"
 msgid "Event"
 msgstr "Gebeurtenis"
 
-#: sickbeard/logger.py:490 sickbeard/webserve.py:1366
-#: sickbeard/webserve.py:1369 sickbeard/webserve.py:1554
-#: sickbeard/webserve.py:1561 sickbeard/webserve.py:1768
-#: sickbeard/webserve.py:1781 sickbeard/webserve.py:1804
-#: sickbeard/webserve.py:1817 sickbeard/webserve.py:1822
-#: sickbeard/webserve.py:1838 sickbeard/webserve.py:1843
-#: sickbeard/webserve.py:1907 sickbeard/webserve.py:1910
-#: sickbeard/webserve.py:1916 sickbeard/webserve.py:1919
-#: sickbeard/webserve.py:1926 sickbeard/webserve.py:1929
-#: sickbeard/webserve.py:1951 sickbeard/webserve.py:2056
-#: sickbeard/webserve.py:2061 sickbeard/webserve.py:2066
-#: sickbeard/webserve.py:2093 sickbeard/webserve.py:2097
-#: sickbeard/webserve.py:2102
+#: sickbeard/logger.py:490 sickbeard/webserve.py:1358
+#: sickbeard/webserve.py:1361 sickbeard/webserve.py:1546
+#: sickbeard/webserve.py:1553 sickbeard/webserve.py:1760
+#: sickbeard/webserve.py:1773 sickbeard/webserve.py:1796
+#: sickbeard/webserve.py:1809 sickbeard/webserve.py:1814
+#: sickbeard/webserve.py:1830 sickbeard/webserve.py:1835
+#: sickbeard/webserve.py:1899 sickbeard/webserve.py:1902
+#: sickbeard/webserve.py:1908 sickbeard/webserve.py:1911
+#: sickbeard/webserve.py:1918 sickbeard/webserve.py:1921
+#: sickbeard/webserve.py:1943 sickbeard/webserve.py:2048
+#: sickbeard/webserve.py:2053 sickbeard/webserve.py:2058
+#: sickbeard/webserve.py:2085 sickbeard/webserve.py:2089
+#: sickbeard/webserve.py:2094
 msgid "Error"
 msgstr "Fout"
 
@@ -469,52 +753,52 @@ msgstr ""
 "systeem hebt gebruikt dan is de huidige versie niet bekend. &mdash; <a "
 "href=\"{update_url}\">Update Nu</a>"
 
-#: sickbeard/webserve.py:164
+#: sickbeard/webserve.py:163
 msgid "Mako Error"
 msgstr "Mako fout"
 
-#: sickbeard/webserve.py:193
+#: sickbeard/webserve.py:192
 msgid "Oops"
 msgstr "Oeps"
 
-#: sickbeard/webserve.py:195
+#: sickbeard/webserve.py:194
 msgid "Wrong API key used"
 msgstr "Ongeldige API-sleutel gebruikt"
 
-#: gui/slick/views/login.mako:36 sickbeard/webserve.py:305
+#: gui/slick/views/login.mako:36 sickbeard/webserve.py:306
 msgid "Login"
 msgstr "Inloggen"
 
-#: sickbeard/webserve.py:380
+#: sickbeard/webserve.py:381
 msgid "API Key not generated"
 msgstr "API-sleutel niet gegenereerd"
 
-#: sickbeard/webserve.py:383
+#: sickbeard/webserve.py:384
 msgid "API Builder"
 msgstr "API Bouwer"
 
 #: gui/slick/views/config_general.mako:76 gui/slick/views/layouts/main.mako:163
-#: sickbeard/webserve.py:492
+#: sickbeard/webserve.py:493
 msgid "Schedule"
 msgstr "Kalender"
 
-#: sickbeard/webserve.py:605
+#: sickbeard/webserve.py:606
 msgid "Test 1"
 msgstr "Test 1"
 
-#: sickbeard/webserve.py:605
+#: sickbeard/webserve.py:606
 msgid "This is test number 1"
 msgstr "Dit is test nummer 1"
 
-#: sickbeard/webserve.py:606
+#: sickbeard/webserve.py:607
 msgid "Test 2"
 msgstr "Test 2"
 
-#: sickbeard/webserve.py:606
+#: sickbeard/webserve.py:607
 msgid "This is test number 2"
 msgstr "Dit is test nummer 2"
 
-#: sickbeard/webserve.py:631
+#: sickbeard/webserve.py:632
 msgid ""
 "You're using the {branch} branch. Please use 'master' unless specifically"
 " asked"
@@ -522,28 +806,28 @@ msgstr ""
 "U gebruikt momenteel de {branch} branch. Gebruik 'master' tenzij "
 "specifiek aangegeven"
 
-#: sickbeard/webserve.py:696 sickbeard/webserve.py:701
+#: sickbeard/webserve.py:697 sickbeard/webserve.py:702
 msgid "Invalid show parameters"
 msgstr "Ongeldige seriegegevens"
 
-#: sickbeard/webserve.py:708
+#: sickbeard/webserve.py:709
 msgid "Invalid parameters"
 msgstr "Ongeldige parameters"
 
-#: sickbeard/webserve.py:711 sickbeard/webserve.py:1951
+#: sickbeard/webserve.py:712 sickbeard/webserve.py:1943
 msgid "Episode couldn't be retrieved"
 msgstr "Aflevering kon niet gevonden worden"
 
-#: sickbeard/webserve.py:759 sickbeard/webserve.py:1273
-#: sickbeard/webserve.py:1303
+#: sickbeard/webserve.py:760 sickbeard/webserve.py:1265
+#: sickbeard/webserve.py:1295
 msgid "Home"
 msgstr "Startscherm"
 
-#: gui/slick/views/layouts/main.mako:149 sickbeard/webserve.py:759
+#: gui/slick/views/layouts/main.mako:149 sickbeard/webserve.py:760
 msgid "Show List"
 msgstr "Serielijst"
 
-#: sickbeard/webserve.py:809
+#: sickbeard/webserve.py:810
 msgid ""
 "Error: Unsupported Request. Send jsonp request with 'callback' variable "
 "in the query string."
@@ -551,31 +835,31 @@ msgstr ""
 "Fout: Verzoek wordt niet ondersteund. Verzendt het jsonp request met "
 "'callback' variabele in de queryreeks."
 
-#: sickbeard/webserve.py:854
+#: sickbeard/webserve.py:855
 msgid "Success. Connected and authenticated"
 msgstr "Succes. Verbonden en geverifieerd"
 
-#: sickbeard/webserve.py:856
+#: sickbeard/webserve.py:857
 msgid "Authentication failed. SABnzbd expects"
 msgstr "Authenticatie mislukt. SABnzbd verwacht"
 
-#: sickbeard/webserve.py:856
+#: sickbeard/webserve.py:857
 msgid "as authentication method"
 msgstr "als verificatiemethode"
 
-#: sickbeard/webserve.py:858
+#: sickbeard/webserve.py:859
 msgid "Unable to connect to host"
 msgstr "Kan niet verbinden met de server"
 
-#: sickbeard/webserve.py:878
+#: sickbeard/webserve.py:879
 msgid "SMS sent successfully"
 msgstr "SMS verzonden"
 
-#: sickbeard/webserve.py:880
+#: sickbeard/webserve.py:881
 msgid "Problem sending SMS: {message}"
 msgstr "Probleem met het verzenden van SMS: {message}"
 
-#: sickbeard/webserve.py:887
+#: sickbeard/webserve.py:888
 msgid ""
 "Telegram notification succeeded. Check your Telegram clients to make sure"
 " it worked"
@@ -583,41 +867,41 @@ msgstr ""
 "Telegram melding verzonden. Controleer uw Telegram client om te "
 "verifiëren dat het gelukt is"
 
-#: sickbeard/webserve.py:889
+#: sickbeard/webserve.py:890
 msgid "Error sending Telegram notification: {message}"
 msgstr "Verzenden Telegram melding mislukt: {message}"
 
-#: sickbeard/webserve.py:896
+#: sickbeard/webserve.py:897
 msgid ""
 "join notification succeeded. Check your join clients to make sure it "
 "worked"
 msgstr "samenvoegmelding gelukt. Controleer je samenvoeg-clients op juiste werking"
 
-#: sickbeard/webserve.py:898
+#: sickbeard/webserve.py:899
 msgid "Error sending join notification: {message}"
 msgstr "Fout bij versturen van Join melding: {message}"
 
-#: sickbeard/webserve.py:908
+#: sickbeard/webserve.py:909
 msgid " with password"
 msgstr " met wachtwoord"
 
-#: sickbeard/webserve.py:910
+#: sickbeard/webserve.py:911
 msgid "Registered and Tested growl successfully {growl_host}"
 msgstr "Geregistreerd en Growl test is gelukt {growl_host}"
 
-#: sickbeard/webserve.py:912
+#: sickbeard/webserve.py:913
 msgid "Registration and Testing of growl failed {growl_host}"
 msgstr "Geregistreerd en Growl test is mislukt {growl_host}"
 
-#: sickbeard/webserve.py:919
+#: sickbeard/webserve.py:920
 msgid "Test prowl notice sent successfully"
 msgstr "Test prowl melding verzonden"
 
-#: sickbeard/webserve.py:921
+#: sickbeard/webserve.py:922
 msgid "Test prowl notice failed"
 msgstr "Test prowl melding mislukt"
 
-#: sickbeard/webserve.py:928
+#: sickbeard/webserve.py:929
 msgid ""
 "Boxcar2 notification succeeded. Check your Boxcar2 clients to make sure "
 "it worked"
@@ -625,11 +909,11 @@ msgstr ""
 "Boxcar2 melding verzonden. Controleer uw Boxcar2 client om te verifiëren "
 "dat het gelukt is"
 
-#: sickbeard/webserve.py:930
+#: sickbeard/webserve.py:931
 msgid "Error sending Boxcar2 notification"
 msgstr "Fout bij verzenden van Boxcar2 melding"
 
-#: sickbeard/webserve.py:937
+#: sickbeard/webserve.py:938
 msgid ""
 "Pushover notification succeeded. Check your Pushover clients to make sure"
 " it worked"
@@ -637,157 +921,149 @@ msgstr ""
 "Pushover melding verzonden. Controleer uw Pushover client om te "
 "verifiëren dat het gelukt is"
 
-#: sickbeard/webserve.py:939
+#: sickbeard/webserve.py:940
 msgid "Error sending Pushover notification"
 msgstr "Fout bij verzenden van Pushover melding"
 
-#: sickbeard/webserve.py:953
+#: sickbeard/webserve.py:954
 msgid "Key verification successful"
 msgstr "Sleutel succesvol geverifieerd"
 
-#: sickbeard/webserve.py:955
+#: sickbeard/webserve.py:956
 msgid "Unable to verify key"
 msgstr "Niet in staat de sleutel te verifiëren"
 
-#: sickbeard/webserve.py:962
+#: sickbeard/webserve.py:963
 msgid "Tweet successful, check your twitter to make sure it worked"
 msgstr "Tweet verzonden. Controleer uw Twitter om te verifiëren dat het gelukt is"
 
-#: sickbeard/webserve.py:964
+#: sickbeard/webserve.py:965
 msgid "Error sending tweet"
 msgstr "Fout bij verzenden tweet"
 
-#: sickbeard/webserve.py:969
+#: sickbeard/webserve.py:970
 msgid "Please enter a valid account sid"
 msgstr "Voer svp een geldig gebruikers-ID in"
 
-#: sickbeard/webserve.py:972
+#: sickbeard/webserve.py:973
 msgid "Please enter a valid auth token"
 msgstr "Voer svp een geldig controlegetal in"
 
-#: sickbeard/webserve.py:975
+#: sickbeard/webserve.py:976
 msgid "Please enter a valid phone sid"
 msgstr "Voer svp een geldig telefoon ID in"
 
-#: sickbeard/webserve.py:978
+#: sickbeard/webserve.py:979
 msgid "Please format the phone number as \"+1-###-###-####\""
 msgstr "Gebruik svp voor het telefoonnummer de opmaak +1-###-###-####"
 
-#: sickbeard/webserve.py:982
+#: sickbeard/webserve.py:983
 msgid "Authorization successful and number ownership verified"
 msgstr "Autorisatie succesvol en eigendom nummer geverifieerd"
 
-#: sickbeard/webserve.py:984
+#: sickbeard/webserve.py:985
 msgid "Error sending sms"
 msgstr "Fout bij het verzenden van sms"
 
-#: sickbeard/webserve.py:990
+#: sickbeard/webserve.py:991
 msgid "Slack message successful"
 msgstr "Slack bericht gelukt"
 
-#: sickbeard/webserve.py:992
+#: sickbeard/webserve.py:993
 msgid "Slack message failed"
 msgstr "Slack bericht mislukt"
 
-#: sickbeard/webserve.py:998
+#: sickbeard/webserve.py:999
 msgid "Discord message successful"
 msgstr "Discord bericht succesvol"
 
-#: sickbeard/webserve.py:1000
+#: sickbeard/webserve.py:1001
 msgid "Discord message failed"
 msgstr "Discord bericht mislukt"
 
-#: sickbeard/webserve.py:1011
+#: sickbeard/webserve.py:1012
 msgid "Test KODI notice sent successfully to {kodi_host}"
 msgstr "KODI test boodschap succesvol naar {kodi_host} verzonden"
 
-#: sickbeard/webserve.py:1013
+#: sickbeard/webserve.py:1014
 msgid "Test KODI notice failed to {kodi_host}"
 msgstr "KODI test boodschap naar {kodi_host} mislukt"
 
-#: sickbeard/webserve.py:1027
+#: sickbeard/webserve.py:1028
 msgid "Successful test notice sent to Plex Home Theater ... {plex_clients}"
 msgstr ""
 "Succesvol een testbericht naar Plex Home Theater verstuurd ... "
 "{plex_clients}"
 
-#: sickbeard/webserve.py:1029
+#: sickbeard/webserve.py:1030
 msgid "Test failed for Plex Home Theater ... {plex_clients}"
 msgstr "Test mislukt ... {plex_clients}"
 
-#: sickbeard/webserve.py:1032
+#: sickbeard/webserve.py:1033
 msgid "Tested Plex Home Theater(s)"
 msgstr "Plex Home Theater(s) getest"
 
-#: sickbeard/webserve.py:1045
+#: sickbeard/webserve.py:1046
 msgid "Successful test of Plex Media Server(s) ... {plex_servers}"
 msgstr "Plex Media Server(s) succesvol getest ... {plex_servers}"
 
-#: sickbeard/webserve.py:1047
+#: sickbeard/webserve.py:1048
 msgid "Test failed, No Plex Media Server host specified"
 msgstr "Test is mislukt, geen Plex Media Server host opgegeven"
 
-#: sickbeard/webserve.py:1049
+#: sickbeard/webserve.py:1050
 msgid "Test failed for Plex Media Server(s) ... {plex_servers}"
 msgstr "Test mislukt voor Plex Media Server(s) ... {plex_servers}"
 
-#: sickbeard/webserve.py:1052
+#: sickbeard/webserve.py:1053
 msgid "Tested Plex Media Server host(s)"
 msgstr "Plex Media Server host(s) getest"
 
-#: sickbeard/webserve.py:1060
+#: sickbeard/webserve.py:1061
 msgid "Tried sending desktop notification via libnotify"
 msgstr "Bureaublad melding via libnotify is verzonden"
 
-#: sickbeard/webserve.py:1069
+#: sickbeard/webserve.py:1070
 msgid "Test notice sent successfully to {emby_host}"
 msgstr "Testboodschap succesvol naar {emby_host} verzonden"
 
-#: sickbeard/webserve.py:1071
+#: sickbeard/webserve.py:1072
 msgid "Test notice failed to {emby_host}"
 msgstr "Testboodschap naar {emby_host} mislukt"
 
-#: sickbeard/webserve.py:1079
+#: sickbeard/webserve.py:1080
 msgid "Successfully started the scan update"
 msgstr "Scan update succesvol gestart"
 
-#: sickbeard/webserve.py:1081
+#: sickbeard/webserve.py:1082
 msgid "Test failed to start the scan update"
 msgstr "De test om de scan update te starten is mislukt"
 
-#: sickbeard/webserve.py:1101
+#: sickbeard/webserve.py:1102
 msgid "Test notice sent successfully to {nmj2_host}"
 msgstr "Testbericht met succes verzonden naar {nmj2_host}"
 
-#: sickbeard/webserve.py:1103
+#: sickbeard/webserve.py:1104
 msgid "Test notice failed to {nmj2_host}"
 msgstr "Testboodschap naar {nmj2_host} mislukt"
 
-#: sickbeard/webserve.py:1124
+#: sickbeard/webserve.py:1125
 msgid "Trakt Authorized"
 msgstr "Trakt is gemachtigd"
 
-#: sickbeard/webserve.py:1125
+#: sickbeard/webserve.py:1126
 msgid "Trakt Not Authorized!"
 msgstr "Trakt is niet gemachtigd!"
 
-#: sickbeard/webserve.py:1189
+#: sickbeard/webserve.py:1190
 msgid "Test email sent successfully! Check inbox."
 msgstr "Test e-mail succesvol verzonden! Controleer je Postvak IN."
 
-#: sickbeard/webserve.py:1191
+#: sickbeard/webserve.py:1192
 msgid "ERROR: {last_error}"
 msgstr "FOUT: {last_error}"
 
-#: sickbeard/webserve.py:1198
-msgid "Test NMA notice sent successfully"
-msgstr "NMA testbericht met succes verzonden"
-
-#: sickbeard/webserve.py:1200
-msgid "Test NMA notice failed"
-msgstr "NMA testbericht mislukt"
-
-#: sickbeard/webserve.py:1207
+#: sickbeard/webserve.py:1199
 msgid ""
 "Pushalot notification succeeded. Check your Pushalot clients to make sure"
 " it worked"
@@ -795,11 +1071,11 @@ msgstr ""
 "Pushalot melding verzonden. Controleer uw Pushalot client om te "
 "verifiëren dat het gelukt is"
 
-#: sickbeard/webserve.py:1209
+#: sickbeard/webserve.py:1201
 msgid "Error sending Pushalot notification"
 msgstr "Fout bij verzenden van Pushalot melding"
 
-#: sickbeard/webserve.py:1216
+#: sickbeard/webserve.py:1208
 msgid ""
 "Pushbullet notification succeeded. Check your device to make sure it "
 "worked"
@@ -807,26 +1083,26 @@ msgstr ""
 "Pushbullet melding verzonden. Controleer uw apparaat om te verifiëren dat"
 " het gelukt is"
 
-#: sickbeard/webserve.py:1218 sickbeard/webserve.py:1228
-#: sickbeard/webserve.py:1237
+#: sickbeard/webserve.py:1210 sickbeard/webserve.py:1220
+#: sickbeard/webserve.py:1229
 msgid "Error sending Pushbullet notification"
 msgstr "Fout bij verzenden van Pushbullet melding"
 
 #: gui/slick/views/displayShow.mako:435
 #: gui/slick/views/inc_home_showList.mako:178 gui/slick/views/manage.mako:49
-#: sickbeard/webserve.py:1254
+#: sickbeard/webserve.py:1246
 msgid "Status"
 msgstr "Status"
 
-#: sickbeard/webserve.py:1273 sickbeard/webserve.py:1303
+#: sickbeard/webserve.py:1265 sickbeard/webserve.py:1295
 msgid "Restarting SickChill"
 msgstr "SickChill aan het herstarten"
 
-#: sickbeard/webserve.py:1306
+#: sickbeard/webserve.py:1298
 msgid "Update Failed"
 msgstr "Update is mislukt"
 
-#: sickbeard/webserve.py:1307
+#: sickbeard/webserve.py:1299
 msgid ""
 "Update wasn't successful, not restarting. Check your log for more "
 "information."
@@ -834,30 +1110,30 @@ msgstr ""
 "Update was niet succesvol, er is niet opnieuw opgestart. Controleer uw "
 "logboek voor meer informatie."
 
-#: sickbeard/webserve.py:1335
+#: sickbeard/webserve.py:1327
 msgid "Checking out branch"
 msgstr "Branch uitchecken"
 
-#: sickbeard/webserve.py:1338
+#: sickbeard/webserve.py:1330
 msgid "Already on branch"
 msgstr "Zit reeds op deze branch"
 
-#: sickbeard/webserve.py:1366
+#: sickbeard/webserve.py:1358
 msgid "Invalid show ID: {show}"
 msgstr "Ongeldige serie ID: {show}"
 
-#: sickbeard/webserve.py:1369 sickbeard/webserve.py:1924
-#: sickbeard/webserve.py:2061 sickbeard/webserve.py:2097
+#: sickbeard/webserve.py:1361 sickbeard/webserve.py:1916
+#: sickbeard/webserve.py:2053 sickbeard/webserve.py:2089
 msgid "Show not in show list"
 msgstr "Serie niet in serielijst gevonden"
 
 #: gui/slick/views/inc_rootDirs.mako:31 gui/slick/views/manage.mako:38
-#: gui/slick/views/manage_massEdit.mako:74 sickbeard/webserve.py:1385
-#: sickbeard/webserve.py:2084
+#: gui/slick/views/manage_massEdit.mako:74 sickbeard/webserve.py:1377
+#: sickbeard/webserve.py:2076
 msgid "Edit"
 msgstr "Bewerk"
 
-#: sickbeard/webserve.py:1396
+#: sickbeard/webserve.py:1388
 msgid ""
 "This show is in the process of being downloaded - the info below is "
 "incomplete."
@@ -865,203 +1141,203 @@ msgstr ""
 "Deze serie wordt op dit moment gedownload - de informatie hieronder is "
 "incompleet."
 
-#: sickbeard/webserve.py:1399
+#: sickbeard/webserve.py:1391
 msgid "The information on this page is in the process of being updated."
 msgstr "De informatie op deze pagina wordt op dit moment bijgewerkt."
 
-#: sickbeard/webserve.py:1402
+#: sickbeard/webserve.py:1394
 msgid "The episodes below are currently being refreshed from disk"
 msgstr "De afleveringen hieronder worden op dit moment ververst vanaf schijf"
 
-#: sickbeard/webserve.py:1405
+#: sickbeard/webserve.py:1397
 msgid "Currently downloading subtitles for this show"
 msgstr "Ondertiteling voor deze serie nu aan het downloaden"
 
-#: sickbeard/webserve.py:1408
+#: sickbeard/webserve.py:1400
 msgid "This show is queued to be refreshed."
 msgstr "Deze serie staat in de rij om bijgewerkt te worden."
 
-#: sickbeard/webserve.py:1411
+#: sickbeard/webserve.py:1403
 msgid "This show is queued and awaiting an update."
 msgstr "Deze serie staat in de rij en wacht op een update."
 
-#: sickbeard/webserve.py:1414
+#: sickbeard/webserve.py:1406
 msgid "This show is queued and awaiting subtitles download."
 msgstr "Deze serie staat in de rij en wacht op het downloaden van ondertiteling."
 
-#: gui/slick/js/core.js:3623 sickbeard/webserve.py:1419
+#: gui/slick/js/core.js:3602 sickbeard/webserve.py:1411
 msgid "Resume"
 msgstr "Hervat"
 
-#: gui/slick/js/core.js:3623 gui/slick/views/viewlogs.mako:12
-#: sickbeard/webserve.py:1421
+#: gui/slick/js/core.js:3602 gui/slick/views/viewlogs.mako:12
+#: sickbeard/webserve.py:1413
 msgid "Pause"
 msgstr "Pauzeer"
 
 #: gui/slick/views/editShow.mako:368 gui/slick/views/inc_blackwhitelist.mako:40
 #: gui/slick/views/inc_blackwhitelist.mako:85 gui/slick/views/manage.mako:58
-#: gui/slick/views/manage_failedDownloads.mako:43 sickbeard/webserve.py:1424
+#: gui/slick/views/manage_failedDownloads.mako:43 sickbeard/webserve.py:1416
 msgid "Remove"
 msgstr "Verwijder"
 
-#: sickbeard/webserve.py:1425
+#: sickbeard/webserve.py:1417
 msgid "Re-scan files"
 msgstr "(Her)Scan Bestanden"
 
-#: sickbeard/webserve.py:1427
+#: sickbeard/webserve.py:1419
 msgid "Force Full Update"
 msgstr "Forceer volledige update"
 
-#: sickbeard/webserve.py:1429
+#: sickbeard/webserve.py:1421
 msgid "Update show in KODI"
 msgstr "Update serie in KODI"
 
-#: sickbeard/webserve.py:1431
+#: sickbeard/webserve.py:1423
 msgid "Update show in Emby"
 msgstr "Update serie in Emby"
 
-#: sickbeard/webserve.py:1435
+#: sickbeard/webserve.py:1427
 msgid "Hide specials"
 msgstr "Specials verbergen"
 
-#: sickbeard/webserve.py:1438
+#: sickbeard/webserve.py:1430
 msgid "Show specials"
 msgstr "Specials tonen"
 
-#: sickbeard/webserve.py:1440 sickbeard/webserve.py:2087
-#: sickbeard/webserve.py:2088
+#: sickbeard/webserve.py:1432 sickbeard/webserve.py:2079
+#: sickbeard/webserve.py:2080
 msgid "Preview Rename"
 msgstr "Hernoemvoorbeeld"
 
-#: sickbeard/webserve.py:1444
+#: sickbeard/webserve.py:1436
 msgid "Download Subtitles"
 msgstr "Download ondertiteling"
 
-#: sickbeard/webserve.py:1529
+#: sickbeard/webserve.py:1521
 msgid "No scene exceptions"
 msgstr "Geen scène-uitzonderingen"
 
-#: sickbeard/webserve.py:1550 sickbeard/webserve.py:1817
-#: sickbeard/webserve.py:1838
+#: sickbeard/webserve.py:1542 sickbeard/webserve.py:1809
+#: sickbeard/webserve.py:1830
 msgid "Invalid show ID"
 msgstr "Serie ID onjuist"
 
-#: sickbeard/webserve.py:1557 sickbeard/webserve.py:1822
-#: sickbeard/webserve.py:1843
+#: sickbeard/webserve.py:1549 sickbeard/webserve.py:1814
+#: sickbeard/webserve.py:1835
 msgid "Unable to find the specified show"
 msgstr "Kan deze serie niet vinden"
 
-#: sickbeard/webserve.py:1587
+#: sickbeard/webserve.py:1579
 msgid "Unable to retreive Fansub Groups from AniDB."
 msgstr "Niet mogelijk Fansub groepen van AniDB op te halen"
 
-#: sickbeard/webserve.py:1596 sickbeard/webserve.py:1599
+#: sickbeard/webserve.py:1588 sickbeard/webserve.py:1591
 msgid "Edit Show"
 msgstr "Bewerk Serie"
 
-#: sickbeard/webserve.py:1685 sickbeard/webserve.py:1720
+#: sickbeard/webserve.py:1677 sickbeard/webserve.py:1712
 msgid "Unable to refresh this show: {error}"
 msgstr "Serie kan momenteel niet vernieuwd worden: {error}"
 
-#: sickbeard/webserve.py:1712
+#: sickbeard/webserve.py:1704
 msgid "New location <tt>{location}</tt> does not exist"
 msgstr "Nieuwe locatie <tt>{location}</tt> bestaat niet"
 
-#: sickbeard/webserve.py:1738
+#: sickbeard/webserve.py:1730
 msgid "Unable to update show: {error}"
 msgstr "Kan serie niet updaten: {error}"
 
-#: sickbeard/webserve.py:1744
+#: sickbeard/webserve.py:1736
 msgid "Unable to force an update on scene exceptions of the show."
 msgstr ""
 "Niet in staat om een geforceerde update uit te voeren op de scène-"
 "uitzonderingen bij deze serie."
 
-#: sickbeard/webserve.py:1751
+#: sickbeard/webserve.py:1743
 msgid "Unable to force an update on scene numbering of the show."
 msgstr ""
 "Niet in staat om een geforceerde update uit te voeren op de scène-"
 "nummering bij deze serie."
 
-#: sickbeard/webserve.py:1758 sickbeard/webserve.py:3579
+#: sickbeard/webserve.py:1750 sickbeard/webserve.py:3571
 msgid "{num_errors:d} error{plural} while saving changes:"
 msgstr "{num_errors:d} foutmelding{plural} tijdens het opslaan van wijzigingen:"
 
-#: sickbeard/webserve.py:1771
+#: sickbeard/webserve.py:1763
 msgid "{show_name} has been {paused_resumed}"
 msgstr "{show_name} is {paused_resumed}"
 
-#: sickbeard/webserve.py:1771
+#: sickbeard/webserve.py:1763
 msgid "resumed"
 msgstr "hervat"
 
-#: sickbeard/webserve.py:1771
+#: sickbeard/webserve.py:1763
 msgid "paused"
 msgstr "gepauzeerd"
 
-#: sickbeard/webserve.py:1784
+#: sickbeard/webserve.py:1776
 msgid "{show_name} has been {deleted_trashed} {was_deleted}"
 msgstr "{show_name} is {deleted_trashed} {was_deleted}"
 
-#: sickbeard/webserve.py:1786
+#: sickbeard/webserve.py:1778
 msgid "deleted"
 msgstr "verwijderd"
 
-#: sickbeard/webserve.py:1786
+#: sickbeard/webserve.py:1778
 msgid "trashed"
 msgstr "verplaatst naar prullenbak"
 
-#: sickbeard/webserve.py:1787
+#: sickbeard/webserve.py:1779
 msgid "(media untouched)"
 msgstr "(media ongewijzigd)"
 
-#: sickbeard/webserve.py:1787
+#: sickbeard/webserve.py:1779
 msgid "(with all related media)"
 msgstr "(met alle gerelateerde media)"
 
-#: sickbeard/webserve.py:1808
+#: sickbeard/webserve.py:1800
 msgid "Unable to refresh this show."
 msgstr "Serie kan momenteel niet vernieuwd worden."
 
-#: sickbeard/webserve.py:1828
+#: sickbeard/webserve.py:1820
 msgid "Unable to update this show."
 msgstr "Kan deze serie niet updaten."
 
-#: sickbeard/webserve.py:1867
+#: sickbeard/webserve.py:1859
 msgid "Library update command sent to KODI host(s)): {kodi_hosts}"
 msgstr "Bibliotheek update-commando is naar KODI host(s)) verstuurd: {kodi_hosts}"
 
-#: sickbeard/webserve.py:1869
+#: sickbeard/webserve.py:1861
 msgid "Unable to contact one or more KODI host(s)): {kodi_hosts}"
 msgstr ""
 "Niet mogelijk contact te leggen met 1 of meerdere KODI host(s)): "
 "{kodi_hosts}"
 
-#: sickbeard/webserve.py:1878
+#: sickbeard/webserve.py:1870
 msgid "Library update command sent to Plex Media Server host: {plex_server}"
 msgstr "Update commando is naar Plex Media Server host gestuurd: {plex_server}"
 
-#: sickbeard/webserve.py:1881
+#: sickbeard/webserve.py:1873
 msgid "Unable to contact Plex Media Server host: {plex_server}"
 msgstr "Niet mogelijk contact te leggen met Plex Media Server host: {plex_server}"
 
-#: sickbeard/webserve.py:1893
+#: sickbeard/webserve.py:1885
 msgid "Library update command sent to Emby host: {emby_host}"
 msgstr "Bibliotheek update-commando is naar Emby host verstuurd: {emby_host}"
 
-#: sickbeard/webserve.py:1895
+#: sickbeard/webserve.py:1887
 msgid "Unable to contact Emby host: {emby_host}"
 msgstr "Niet gelukt met de Emby host te verbinden: {emby_host}"
 
-#: sickbeard/webserve.py:1905 sickbeard/webserve.py:2093
+#: sickbeard/webserve.py:1897 sickbeard/webserve.py:2085
 msgid "You must specify a show and at least one episode"
 msgstr "U moet een serie selecteren en minimaal 1 aflevering"
 
-#: sickbeard/webserve.py:1914
+#: sickbeard/webserve.py:1906
 msgid "Invalid status"
 msgstr "Ongeldige status"
 
-#: sickbeard/webserve.py:2013
+#: sickbeard/webserve.py:2005
 msgid ""
 "Backlog was automatically started for the following seasons of "
 "<b>{show_name}</b>"
@@ -1070,16 +1346,16 @@ msgstr ""
 "<b>{show_name}</b>"
 
 #: gui/slick/views/displayShow.mako:73 gui/slick/views/displayShow.mako:78
-#: gui/slick/views/displayShow.mako:403 sickbeard/webserve.py:2020
-#: sickbeard/webserve.py:2039
+#: gui/slick/views/displayShow.mako:403 sickbeard/webserve.py:2012
+#: sickbeard/webserve.py:2031
 msgid "Season"
 msgstr "Seizoen"
 
-#: sickbeard/webserve.py:2027
+#: sickbeard/webserve.py:2019
 msgid "Backlog started"
 msgstr "Werkvoorraad wordt aangemaakt"
 
-#: sickbeard/webserve.py:2032
+#: sickbeard/webserve.py:2024
 msgid ""
 "Retrying Search was automatically started for the following season of "
 "<b>{show_name}</b>"
@@ -1087,44 +1363,44 @@ msgstr ""
 "Opnieuw zoeken is automatisch gestart voor de volgende seizoenen van "
 "<b>{show_name}</b>"
 
-#: sickbeard/webserve.py:2046
+#: sickbeard/webserve.py:2038
 msgid "Retry Search started"
 msgstr "Opnieuw aan het zoeken"
 
-#: sickbeard/webserve.py:2056
+#: sickbeard/webserve.py:2048
 msgid "You must specify a show"
 msgstr "U moet een serie specificeren"
 
-#: sickbeard/webserve.py:2066 sickbeard/webserve.py:2102
+#: sickbeard/webserve.py:2058 sickbeard/webserve.py:2094
 msgid "Can't rename episodes when the show dir is missing."
 msgstr "Kan geen afleveringen hernoemen als er geen seriemap is."
 
-#: sickbeard/webserve.py:2272 sickbeard/webserve.py:2293
+#: sickbeard/webserve.py:2264 sickbeard/webserve.py:2285
 msgid "New subtitles downloaded: {new_subtitle_languages}"
 msgstr "Nieuwe ondertiteling gedownload: {new_subtitle_languages}"
 
-#: sickbeard/webserve.py:2275 sickbeard/webserve.py:2296
+#: sickbeard/webserve.py:2267 sickbeard/webserve.py:2288
 msgid "No subtitles downloaded"
 msgstr "Geen ondertiteling gedownload"
 
 #: gui/slick/views/config_general.mako:79 gui/slick/views/layouts/main.mako:236
-#: sickbeard/webserve.py:2422
+#: sickbeard/webserve.py:2414
 msgid "IRC"
 msgstr "IRC"
 
-#: sickbeard/webserve.py:2436
+#: sickbeard/webserve.py:2428
 msgid "Could not load news from the repo. [Click here for news.md])({news_url})"
 msgstr ""
 "Nieuws kan niet worden geladen uit de repo. [Klik hier voor de "
 "news.md])({news_url})"
 
-#: sickbeard/webserve.py:2443 sickbeard/webserve.py:2464
+#: sickbeard/webserve.py:2435 sickbeard/webserve.py:2456
 msgid "The was a problem connecting to github, please refresh and try again"
 msgstr ""
 "Er was een probleem met de verbinding met GitHub, graag vernieuwen en "
 "opnieuw proberen"
 
-#: sickbeard/webserve.py:2459
+#: sickbeard/webserve.py:2451
 msgid ""
 "Could not load changes from the repo. [Click here for "
 "CHANGES.md]({changes_url})"
@@ -1132,85 +1408,85 @@ msgstr ""
 "Aanpassingen kunnen niet worden geladen uit de repo. [Klik hier voor de "
 "CHANGES.md]({changes_url})"
 
-#: gui/slick/views/layouts/main.mako:237 sickbeard/webserve.py:2466
+#: gui/slick/views/layouts/main.mako:237 sickbeard/webserve.py:2458
 msgid "Changelog"
 msgstr "Veranderingen"
 
-#: gui/slick/views/layouts/main.mako:212 sickbeard/webserve.py:2477
-#: sickbeard/webserve.py:3870 sickbeard/webserve.py:4368
+#: gui/slick/views/layouts/main.mako:212 sickbeard/webserve.py:2469
+#: sickbeard/webserve.py:3862 sickbeard/webserve.py:4360
 msgid "Post Processing"
 msgstr "Nabewerking"
 
-#: gui/slick/views/layouts/main.mako:150 sickbeard/webserve.py:2509
+#: gui/slick/views/layouts/main.mako:150 sickbeard/webserve.py:2501
 msgid "Add Shows"
 msgstr "Serie Toevoegen"
 
-#: sickbeard/webserve.py:2576
+#: sickbeard/webserve.py:2568
 msgid "No folders selected."
 msgstr "Geen mappen geselecteerd."
 
-#: sickbeard/webserve.py:2700
+#: sickbeard/webserve.py:2692
 msgid "New Show"
 msgstr "Nieuwe Serie"
 
-#: sickbeard/webserve.py:2715
+#: sickbeard/webserve.py:2707
 msgid "Trending Shows"
 msgstr "Populaire Series"
 
-#: sickbeard/webserve.py:2717 sickbeard/webserve.py:2800
+#: sickbeard/webserve.py:2709 sickbeard/webserve.py:2792
 msgid "Popular Shows"
 msgstr "Populaire Shows"
 
-#: sickbeard/webserve.py:2719 sickbeard/webserve.py:2733
+#: sickbeard/webserve.py:2711 sickbeard/webserve.py:2725
 msgid "Most Anticipated Shows"
 msgstr "De langstverwachte Series"
 
-#: sickbeard/webserve.py:2721
+#: sickbeard/webserve.py:2713
 msgid "Most Collected Shows"
 msgstr "Meest Verzamelde Series"
 
-#: sickbeard/webserve.py:2723
+#: sickbeard/webserve.py:2715
 msgid "Most Watched Shows"
 msgstr "Meest Bekeken Series"
 
-#: sickbeard/webserve.py:2725
+#: sickbeard/webserve.py:2717
 msgid "Most Played Shows"
 msgstr "Meest Afgespeelde Series"
 
-#: sickbeard/webserve.py:2727
+#: sickbeard/webserve.py:2719
 msgid "Recommended Shows"
 msgstr "Aanbevolen Series"
 
-#: gui/slick/views/addShows_trendingShows.mako:60 sickbeard/webserve.py:2729
+#: gui/slick/views/addShows_trendingShows.mako:60 sickbeard/webserve.py:2721
 msgid "New Shows"
 msgstr "Nieuwe Series"
 
-#: gui/slick/views/addShows_trendingShows.mako:61 sickbeard/webserve.py:2731
+#: gui/slick/views/addShows_trendingShows.mako:61 sickbeard/webserve.py:2723
 msgid "Season Premieres"
 msgstr "Seizoen Start "
 
-#: sickbeard/webserve.py:2820 sickbeard/webserve.py:2821
+#: sickbeard/webserve.py:2812 sickbeard/webserve.py:2813
 msgid "Existing Show"
 msgstr "Bestaande Serie"
 
-#: sickbeard/webserve.py:2900
+#: sickbeard/webserve.py:2892
 msgid "No root directories setup, please go back and add one."
 msgstr "Geen hoofdmappen ingesteld, graag teruggaan en één toe te voegen."
 
-#: sickbeard/webserve.py:2906 sickbeard/webserve.py:2990
-#: sickbeard/webserve.py:3000
+#: sickbeard/webserve.py:2898 sickbeard/webserve.py:2982
+#: sickbeard/webserve.py:2992
 msgid "Unable to add show"
 msgstr "Serie toevoegen mislukt"
 
-#: sickbeard/webserve.py:2916 sickbeard/webserve.py:3035
+#: sickbeard/webserve.py:2908 sickbeard/webserve.py:3027
 msgid "Show added"
 msgstr "Serie toegevoegd"
 
-#: sickbeard/webserve.py:2916
+#: sickbeard/webserve.py:2908
 msgid "Adding the specified show {show_name}"
 msgstr "Bezig deze serie toe te voegen: {show_name}"
 
-#: sickbeard/webserve.py:2957
+#: sickbeard/webserve.py:2949
 msgid ""
 "Missing params, no Indexer ID or folder: {show_to_add} and "
 "{root_dir}/{show_path}"
@@ -1218,165 +1494,165 @@ msgstr ""
 "Ontbrekende parameters, geen Indexeerder ID of map: {show_to_add} en "
 "{root_dir}/{show_path}"
 
-#: sickbeard/webserve.py:2966
+#: sickbeard/webserve.py:2958
 msgid "Unknown error. Unable to add show due to problem with show selection."
 msgstr ""
 "Onbekende fout. Serie kan niet toegevoegd worden vanwege een probleem met"
 " het selecteren van de serie."
 
-#: sickbeard/webserve.py:2990
+#: sickbeard/webserve.py:2982
 msgid "Folder {show_dir} exists already"
 msgstr "Map genaamd {show_dir} bestaat al"
 
-#: sickbeard/webserve.py:3001
+#: sickbeard/webserve.py:2993
 msgid "Unable to create the folder {show_dir}, can't add the show"
 msgstr ""
 "Niet mogelijk om de map {show_dir} aan te maken, kon de serie niet "
 "toevoegen"
 
-#: sickbeard/webserve.py:3035
+#: sickbeard/webserve.py:3027
 msgid "Adding the specified show into {show_dir}"
 msgstr "Bezig deze serie toe te voegen in {show_dir}"
 
-#: sickbeard/webserve.py:3111
+#: sickbeard/webserve.py:3103
 msgid "Shows Added"
 msgstr "Toegevoegde Series"
 
-#: sickbeard/webserve.py:3112
+#: sickbeard/webserve.py:3104
 msgid "Automatically added {num_shows} from their existing metadata files"
 msgstr ""
 "Automatisch {num_shows} series toegevoegd op basis van al aanwezige "
 "metadata bestanden"
 
-#: gui/slick/views/layouts/main.mako:175 sickbeard/webserve.py:3129
+#: gui/slick/views/layouts/main.mako:175 sickbeard/webserve.py:3121
 msgid "Mass Update"
 msgstr "Groepsgewijs Updaten"
 
-#: sickbeard/webserve.py:3167 sickbeard/webserve.py:3194
-#: sickbeard/webserve.py:3270 sickbeard/webserve.py:3271
+#: sickbeard/webserve.py:3159 sickbeard/webserve.py:3186
+#: sickbeard/webserve.py:3262 sickbeard/webserve.py:3263
 msgid "Episode Overview"
 msgstr "Aflevering Overzicht"
 
-#: sickbeard/webserve.py:3303
+#: sickbeard/webserve.py:3295
 msgid "Missing Subtitles"
 msgstr "Ontbrekende Ondertiteling"
 
-#: gui/slick/views/layouts/main.mako:176 sickbeard/webserve.py:3389
-#: sickbeard/webserve.py:3390
+#: gui/slick/views/layouts/main.mako:176 sickbeard/webserve.py:3381
+#: sickbeard/webserve.py:3382
 msgid "Backlog Overview"
 msgstr "Werkvoorraad Overzicht"
 
-#: sickbeard/webserve.py:3515
+#: sickbeard/webserve.py:3507
 msgid "Mass Edit"
 msgstr "Groepsgewijs Bewerken"
 
-#: sickbeard/webserve.py:3626
+#: sickbeard/webserve.py:3618
 msgid "Unable to update show: {excption_format}"
 msgstr "Kan serie niet updaten: {excption_format}"
 
-#: sickbeard/webserve.py:3634
+#: sickbeard/webserve.py:3626
 msgid "Unable to refresh show {show_name}: {excption_format}"
 msgstr "Kan serie {show_name} niet updaten: {excption_format}"
 
-#: sickbeard/webserve.py:3645
+#: sickbeard/webserve.py:3637
 msgid "Errors encountered"
 msgstr "Fouten die zijn opgetreden"
 
-#: gui/slick/views/config_general.mako:260 sickbeard/webserve.py:3651
+#: gui/slick/views/config_general.mako:260 sickbeard/webserve.py:3643
 msgid "Updates"
 msgstr "Updates"
 
-#: sickbeard/webserve.py:3656
+#: sickbeard/webserve.py:3648
 msgid "Refreshes"
 msgstr "Vernieuwingen"
 
-#: sickbeard/webserve.py:3661
+#: sickbeard/webserve.py:3653
 msgid "Renames"
 msgstr "Naamswijzigingen"
 
 #: gui/slick/views/displayShow.mako:259 gui/slick/views/displayShow.mako:434
 #: gui/slick/views/editShow.mako:119 gui/slick/views/inc_addShowOptions.mako:20
-#: gui/slick/views/manage_massEdit.mako:262 sickbeard/webserve.py:3666
-#: sickbeard/webserve.py:5134
+#: gui/slick/views/manage_massEdit.mako:262 sickbeard/webserve.py:3658
+#: sickbeard/webserve.py:5118
 msgid "Subtitles"
 msgstr "Ondertiteling"
 
-#: sickbeard/webserve.py:3671
+#: sickbeard/webserve.py:3663
 msgid "The following actions were queued"
 msgstr "De volgende acties zijn in de wachtrij gezet"
 
-#: gui/slick/views/layouts/main.mako:192 sickbeard/webserve.py:3695
+#: gui/slick/views/layouts/main.mako:192 sickbeard/webserve.py:3687
 msgid "Failed Downloads"
 msgstr "Mislukte Downloads"
 
-#: gui/slick/views/layouts/main.mako:177 sickbeard/webserve.py:3715
+#: gui/slick/views/layouts/main.mako:177 sickbeard/webserve.py:3707
 msgid "Manage Searches"
 msgstr "Zoeken"
 
-#: sickbeard/webserve.py:3723
+#: sickbeard/webserve.py:3715
 msgid "Backlog search started"
 msgstr "Werkvoorraad-zoekopdracht gestart"
 
-#: sickbeard/webserve.py:3733
+#: sickbeard/webserve.py:3725
 msgid "Daily search started"
 msgstr "Dagelijkse zoekopdracht gestart"
 
-#: sickbeard/webserve.py:3742
+#: sickbeard/webserve.py:3734
 msgid "Find propers search started"
 msgstr "Zoekopdracht propers gestart"
 
-#: sickbeard/webserve.py:3751
+#: sickbeard/webserve.py:3743
 msgid "Subtitle search started"
 msgstr "Zoekopdracht ondertiteling gestart"
 
-#: sickbeard/webserve.py:3816
+#: sickbeard/webserve.py:3808
 msgid "Remove Selected"
 msgstr "Verwijder Geselecteerde"
 
-#: sickbeard/webserve.py:3817
+#: sickbeard/webserve.py:3809
 msgid "Clear History"
 msgstr "Geschiedenis wissen"
 
-#: sickbeard/webserve.py:3818
+#: sickbeard/webserve.py:3810
 msgid "Trim History"
 msgstr "Trim geschiedenis"
 
-#: sickbeard/webserve.py:3838
+#: sickbeard/webserve.py:3830
 msgid "Selected history entries removed"
 msgstr "Geselecteerde historie items verwijderd"
 
-#: sickbeard/webserve.py:3845
+#: sickbeard/webserve.py:3837
 msgid "History cleared"
 msgstr "Geschiedenis gewist"
 
-#: sickbeard/webserve.py:3852
+#: sickbeard/webserve.py:3844
 msgid "Removed history entries older than 30 days"
 msgstr "Verwijder alle gebeurtenissen ouder dan 30 dagen"
 
-#: gui/slick/views/layouts/main.mako:207 sickbeard/webserve.py:3865
+#: gui/slick/views/layouts/main.mako:207 sickbeard/webserve.py:3857
 msgid "General"
 msgstr "Algemeen"
 
-#: sickbeard/webserve.py:3866 sickbeard/webserve.py:4166
+#: sickbeard/webserve.py:3858 sickbeard/webserve.py:4158
 msgid "Backup/Restore"
 msgstr "Back-up/Herstel"
 
-#: gui/slick/views/layouts/main.mako:209 sickbeard/webserve.py:3867
-#: sickbeard/webserve.py:4230
+#: gui/slick/views/layouts/main.mako:209 sickbeard/webserve.py:3859
+#: sickbeard/webserve.py:4222
 msgid "Search Settings"
 msgstr "Zoekinstellingen"
 
-#: gui/slick/views/layouts/main.mako:210 sickbeard/webserve.py:3868
-#: sickbeard/webserve.py:4546
+#: gui/slick/views/layouts/main.mako:210 sickbeard/webserve.py:3860
+#: sickbeard/webserve.py:4538
 msgid "Search Providers"
 msgstr "Zoekmachines"
 
-#: gui/slick/views/layouts/main.mako:211 sickbeard/webserve.py:3869
+#: gui/slick/views/layouts/main.mako:211 sickbeard/webserve.py:3861
 msgid "Subtitles Settings"
 msgstr "Ondertiteling"
 
-#: gui/slick/views/layouts/main.mako:213 sickbeard/webserve.py:3871
-#: sickbeard/webserve.py:4854
+#: gui/slick/views/layouts/main.mako:213 sickbeard/webserve.py:3863
+#: sickbeard/webserve.py:4846
 msgid "Notifications"
 msgstr "Berichtgeving"
 
@@ -1384,94 +1660,94 @@ msgstr "Berichtgeving"
 #: gui/slick/views/home.mako:35 gui/slick/views/inc_addShowOptions.mako:79
 #: gui/slick/views/inc_home_showList.mako:183
 #: gui/slick/views/layouts/main.mako:214 gui/slick/views/manage.mako:44
-#: gui/slick/views/manage_massEdit.mako:202 sickbeard/webserve.py:3872
-#: sickbeard/webserve.py:5205
+#: gui/slick/views/manage_massEdit.mako:202 sickbeard/webserve.py:3864
+#: sickbeard/webserve.py:5189
 msgid "Anime"
 msgstr "Anime"
 
-#: sickbeard/webserve.py:3912 sickbeard/webserve.py:3913
+#: sickbeard/webserve.py:3904 sickbeard/webserve.py:3905
 msgid "SickChill Configuration"
 msgstr "SickChill Configuratie"
 
-#: sickbeard/webserve.py:3928
+#: sickbeard/webserve.py:3920
 msgid "Config - Shares"
 msgstr "Configuratie - Shares"
 
-#: sickbeard/webserve.py:3928
+#: sickbeard/webserve.py:3920
 msgid "Windows Shares Configuration"
 msgstr "Windows Shares Configuratie"
 
-#: sickbeard/webserve.py:3956
+#: sickbeard/webserve.py:3948
 msgid "Saved Shares"
 msgstr "Opgeslagen Shares"
 
-#: sickbeard/webserve.py:3956
+#: sickbeard/webserve.py:3948
 msgid "Your Windows share settings have been saved"
 msgstr "De Windows share configuratie is opgeslagen"
 
-#: sickbeard/webserve.py:3968
+#: sickbeard/webserve.py:3960
 msgid "Config - General"
 msgstr "Configuratie - Algemeen"
 
-#: sickbeard/webserve.py:3968
+#: sickbeard/webserve.py:3960
 msgid "General Configuration"
 msgstr "Algemene Configuratie"
 
-#: sickbeard/webserve.py:4008
+#: sickbeard/webserve.py:4000
 msgid "Saved Defaults"
 msgstr "Opgeslagen Standaardwaarden"
 
-#: sickbeard/webserve.py:4008
+#: sickbeard/webserve.py:4000
 msgid "Your \"add show\" defaults have been set to your current selections."
 msgstr ""
 "De standaard waardes voor \"Show toevoegen\" zijn ingesteld op uw huidige"
 " selectie."
 
-#: sickbeard/webserve.py:4117
+#: sickbeard/webserve.py:4109
 msgid "Unable to create directory {directory}, log directory not changed."
 msgstr "Aanmaken van de map {directory} is mislukt, logboekmap is ongewijzigd."
 
-#: sickbeard/webserve.py:4125
+#: sickbeard/webserve.py:4117
 msgid "Unable to create directory {directory}, https cert directory not changed."
 msgstr ""
 "Map {directory) kan niet worden aangemaakt, SSL certificaat map is "
 "ongewijzigd."
 
-#: sickbeard/webserve.py:4129
+#: sickbeard/webserve.py:4121
 msgid "Unable to create directory {directory}, https key directory not changed."
 msgstr ""
 "Niet in staat hier een map {directory} te maken, de https key map is niet"
 " gewijzigd."
 
-#: sickbeard/webserve.py:4148 sickbeard/webserve.py:4350
-#: sickbeard/webserve.py:4483 sickbeard/webserve.py:5116
+#: sickbeard/webserve.py:4140 sickbeard/webserve.py:4342
+#: sickbeard/webserve.py:4475 sickbeard/webserve.py:5100
 msgid "Error(s) Saving Configuration"
 msgstr "Er is een/zijn fout(en) opgetreden bij het opslaan van de instellingen"
 
-#: sickbeard/webserve.py:4151 sickbeard/webserve.py:4353
-#: sickbeard/webserve.py:4485 sickbeard/webserve.py:4839
-#: sickbeard/webserve.py:5119 sickbeard/webserve.py:5189
-#: sickbeard/webserve.py:5219
+#: sickbeard/webserve.py:4143 sickbeard/webserve.py:4345
+#: sickbeard/webserve.py:4477 sickbeard/webserve.py:4831
+#: sickbeard/webserve.py:5103 sickbeard/webserve.py:5173
+#: sickbeard/webserve.py:5203
 msgid "Configuration Saved"
 msgstr "Configuratie opgeslagen"
 
-#: sickbeard/webserve.py:4165
+#: sickbeard/webserve.py:4157
 msgid "Config - Backup/Restore"
 msgstr "Configuratie - Back-up/Herstel"
 
-#: sickbeard/webserve.py:4229
+#: sickbeard/webserve.py:4221
 msgid "Config - Episode Search"
 msgstr "Configuratie - Afleveringen zoeken"
 
-#: sickbeard/webserve.py:4367
+#: sickbeard/webserve.py:4359
 msgid "Config - Post Processing"
 msgstr "Configuratie - nabewerking"
 
-#: sickbeard/webserve.py:4407
+#: sickbeard/webserve.py:4399
 msgid "Unpacking Not Supported, disabling unpack setting"
 msgstr "Uitpakken niet ondersteund, deze instelling is nu uitgeschakeld"
 
-#: sickbeard/webserve.py:4458
+#: sickbeard/webserve.py:4450
 msgid ""
 "You tried saving an invalid normal naming config, not saving your naming "
 "settings"
@@ -1479,7 +1755,7 @@ msgstr ""
 "U hebt geprobeerd een ongeldige normale benamingsconfiguratie op te "
 "slaan, deze wordt nu niet opgeslagen"
 
-#: sickbeard/webserve.py:4466
+#: sickbeard/webserve.py:4458
 msgid ""
 "You tried saving an invalid anime naming config, not saving your naming "
 "settings"
@@ -1487,55 +1763,55 @@ msgstr ""
 "U hebt geprobeerd een ongeldige anime benamingsconfiguratie op te slaan, "
 "deze wordt nu niet opgeslagen"
 
-#: sickbeard/webserve.py:4545
+#: sickbeard/webserve.py:4537
 msgid "Config - Providers"
 msgstr "Configuratie - Providers"
 
-#: sickbeard/webserve.py:4575
+#: sickbeard/webserve.py:4567
 msgid "No Provider Name specified"
 msgstr "Geen naam opgegeven voor deze zoekmachine"
 
-#: sickbeard/webserve.py:4577
+#: sickbeard/webserve.py:4569
 msgid "No Provider Url specified"
 msgstr "Geen webadres opgegeven voor deze zoekmachine"
 
-#: sickbeard/webserve.py:4579
+#: sickbeard/webserve.py:4571
 msgid "No Provider Api key specified"
 msgstr "Geen API sleutel opgegeven voor deze zoekmachine"
 
-#: sickbeard/webserve.py:4853
+#: sickbeard/webserve.py:4845
 msgid "Config - Notifications"
 msgstr "Configuratie - meldingen"
 
-#: sickbeard/webserve.py:5133
+#: sickbeard/webserve.py:5117
 msgid "Config - Subtitles"
 msgstr "Configuratie - Ondertiteling"
 
-#: sickbeard/webserve.py:5204
+#: sickbeard/webserve.py:5188
 msgid "Config - Anime"
 msgstr "Configuratie - Anime"
 
-#: sickbeard/webserve.py:5232
+#: sickbeard/webserve.py:5216
 msgid "Clear Errors"
 msgstr "Verwijder foutmeldingen"
 
-#: sickbeard/webserve.py:5238
+#: sickbeard/webserve.py:5222
 msgid "Clear Warnings"
 msgstr "Verwijder waarschuwingen"
 
-#: sickbeard/webserve.py:5244
+#: sickbeard/webserve.py:5228
 msgid "Submit Errors"
 msgstr "Verzend foutmeldingen"
 
-#: sickbeard/webserve.py:5260
+#: sickbeard/webserve.py:5244
 msgid "Logs &amp; Errors"
 msgstr "Waarschuwingen &amp; fouten"
 
-#: sickbeard/webserve.py:5285
+#: sickbeard/webserve.py:5269
 msgid "Log File"
 msgstr "Logbestand"
 
-#: sickbeard/webserve.py:5285
+#: sickbeard/webserve.py:5269
 msgid "Logs"
 msgstr "Logboeken"
 
@@ -1601,8 +1877,7 @@ msgstr "Selecteer backup-bestand om te herstellen"
 #: gui/slick/js/core.js:630 gui/slick/js/core.js:650 gui/slick/js/core.js:695
 #: gui/slick/js/core.js:774 gui/slick/js/core.js:834 gui/slick/js/core.js:854
 #: gui/slick/js/core.js:884 gui/slick/js/core.js:914 gui/slick/js/core.js:974
-#: gui/slick/js/core.js:1048 gui/slick/js/core.js:1068
-#: gui/slick/js/core.js:1087
+#: gui/slick/js/core.js:1047 gui/slick/js/core.js:1066
 msgid "Please fill out the necessary fields above."
 msgstr "Vul bovenstaande verplichte velden."
 
@@ -1618,29 +1893,29 @@ msgstr "Controleer zwarte-lijst naam; de waarde moet een 'trakt slug' zijn"
 msgid "You must provide a recipient email address!"
 msgstr "Vul een ontvangst email adres in!"
 
-#: gui/slick/js/core.js:1111
+#: gui/slick/js/core.js:1090
 msgid "You didn't supply a Pushbullet api key"
 msgstr "Een Pushbullet api sleutel was niet ingevuld"
 
-#: gui/slick/js/core.js:1139 gui/slick/js/core.js:1168
+#: gui/slick/js/core.js:1118 gui/slick/js/core.js:1147
 msgid "Don't forget to save your new pushbullet settings."
 msgstr "Vergeet niet de nieuwe Pushbullet instellingen te bewaren."
 
-#: gui/slick/js/core.js:1277
+#: gui/slick/js/core.js:1256
 msgid "Select TV Download Directory"
 msgstr "Selecteer TV Download Map"
 
-#: gui/slick/js/core.js:1278
+#: gui/slick/js/core.js:1257
 msgid "Select Unpack Directory"
 msgstr "Selecteer Unpack-map"
 
-#: gui/slick/js/core.js:1341 gui/slick/js/core.js:1390
-#: gui/slick/js/core.js:1439 gui/slick/js/core.js:1505
+#: gui/slick/js/core.js:1320 gui/slick/js/core.js:1369
+#: gui/slick/js/core.js:1418 gui/slick/js/core.js:1484
 msgid "This pattern is invalid."
 msgstr "Dit patroon is ongeldig."
 
-#: gui/slick/js/core.js:1349 gui/slick/js/core.js:1398
-#: gui/slick/js/core.js:1447 gui/slick/js/core.js:1513
+#: gui/slick/js/core.js:1328 gui/slick/js/core.js:1377
+#: gui/slick/js/core.js:1426 gui/slick/js/core.js:1492
 msgid ""
 "This pattern would be invalid without the folders, using it will force "
 "\"Season Folders\" on for all shows."
@@ -1648,52 +1923,52 @@ msgstr ""
 "Dit patroon is normaliter ongeldig zonder de folders; in dat geval wordt "
 "\"Seizoen Folders\" voor alle series gebruikt."
 
-#: gui/slick/js/core.js:1357 gui/slick/js/core.js:1406
-#: gui/slick/js/core.js:1455 gui/slick/js/core.js:1521
+#: gui/slick/js/core.js:1336 gui/slick/js/core.js:1385
+#: gui/slick/js/core.js:1434 gui/slick/js/core.js:1500
 msgid "This pattern is valid."
 msgstr "Dit patroon is geldig."
 
-#: gui/slick/js/core.js:1799
+#: gui/slick/js/core.js:1778
 msgid "Select .nzb black hole/watch location"
 msgstr "Selecteer .nzb 'black hole/watch' locatie"
 
-#: gui/slick/js/core.js:1800
+#: gui/slick/js/core.js:1779
 msgid "Select .torrent black hole/watch location"
 msgstr "Selecteer .torrent 'black hole/watch' locatie"
 
-#: gui/slick/js/core.js:1801
+#: gui/slick/js/core.js:1780
 msgid "Select .torrent download location"
 msgstr "Selecteer .torrent download locatie"
 
-#: gui/slick/js/core.js:1882
+#: gui/slick/js/core.js:1861
 msgid "Minimum seeding time is"
 msgstr "Minimale 'seeding' tijd is"
 
-#: gui/slick/js/core.js:1884
+#: gui/slick/js/core.js:1863
 msgid "URL to your uTorrent client (e.g. http://localhost:8000)"
 msgstr "URL voor de uTorrent client (b.v. http://localhost:8000)"
 
-#: gui/slick/js/core.js:1887
+#: gui/slick/js/core.js:1866
 msgid "Stop seeding when inactive for"
 msgstr "Stoppen met 'seeden' wanneer inactief voor"
 
-#: gui/slick/js/core.js:1893
+#: gui/slick/js/core.js:1872
 msgid "URL to your Transmission client (e.g. http://localhost:9091)"
 msgstr "URL naar de Transmission client (b.v. http://localhost:9091)"
 
-#: gui/slick/js/core.js:1903
+#: gui/slick/js/core.js:1882
 msgid "URL to your Deluge client (e.g. http://localhost:8112)"
 msgstr "URL naar de Deluge client (b.v. http://localhost:8112)"
 
-#: gui/slick/js/core.js:1912
+#: gui/slick/js/core.js:1891
 msgid "IP or Hostname of your Deluge Daemon (e.g. scgi://localhost:58846)"
 msgstr "IP of Hostnaam van de Delug Daemon (b.v. scgi://localhost:58846)"
 
-#: gui/slick/js/core.js:1919
+#: gui/slick/js/core.js:1898
 msgid "URL to your Synology DS client (e.g. http://localhost:5000)"
 msgstr "URL naar de Synology DS client (b.v. http://localhost:5000)"
 
-#: gui/slick/js/core.js:1923
+#: gui/slick/js/core.js:1902
 msgid ""
 "URL to your rTorrent client (e.g. scgi://localhost:5000 <br> or "
 "https://localhost/rutorrent/plugins/httprpc/action.php)"
@@ -1701,77 +1976,77 @@ msgstr ""
 "URL naar de rTorrent client (b.v. scgi://localhost:5000 <br> of "
 "https://localhost/rutorrent/plugins/httprpc/action.php)"
 
-#: gui/slick/js/core.js:1934
+#: gui/slick/js/core.js:1913
 msgid "URL to your qBittorrent client (e.g. http://localhost:8080)"
 msgstr "URL naar de qBittorrent client (b.v. http://localhost:8080)"
 
-#: gui/slick/js/core.js:1944
+#: gui/slick/js/core.js:1923
 msgid "URL to your MLDonkey (e.g. http://localhost:4080)"
 msgstr "URL naar de MLDonkey (b.v. http://localhost:4080)"
 
-#: gui/slick/js/core.js:1955
+#: gui/slick/js/core.js:1934
 msgid "URL to your putio client (e.g. http://localhost:8080)"
 msgstr "URL naar de putio client (b.v. http://localhost:8080)"
 
-#: gui/slick/js/core.js:1958
+#: gui/slick/js/core.js:1937
 msgid "Create a new OAuth app for put.io"
 msgstr "Maak een nieuwe OAuth app voor put.io aan"
 
-#: gui/slick/js/core.js:1959
+#: gui/slick/js/core.js:1938
 msgid "Put.io Parent Folder"
 msgstr "Put.io Bovenliggende Map"
 
-#: gui/slick/js/core.js:1960
+#: gui/slick/js/core.js:1939
 msgid "Put.io OAuth Token"
 msgstr "Put.io OAuth Token"
 
-#: gui/slick/js/core.js:2854 gui/slick/views/displayShow.mako:409
+#: gui/slick/js/core.js:2833 gui/slick/views/displayShow.mako:409
 msgid "Show Episodes"
 msgstr "Toon afleveringen"
 
-#: gui/slick/js/core.js:2859 gui/slick/views/displayShow.mako:407
+#: gui/slick/js/core.js:2838 gui/slick/views/displayShow.mako:407
 msgid "Hide Episodes"
 msgstr "Afleveringen verbergen"
 
-#: gui/slick/js/core.js:2864
+#: gui/slick/js/core.js:2843
 msgid "Select Show Location"
 msgstr "Selecteer Serie Locatie"
 
-#: gui/slick/js/core.js:2929 gui/slick/views/editShow.mako:362
+#: gui/slick/js/core.js:2908 gui/slick/views/editShow.mako:362
 msgid "None"
 msgstr "Geen"
 
-#: gui/slick/js/core.js:2939
+#: gui/slick/js/core.js:2918
 msgid "Select Unprocessed Episode Folder"
 msgstr "Selecteer Niet-verwerkte Aflevering Map"
 
-#: gui/slick/js/core.js:3327
+#: gui/slick/js/core.js:3306
 msgid "DELETED"
 msgstr "VERWIJDERD"
 
-#: gui/slick/js/core.js:3624
+#: gui/slick/js/core.js:3603
 msgid "Resume updating the log on this page."
 msgstr "Bijwerken van de logging op deze pagina hervatten."
 
-#: gui/slick/js/core.js:3624 gui/slick/views/viewlogs.mako:10
+#: gui/slick/js/core.js:3603 gui/slick/views/viewlogs.mako:10
 msgid "Pause updating the log on this page."
 msgstr "Bijwerken van de logging op deze pagina pauzeren."
 
-#: gui/slick/js/core.js:3955
+#: gui/slick/js/core.js:3934
 msgid " on  in "
 msgstr " op in "
 
-#: gui/slick/js/core.js:3958
+#: gui/slick/js/core.js:3937
 msgid "searching {searchingFor}..."
 msgstr "aan het zoeken naar {searchingFor}..."
 
-#: gui/slick/js/core.js:3971
+#: gui/slick/js/core.js:3950
 msgid "search timed out, try again or try another indexer"
 msgstr ""
 "zoeken duurt te lang, probeer het opnieuw of probeer een andere "
 "indexeerder"
 
-#: gui/slick/js/core.js:4101
+#: gui/slick/js/core.js:4080
 msgid "loading folders..."
 msgstr "mappen openen..."
 
@@ -2251,17 +2526,16 @@ msgstr "AniDB is een anime naslagwerk open voor het publiek zonder winstoogmerk"
 #: gui/slick/views/config_notifications.mako:1389
 #: gui/slick/views/config_notifications.mako:1584
 #: gui/slick/views/config_notifications.mako:1677
-#: gui/slick/views/config_notifications.mako:1793
-#: gui/slick/views/config_notifications.mako:1886
-#: gui/slick/views/config_notifications.mako:2020
+#: gui/slick/views/config_notifications.mako:1770
+#: gui/slick/views/config_notifications.mako:1904
+#: gui/slick/views/config_notifications.mako:2015
 #: gui/slick/views/config_notifications.mako:2131
-#: gui/slick/views/config_notifications.mako:2247
-#: gui/slick/views/config_notifications.mako:2358
-#: gui/slick/views/config_notifications.mako:2510
-#: gui/slick/views/config_notifications.mako:2650
-#: gui/slick/views/config_notifications.mako:2898
-#: gui/slick/views/config_notifications.mako:3148
-#: gui/slick/views/config_notifications.mako:3225
+#: gui/slick/views/config_notifications.mako:2242
+#: gui/slick/views/config_notifications.mako:2394
+#: gui/slick/views/config_notifications.mako:2534
+#: gui/slick/views/config_notifications.mako:2782
+#: gui/slick/views/config_notifications.mako:3032
+#: gui/slick/views/config_notifications.mako:3119
 #: gui/slick/views/config_postProcessing.mako:36 gui/slick/views/status.mako:44
 msgid "Enable"
 msgstr "Ingeschakeld"
@@ -2412,7 +2686,7 @@ msgstr ""
 #: gui/slick/views/config_notifications.mako:836
 #: gui/slick/views/config_notifications.mako:881
 #: gui/slick/views/config_notifications.mako:956
-#: gui/slick/views/config_notifications.mako:2521
+#: gui/slick/views/config_notifications.mako:2405
 #: gui/slick/views/config_postProcessing.mako:47
 #: gui/slick/views/config_postProcessing.mako:70
 #: gui/slick/views/config_postProcessing.mako:98
@@ -2527,18 +2801,17 @@ msgstr "bestandsmap(pen) van de Serie(s)"
 #: gui/slick/views/config_notifications.mako:1362
 #: gui/slick/views/config_notifications.mako:1557
 #: gui/slick/views/config_notifications.mako:1650
-#: gui/slick/views/config_notifications.mako:1766
-#: gui/slick/views/config_notifications.mako:1859
-#: gui/slick/views/config_notifications.mako:1993
+#: gui/slick/views/config_notifications.mako:1743
+#: gui/slick/views/config_notifications.mako:1877
+#: gui/slick/views/config_notifications.mako:1988
 #: gui/slick/views/config_notifications.mako:2104
-#: gui/slick/views/config_notifications.mako:2220
-#: gui/slick/views/config_notifications.mako:2332
-#: gui/slick/views/config_notifications.mako:2483
-#: gui/slick/views/config_notifications.mako:2625
-#: gui/slick/views/config_notifications.mako:2875
-#: gui/slick/views/config_notifications.mako:3123
-#: gui/slick/views/config_notifications.mako:3200
-#: gui/slick/views/config_notifications.mako:3326
+#: gui/slick/views/config_notifications.mako:2216
+#: gui/slick/views/config_notifications.mako:2367
+#: gui/slick/views/config_notifications.mako:2509
+#: gui/slick/views/config_notifications.mako:2759
+#: gui/slick/views/config_notifications.mako:3007
+#: gui/slick/views/config_notifications.mako:3094
+#: gui/slick/views/config_notifications.mako:3220
 #: gui/slick/views/config_search.mako:825
 #: gui/slick/views/config_search.mako:902
 #: gui/slick/views/config_search.mako:1161 gui/slick/views/editShow.mako:398
@@ -2789,7 +3062,7 @@ msgid "these options require a manual restart to take effect."
 msgstr "deze opties vereisen een handmatige herstart voor ze effectief worden."
 
 #: gui/slick/views/config_general.mako:649
-#: gui/slick/views/config_notifications.mako:2307
+#: gui/slick/views/config_notifications.mako:2191
 #: gui/slick/views/config_providers.mako:164
 #: gui/slick/views/config_providers.mako:278
 #: gui/slick/views/config_providers.mako:815
@@ -3183,16 +3456,15 @@ msgstr "registreer de foutmelding wanneer niet toegankelijk?"
 #: gui/slick/views/config_notifications.mako:1401
 #: gui/slick/views/config_notifications.mako:1596
 #: gui/slick/views/config_notifications.mako:1689
-#: gui/slick/views/config_notifications.mako:1805
-#: gui/slick/views/config_notifications.mako:1898
-#: gui/slick/views/config_notifications.mako:2032
+#: gui/slick/views/config_notifications.mako:1782
+#: gui/slick/views/config_notifications.mako:1916
+#: gui/slick/views/config_notifications.mako:2027
 #: gui/slick/views/config_notifications.mako:2143
-#: gui/slick/views/config_notifications.mako:2259
-#: gui/slick/views/config_notifications.mako:2374
-#: gui/slick/views/config_notifications.mako:2531
-#: gui/slick/views/config_notifications.mako:2910
-#: gui/slick/views/config_notifications.mako:3164
-#: gui/slick/views/config_notifications.mako:3241
+#: gui/slick/views/config_notifications.mako:2258
+#: gui/slick/views/config_notifications.mako:2415
+#: gui/slick/views/config_notifications.mako:2794
+#: gui/slick/views/config_notifications.mako:3048
+#: gui/slick/views/config_notifications.mako:3135
 msgid "Notify on snatch"
 msgstr "Melden bij opgepikt"
 
@@ -3205,13 +3477,12 @@ msgstr "Melden bij opgepikt"
 #: gui/slick/views/config_notifications.mako:1405
 #: gui/slick/views/config_notifications.mako:1600
 #: gui/slick/views/config_notifications.mako:1693
-#: gui/slick/views/config_notifications.mako:1809
-#: gui/slick/views/config_notifications.mako:1902
-#: gui/slick/views/config_notifications.mako:2378
-#: gui/slick/views/config_notifications.mako:2535
-#: gui/slick/views/config_notifications.mako:2914
-#: gui/slick/views/config_notifications.mako:3168
-#: gui/slick/views/config_notifications.mako:3245
+#: gui/slick/views/config_notifications.mako:1786
+#: gui/slick/views/config_notifications.mako:2262
+#: gui/slick/views/config_notifications.mako:2419
+#: gui/slick/views/config_notifications.mako:2798
+#: gui/slick/views/config_notifications.mako:3052
+#: gui/slick/views/config_notifications.mako:3139
 msgid "send a notification when a download starts?"
 msgstr "stuur een melding wanneer een download start?"
 
@@ -3224,16 +3495,15 @@ msgstr "stuur een melding wanneer een download start?"
 #: gui/slick/views/config_notifications.mako:1411
 #: gui/slick/views/config_notifications.mako:1606
 #: gui/slick/views/config_notifications.mako:1699
-#: gui/slick/views/config_notifications.mako:1815
-#: gui/slick/views/config_notifications.mako:1908
-#: gui/slick/views/config_notifications.mako:2042
+#: gui/slick/views/config_notifications.mako:1792
+#: gui/slick/views/config_notifications.mako:1926
+#: gui/slick/views/config_notifications.mako:2037
 #: gui/slick/views/config_notifications.mako:2153
-#: gui/slick/views/config_notifications.mako:2269
-#: gui/slick/views/config_notifications.mako:2384
-#: gui/slick/views/config_notifications.mako:2541
-#: gui/slick/views/config_notifications.mako:2920
-#: gui/slick/views/config_notifications.mako:3174
-#: gui/slick/views/config_notifications.mako:3251
+#: gui/slick/views/config_notifications.mako:2268
+#: gui/slick/views/config_notifications.mako:2425
+#: gui/slick/views/config_notifications.mako:2804
+#: gui/slick/views/config_notifications.mako:3058
+#: gui/slick/views/config_notifications.mako:3145
 msgid "Notify on download"
 msgstr "Bericht bij gedownload"
 
@@ -3246,13 +3516,12 @@ msgstr "Bericht bij gedownload"
 #: gui/slick/views/config_notifications.mako:1415
 #: gui/slick/views/config_notifications.mako:1610
 #: gui/slick/views/config_notifications.mako:1703
-#: gui/slick/views/config_notifications.mako:1819
-#: gui/slick/views/config_notifications.mako:1912
-#: gui/slick/views/config_notifications.mako:2388
-#: gui/slick/views/config_notifications.mako:2545
-#: gui/slick/views/config_notifications.mako:2924
-#: gui/slick/views/config_notifications.mako:3178
-#: gui/slick/views/config_notifications.mako:3255
+#: gui/slick/views/config_notifications.mako:1796
+#: gui/slick/views/config_notifications.mako:2272
+#: gui/slick/views/config_notifications.mako:2429
+#: gui/slick/views/config_notifications.mako:2808
+#: gui/slick/views/config_notifications.mako:3062
+#: gui/slick/views/config_notifications.mako:3149
 msgid "send a notification when a download finishes?"
 msgstr "stuur een bericht wanneer een download klaar is?"
 
@@ -3265,14 +3534,14 @@ msgstr "stuur een bericht wanneer een download klaar is?"
 #: gui/slick/views/config_notifications.mako:1421
 #: gui/slick/views/config_notifications.mako:1616
 #: gui/slick/views/config_notifications.mako:1709
-#: gui/slick/views/config_notifications.mako:1825
-#: gui/slick/views/config_notifications.mako:1918
-#: gui/slick/views/config_notifications.mako:2052
+#: gui/slick/views/config_notifications.mako:1802
+#: gui/slick/views/config_notifications.mako:1936
+#: gui/slick/views/config_notifications.mako:2047
 #: gui/slick/views/config_notifications.mako:2163
-#: gui/slick/views/config_notifications.mako:2279
-#: gui/slick/views/config_notifications.mako:2394
-#: gui/slick/views/config_notifications.mako:2551
-#: gui/slick/views/config_notifications.mako:2930
+#: gui/slick/views/config_notifications.mako:2278
+#: gui/slick/views/config_notifications.mako:2435
+#: gui/slick/views/config_notifications.mako:2814
+#: gui/slick/views/config_notifications.mako:3068
 msgid "Notify on subtitle download"
 msgstr "Bericht"
 
@@ -3285,11 +3554,11 @@ msgstr "Bericht"
 #: gui/slick/views/config_notifications.mako:1425
 #: gui/slick/views/config_notifications.mako:1620
 #: gui/slick/views/config_notifications.mako:1713
-#: gui/slick/views/config_notifications.mako:1829
-#: gui/slick/views/config_notifications.mako:1922
-#: gui/slick/views/config_notifications.mako:2398
-#: gui/slick/views/config_notifications.mako:2555
-#: gui/slick/views/config_notifications.mako:2934
+#: gui/slick/views/config_notifications.mako:1806
+#: gui/slick/views/config_notifications.mako:2282
+#: gui/slick/views/config_notifications.mako:2439
+#: gui/slick/views/config_notifications.mako:2818
+#: gui/slick/views/config_notifications.mako:3072
 msgid "send a notification when subtitles are downloaded?"
 msgstr "stuur een bericht wanneer de ondertiteling gedownload is?"
 
@@ -3334,7 +3603,7 @@ msgstr "(meerdere host strings moeten gescheiden zijn door komma's)"
 #: gui/slick/views/config_notifications.mako:140
 #: gui/slick/views/config_notifications.mako:248
 #: gui/slick/views/config_notifications.mako:419
-#: gui/slick/views/config_notifications.mako:2662
+#: gui/slick/views/config_notifications.mako:2546
 #: gui/slick/views/config_providers.mako:265
 #: gui/slick/views/config_providers.mako:435 gui/slick/views/login.mako:15
 #: gui/slick/views/login.mako:16 gui/slick/views/login.mako:17
@@ -3366,15 +3635,14 @@ msgstr "wachtwoord voor uw KODI-server (leeg voor geen)"
 #: gui/slick/views/config_notifications.mako:1356
 #: gui/slick/views/config_notifications.mako:1551
 #: gui/slick/views/config_notifications.mako:1644
-#: gui/slick/views/config_notifications.mako:1760
-#: gui/slick/views/config_notifications.mako:1853
-#: gui/slick/views/config_notifications.mako:1987
-#: gui/slick/views/config_notifications.mako:2476
-#: gui/slick/views/config_notifications.mako:2618
-#: gui/slick/views/config_notifications.mako:2868
-#: gui/slick/views/config_notifications.mako:3116
-#: gui/slick/views/config_notifications.mako:3193
-#: gui/slick/views/config_notifications.mako:3319
+#: gui/slick/views/config_notifications.mako:1737
+#: gui/slick/views/config_notifications.mako:1871
+#: gui/slick/views/config_notifications.mako:2360
+#: gui/slick/views/config_notifications.mako:2502
+#: gui/slick/views/config_notifications.mako:2752
+#: gui/slick/views/config_notifications.mako:3000
+#: gui/slick/views/config_notifications.mako:3087
+#: gui/slick/views/config_notifications.mako:3213
 msgid "Click below to test."
 msgstr "Klik hieronder om te testen."
 
@@ -3768,12 +4036,12 @@ msgid "(this field may be blank except when testing.)"
 msgstr "(Dit veld mag leeg zijn tenzij er getest wordt.)"
 
 #: gui/slick/views/config_notifications.mako:1234
-#: gui/slick/views/config_notifications.mako:3082
+#: gui/slick/views/config_notifications.mako:2966
 msgid "Show notification list"
 msgstr "Toon overzicht meldingen"
 
 #: gui/slick/views/config_notifications.mako:1240
-#: gui/slick/views/config_notifications.mako:3088
+#: gui/slick/views/config_notifications.mako:2972
 msgid "-- Select a Show --"
 msgstr "-- Kies een Serie --"
 
@@ -3793,7 +4061,7 @@ msgstr ""
 "' knop activeert, na elke invoer."
 
 #: gui/slick/views/config_notifications.mako:1260
-#: gui/slick/views/config_notifications.mako:3108
+#: gui/slick/views/config_notifications.mako:2992
 msgid "Save for this show"
 msgstr "Opslaan voor deze serie"
 
@@ -3803,33 +4071,28 @@ msgstr "Prowl prioriteit"
 
 #: gui/slick/views/config_notifications.mako:1273
 #: gui/slick/views/config_notifications.mako:1533
-#: gui/slick/views/config_notifications.mako:1742
 msgid "Very Low"
 msgstr "Zeer Laag"
 
 #: gui/slick/views/config_notifications.mako:1274
 #: gui/slick/views/config_notifications.mako:1534
-#: gui/slick/views/config_notifications.mako:1743
 msgid "Moderate"
 msgstr "Gemiddeld"
 
 #: gui/slick/views/config_notifications.mako:1275
 #: gui/slick/views/config_notifications.mako:1535
-#: gui/slick/views/config_notifications.mako:1744
 #: gui/slick/views/config_search.mako:709
 msgid "Normal"
 msgstr "Normaal"
 
 #: gui/slick/views/config_notifications.mako:1276
 #: gui/slick/views/config_notifications.mako:1536
-#: gui/slick/views/config_notifications.mako:1745
 #: gui/slick/views/config_search.mako:710
 msgid "High"
 msgstr "Hoog"
 
 #: gui/slick/views/config_notifications.mako:1277
 #: gui/slick/views/config_notifications.mako:1537
-#: gui/slick/views/config_notifications.mako:1746
 msgid "Emergency"
 msgstr "Noodgeval"
 
@@ -3886,7 +4149,7 @@ msgid "Pushover API key"
 msgstr "Pushover API sleutel"
 
 #: gui/slick/views/config_notifications.mako:1459
-#: gui/slick/views/config_notifications.mako:2317
+#: gui/slick/views/config_notifications.mako:2201
 msgid "click here"
 msgstr "klik hier"
 
@@ -4029,48 +4292,10 @@ msgid "access token for your Boxcar account."
 msgstr "toegangstoken voor uw Boxcar account."
 
 #: gui/slick/views/config_notifications.mako:1666
-msgid "NMA"
-msgstr "NMA"
-
-#: gui/slick/views/config_notifications.mako:1667
-msgid "Notify My Android"
-msgstr "Melden aan My Android"
-
-#: gui/slick/views/config_notifications.mako:1668
-msgid ""
-"Notify My Android is a Prowl-like Android App and API that offers an easy"
-" way to send notifications from your application directly to your Android"
-" device."
-msgstr ""
-"Melden aan My Android is een Prowl-achtige Android App en API die een "
-"gemakkelijke manier aanbiedt om meldingen van uw aanvraag rechtstreeks "
-"naar uw Android-apparaat te sturen."
-
-#: gui/slick/views/config_notifications.mako:1681
-msgid "send NMA notifications?"
-msgstr "NMA meldingen versturen?"
-
-#: gui/slick/views/config_notifications.mako:1719
-msgid "NMA API key"
-msgstr "NMA API sleutel"
-
-#: gui/slick/views/config_notifications.mako:1729
-msgid "(multiple keys must be separated by commas, up to a maximum of 5)"
-msgstr "(meerdere sleutels moeten komma-gescheiden zijn, tot een max. van 5)"
-
-#: gui/slick/views/config_notifications.mako:1736
-msgid "NMA priority"
-msgstr "NMA prioriteit"
-
-#: gui/slick/views/config_notifications.mako:1752
-msgid "priority of NMA messages from SickChill."
-msgstr "prioriteit van NMA berichten van SickChill."
-
-#: gui/slick/views/config_notifications.mako:1782
 msgid "Pushalot"
 msgstr "Pushalot"
 
-#: gui/slick/views/config_notifications.mako:1784
+#: gui/slick/views/config_notifications.mako:1668
 msgid ""
 "Pushalot is a platform for receiving custom push notifications to "
 "connected devices running Windows Phone or Windows 8."
@@ -4078,23 +4303,23 @@ msgstr ""
 "Pushalot is een platform voor het ontvangen van aangepaste push-meldingen"
 " op aangesloten apparaten die draaien op Windows Phone en Windows 8."
 
-#: gui/slick/views/config_notifications.mako:1797
+#: gui/slick/views/config_notifications.mako:1681
 msgid "send Pushalot notifications ?"
 msgstr "Pushalot meldingen versturen?"
 
-#: gui/slick/views/config_notifications.mako:1835
+#: gui/slick/views/config_notifications.mako:1719
 msgid "Pushalot authorization token"
 msgstr "Pushalot autorisatietoken"
 
-#: gui/slick/views/config_notifications.mako:1845
+#: gui/slick/views/config_notifications.mako:1729
 msgid "authorization token of your Pushalot account."
 msgstr "autorisatietoken van uw Pushalot account."
 
-#: gui/slick/views/config_notifications.mako:1875
+#: gui/slick/views/config_notifications.mako:1759
 msgid "Pushbullet"
 msgstr "Pushbullet"
 
-#: gui/slick/views/config_notifications.mako:1877
+#: gui/slick/views/config_notifications.mako:1761
 msgid ""
 "Pushbullet is a platform for receiving custom push notifications to "
 "connected devices running Android/iOS and desktop browsers such as "
@@ -4104,35 +4329,35 @@ msgstr ""
 "aangesloten apparaten met Android/iOS en desktop browsers zoals Chrome, "
 "Firefox of Opera."
 
-#: gui/slick/views/config_notifications.mako:1890
+#: gui/slick/views/config_notifications.mako:1774
 msgid "send Pushbullet notifications?"
 msgstr "Pushbullet meldingen versturen?"
 
-#: gui/slick/views/config_notifications.mako:1928
+#: gui/slick/views/config_notifications.mako:1812
 msgid "Pushbullet API key"
 msgstr "Pushbullet API sleutel"
 
-#: gui/slick/views/config_notifications.mako:1938
+#: gui/slick/views/config_notifications.mako:1822
 msgid "API key of your Pushbullet account"
 msgstr "API-sleutel van uw Pushbullet account"
 
-#: gui/slick/views/config_notifications.mako:1946
+#: gui/slick/views/config_notifications.mako:1830
 msgid "Pushbullet devices"
 msgstr "Pushbullet apparaten"
 
-#: gui/slick/views/config_notifications.mako:1961
+#: gui/slick/views/config_notifications.mako:1845
 msgid "Update device list"
 msgstr "Update apparatenlijst"
 
-#: gui/slick/views/config_notifications.mako:1969
+#: gui/slick/views/config_notifications.mako:1853
 msgid "Pushbullet channels"
 msgstr "Pushbullet kanalen"
 
-#: gui/slick/views/config_notifications.mako:2009
+#: gui/slick/views/config_notifications.mako:1893
 msgid "Free Mobile"
 msgstr "Free Mobile"
 
-#: gui/slick/views/config_notifications.mako:2011
+#: gui/slick/views/config_notifications.mako:1895
 msgid ""
 "Free Mobile is a famous French cellular network provider.<br> It provides"
 " to their customer a free SMS API."
@@ -4140,81 +4365,81 @@ msgstr ""
 "Free Mobile is een bekende Franse mobiele netwerk provider. <br> Deze "
 "verstrekt een gratis SMS API aan hun klanten."
 
-#: gui/slick/views/config_notifications.mako:2024
+#: gui/slick/views/config_notifications.mako:1908
 msgid "send SMS notifications?"
 msgstr "SMS meldingen versturen?"
 
-#: gui/slick/views/config_notifications.mako:2036
+#: gui/slick/views/config_notifications.mako:1920
 msgid "send a SMS when a download starts?"
 msgstr "een SMS sturen wanneer een download begint?"
 
-#: gui/slick/views/config_notifications.mako:2046
+#: gui/slick/views/config_notifications.mako:1930
 msgid "send a SMS when a download finishes?"
 msgstr "een SMS sturen wanneer een download eindigt?"
 
-#: gui/slick/views/config_notifications.mako:2056
+#: gui/slick/views/config_notifications.mako:1940
 msgid "send a SMS when subtitles are downloaded?"
 msgstr "een SMS sturen bij gedownloade ondertiteling?"
 
-#: gui/slick/views/config_notifications.mako:2062
+#: gui/slick/views/config_notifications.mako:1946
 msgid "Free Mobile customer ID"
 msgstr "Free Mobile klant ID"
 
-#: gui/slick/views/config_notifications.mako:2072
+#: gui/slick/views/config_notifications.mako:1956
 msgid "it's your Free Mobile customer ID (8 digits)"
 msgstr "het is je Free Mobile klantnummer (8 cijfers)"
 
-#: gui/slick/views/config_notifications.mako:2080
+#: gui/slick/views/config_notifications.mako:1964
 msgid "Free Mobile API key"
 msgstr "Free Mobile API key"
 
-#: gui/slick/views/config_notifications.mako:2090
+#: gui/slick/views/config_notifications.mako:1974
 msgid "find your API key in your customer portal."
 msgstr "vind je API key in je klanten portaal."
 
+#: gui/slick/views/config_notifications.mako:1982
 #: gui/slick/views/config_notifications.mako:2098
-#: gui/slick/views/config_notifications.mako:2214
-#: gui/slick/views/config_notifications.mako:2326
+#: gui/slick/views/config_notifications.mako:2210
 msgid "Click below to test your settings."
 msgstr "Klik hieronder om uw instellingen te testen."
 
-#: gui/slick/views/config_notifications.mako:2120
-#: gui/slick/views/config_notifications.mako:2121
+#: gui/slick/views/config_notifications.mako:2004
+#: gui/slick/views/config_notifications.mako:2005
 msgid "Telegram"
 msgstr "Telegram"
 
-#: gui/slick/views/config_notifications.mako:2122
+#: gui/slick/views/config_notifications.mako:2006
 msgid "Telegram is a cloud-based instant messaging service."
 msgstr "Telegram is een cloud-based instant messaging service."
 
-#: gui/slick/views/config_notifications.mako:2135
+#: gui/slick/views/config_notifications.mako:2019
 msgid "send Telegram notifications?"
 msgstr "Telegram meldingen versturen?"
 
+#: gui/slick/views/config_notifications.mako:2031
 #: gui/slick/views/config_notifications.mako:2147
-#: gui/slick/views/config_notifications.mako:2263
 msgid "send a message when a download starts?"
 msgstr "een bericht sturen wanneer een download begint?"
 
+#: gui/slick/views/config_notifications.mako:2041
 #: gui/slick/views/config_notifications.mako:2157
-#: gui/slick/views/config_notifications.mako:2273
 msgid "send a message when a download finishes?"
 msgstr "stuur een bericht wanneer een download klaar is?"
 
+#: gui/slick/views/config_notifications.mako:2051
 #: gui/slick/views/config_notifications.mako:2167
-#: gui/slick/views/config_notifications.mako:2283
 msgid "send a message when subtitles are downloaded?"
 msgstr "stuur een bericht bij gedownloade ondertiteling?"
 
-#: gui/slick/views/config_notifications.mako:2173
+#: gui/slick/views/config_notifications.mako:2057
 msgid "User/group ID"
 msgstr "Gebruiker/groep ID"
 
-#: gui/slick/views/config_notifications.mako:2183
+#: gui/slick/views/config_notifications.mako:2067
 msgid "contact @myidbot on Telegram to get an ID"
 msgstr "neem contact op met @myidbot op Telegram om een ID te krijgen"
 
-#: gui/slick/views/config_notifications.mako:2188
+#: gui/slick/views/config_notifications.mako:2072
 msgid ""
 "Note: Don't forget to talk with your bot at least one time if you get a "
 "403 error."
@@ -4222,44 +4447,44 @@ msgstr ""
 "Opmerking: vergeet niet om tenminste één keer contact op te nemen met je "
 "bot als je een 403 error krijgt."
 
-#: gui/slick/views/config_notifications.mako:2196
+#: gui/slick/views/config_notifications.mako:2080
 msgid "Bot API token"
 msgstr "Bot API token"
 
-#: gui/slick/views/config_notifications.mako:2206
+#: gui/slick/views/config_notifications.mako:2090
 msgid "contact @BotFather on Telegram to set up one"
 msgstr "neem contact op met @BotFather op Telegram om er een in te stellen"
 
-#: gui/slick/views/config_notifications.mako:2236
-#: gui/slick/views/config_notifications.mako:2237
+#: gui/slick/views/config_notifications.mako:2120
+#: gui/slick/views/config_notifications.mako:2121
 msgid "Join"
 msgstr "Join"
 
-#: gui/slick/views/config_notifications.mako:2238
+#: gui/slick/views/config_notifications.mako:2122
 msgid "Join all of your devices together!"
 msgstr "Voeg al je apparaten samen!"
 
-#: gui/slick/views/config_notifications.mako:2251
+#: gui/slick/views/config_notifications.mako:2135
 msgid "send Join notifications?"
 msgstr "Join meldingen versturen?"
 
-#: gui/slick/views/config_notifications.mako:2289
+#: gui/slick/views/config_notifications.mako:2173
 msgid "Device ID"
 msgstr "Apparaat ID"
 
-#: gui/slick/views/config_notifications.mako:2299
+#: gui/slick/views/config_notifications.mako:2183
 msgid "per device specific id"
 msgstr "per apparaat specifiek id"
 
-#: gui/slick/views/config_notifications.mako:2317
+#: gui/slick/views/config_notifications.mako:2201
 msgid " to create a Join API key"
 msgstr " om een Join API-sleutel te maken"
 
-#: gui/slick/views/config_notifications.mako:2348
+#: gui/slick/views/config_notifications.mako:2232
 msgid "Twilio"
 msgstr "Twilio"
 
-#: gui/slick/views/config_notifications.mako:2350
+#: gui/slick/views/config_notifications.mako:2234
 msgid ""
 "Twilio is a webservice API that allows you to communicate directly with a"
 " mobile number. This notifier will send a text directly to your mobile "
@@ -4269,36 +4494,36 @@ msgstr ""
 "communiceren met een mobiel nummer. Deze melder stuurt rechtstreeks een "
 "sms naar je mobiele apparaat."
 
-#: gui/slick/views/config_notifications.mako:2364
+#: gui/slick/views/config_notifications.mako:2248
 msgid "should SickChill text your mobile device?"
 msgstr "moet SickChill een sms naar je mobiele telefoon sturen?"
 
-#: gui/slick/views/config_notifications.mako:2404
+#: gui/slick/views/config_notifications.mako:2288
 msgid "Twilio Account SID"
 msgstr "Twilio gebruikers-ID"
 
-#: gui/slick/views/config_notifications.mako:2414
-#: gui/slick/views/config_notifications.mako:2432
+#: gui/slick/views/config_notifications.mako:2298
+#: gui/slick/views/config_notifications.mako:2316
 msgid "account SID of your Twilio account."
 msgstr "account SID van je Twilio account."
 
-#: gui/slick/views/config_notifications.mako:2422
+#: gui/slick/views/config_notifications.mako:2306
 msgid "Twilio Auth Token"
 msgstr "Twilio Controlegetal"
 
-#: gui/slick/views/config_notifications.mako:2440
+#: gui/slick/views/config_notifications.mako:2324
 msgid "Twilio Phone SID"
 msgstr "Twilio Telefoon ID"
 
-#: gui/slick/views/config_notifications.mako:2450
+#: gui/slick/views/config_notifications.mako:2334
 msgid "phone SID that you would like to send the sms from"
 msgstr "telefoon SID waar vandaan je de sms wilt sturen"
 
-#: gui/slick/views/config_notifications.mako:2458
+#: gui/slick/views/config_notifications.mako:2342
 msgid "Your phone number"
 msgstr "Je telefoonnummer"
 
-#: gui/slick/views/config_notifications.mako:2468
+#: gui/slick/views/config_notifications.mako:2352
 msgid ""
 "phone number that will receive the sms. Please use the format "
 "+1-###-###-####"
@@ -4306,11 +4531,11 @@ msgstr ""
 "telefoonnummer dat de sms zal ontvangen. Gebruik aub het formaat "
 "+31-###-###-####"
 
-#: gui/slick/views/config_notifications.mako:2500
+#: gui/slick/views/config_notifications.mako:2384
 msgid "Twitter"
 msgstr "Twitter"
 
-#: gui/slick/views/config_notifications.mako:2502
+#: gui/slick/views/config_notifications.mako:2386
 msgid ""
 "A social networking and microblogging service, enabling its users to send"
 " and read other users' messages called tweets."
@@ -4318,39 +4543,39 @@ msgstr ""
 "Een social netwerk en microblogging dienst, dat zijn gebruikers berichten"
 " laat verzenden en lezen van andere gebruikers genaamd \"tweets\"."
 
-#: gui/slick/views/config_notifications.mako:2516
+#: gui/slick/views/config_notifications.mako:2400
 msgid "should SickChill post tweets on Twitter?"
 msgstr "mag SickChill tweets op Twitter plaatsen?"
 
-#: gui/slick/views/config_notifications.mako:2521
+#: gui/slick/views/config_notifications.mako:2405
 msgid "you may want to use a secondary account."
 msgstr "u wilt wellicht een tweede account gebruiken."
 
-#: gui/slick/views/config_notifications.mako:2561
+#: gui/slick/views/config_notifications.mako:2445
 msgid "send direct message"
 msgstr "verstuur direct bericht"
 
-#: gui/slick/views/config_notifications.mako:2565
+#: gui/slick/views/config_notifications.mako:2449
 msgid "send a notification via Direct Message, not via status update"
 msgstr "stuur een bericht via Direct Message, niet via statusupdate"
 
-#: gui/slick/views/config_notifications.mako:2571
+#: gui/slick/views/config_notifications.mako:2455
 msgid "send DM to"
 msgstr "verstuur DM naar"
 
-#: gui/slick/views/config_notifications.mako:2581
+#: gui/slick/views/config_notifications.mako:2465
 msgid "Twitter account to send Direct Messages to (must follow you)"
 msgstr "Twitter-account om direct berichten naar te sturen (moet u volgen)"
 
-#: gui/slick/views/config_notifications.mako:2589
+#: gui/slick/views/config_notifications.mako:2473
 msgid "Step One"
 msgstr "Stap Een"
 
-#: gui/slick/views/config_notifications.mako:2592
+#: gui/slick/views/config_notifications.mako:2476
 msgid "Request Authorization"
 msgstr "Toegang verzoeken"
 
-#: gui/slick/views/config_notifications.mako:2593
+#: gui/slick/views/config_notifications.mako:2477
 msgid ""
 "Click the \"Request Authorization\" button.<br> This will open a new page"
 " containing an auth key.<br> <b>note:</b> if nothing happens check your "
@@ -4360,21 +4585,21 @@ msgstr ""
 "openen met daarin een autorisatiesleutel.<br> <b>opmerking:</b> als er "
 "niks gebeurt, controleer dan je popup blocker."
 
-#: gui/slick/views/config_notifications.mako:2599
+#: gui/slick/views/config_notifications.mako:2483
 msgid "Step Two"
 msgstr "Stap Twee"
 
-#: gui/slick/views/config_notifications.mako:2604
+#: gui/slick/views/config_notifications.mako:2488
 msgid "Enter the key Twitter gave you below, and click \"Verify Key\"."
 msgstr ""
 "Vul hieronder de sleutel in die je van Twitter gekregen hebt en klik op "
 "\"Verify Key\"."
 
-#: gui/slick/views/config_notifications.mako:2640
+#: gui/slick/views/config_notifications.mako:2524
 msgid "Trakt"
 msgstr "Trakt"
 
-#: gui/slick/views/config_notifications.mako:2642
+#: gui/slick/views/config_notifications.mako:2526
 msgid ""
 "Trakt helps keep a record of what TV shows and movies you are watching. "
 "Based on your favorites, Trakt recommends additional shows and movies "
@@ -4384,53 +4609,53 @@ msgstr ""
 "raadt je, gebaseerd op je favorieten, aanvullende series en films aan die"
 " je leuk zult vinden!"
 
-#: gui/slick/views/config_notifications.mako:2654
+#: gui/slick/views/config_notifications.mako:2538
 msgid "send Trakt.tv notifications?"
 msgstr "verstuur Trakt.tv berichten?"
 
-#: gui/slick/views/config_notifications.mako:2672
+#: gui/slick/views/config_notifications.mako:2556
 msgid "username of your Trakt account."
 msgstr "gebruikersnaam van je Trakt account."
 
-#: gui/slick/views/config_notifications.mako:2680
+#: gui/slick/views/config_notifications.mako:2564
 msgid "Trakt PIN"
 msgstr "Trakt PIN"
 
-#: gui/slick/views/config_notifications.mako:2686
+#: gui/slick/views/config_notifications.mako:2570
 msgid "Get Trakt PIN"
 msgstr "Trakt PIN verkrijgen"
 
-#: gui/slick/views/config_notifications.mako:2696
+#: gui/slick/views/config_notifications.mako:2580
 msgid "PIN code to authorize SickChill to access Trakt on your behalf."
 msgstr "PIN code om SickChill toegang te verschaffen tot Trakt onder jouw account."
 
-#: gui/slick/views/config_notifications.mako:2710
+#: gui/slick/views/config_notifications.mako:2594
 msgid "API Timeout"
 msgstr "API Timeout"
 
-#: gui/slick/views/config_notifications.mako:2720
+#: gui/slick/views/config_notifications.mako:2604
 msgid "seconds to wait for Trakt API to respond. (Use 0 to wait forever)"
 msgstr ""
 "aantal seconden dat gewacht moet worden op de Trakt API om te reageren. "
 "(Gebruik 0 om voor altijd te wachten)"
 
-#: gui/slick/views/config_notifications.mako:2728
+#: gui/slick/views/config_notifications.mako:2612
 msgid "Default indexer"
 msgstr "Standaard indexeerder"
 
-#: gui/slick/views/config_notifications.mako:2741
+#: gui/slick/views/config_notifications.mako:2625
 msgid "Sync libraries"
 msgstr "Synchroniseer bibliotheken"
 
-#: gui/slick/views/config_notifications.mako:2745
+#: gui/slick/views/config_notifications.mako:2629
 msgid "sync your SickChill show library with your trakt show library."
 msgstr "synchroniseer uw SickChill seriebibliotheek met uw trakt seriebibliotheek."
 
-#: gui/slick/views/config_notifications.mako:2753
+#: gui/slick/views/config_notifications.mako:2637
 msgid "Remove Episodes From Collection"
 msgstr "Verwijder afleveringen uit de collectie"
 
-#: gui/slick/views/config_notifications.mako:2757
+#: gui/slick/views/config_notifications.mako:2641
 msgid ""
 "remove an episode from your Trakt Collection if it is not in your "
 "SickChill Library."
@@ -4438,11 +4663,11 @@ msgstr ""
 "verwijder een aflevering van je Trakt Collectie als deze zich niet in je "
 "SickChill Bibliotheek bevindt."
 
-#: gui/slick/views/config_notifications.mako:2765
+#: gui/slick/views/config_notifications.mako:2649
 msgid "Sync watchlist"
 msgstr "Synchroniseer volglijst"
 
-#: gui/slick/views/config_notifications.mako:2771
+#: gui/slick/views/config_notifications.mako:2655
 msgid ""
 "sync your SickChill show watchlist with your trakt show watchlist (either"
 " Show and Episode)."
@@ -4450,7 +4675,7 @@ msgstr ""
 "synchroniseer uw SickChill serievolglijst met jouw trakt serievolglijst "
 "(zowel Show en aflevering)."
 
-#: gui/slick/views/config_notifications.mako:2776
+#: gui/slick/views/config_notifications.mako:2660
 msgid ""
 "episode will be added on watch list when wanted or snatched and will be "
 "removed when downloaded "
@@ -4458,63 +4683,63 @@ msgstr ""
 "aflevering zal worden toegevoegd aan de volglijst als hij gezocht of "
 "opgepikt wordt en zal worden verwijderd wanneer de download voltooid is "
 
-#: gui/slick/views/config_notifications.mako:2786
+#: gui/slick/views/config_notifications.mako:2670
 msgid "Watchlist add method"
 msgstr "Volglijst toevoegmethode"
 
-#: gui/slick/views/config_notifications.mako:2792
+#: gui/slick/views/config_notifications.mako:2676
 msgid "Skip All"
 msgstr "Alles overslaan"
 
-#: gui/slick/views/config_notifications.mako:2793
+#: gui/slick/views/config_notifications.mako:2677
 msgid "Download Pilot Only"
 msgstr "Download alleen de eerste aflevering"
 
-#: gui/slick/views/config_notifications.mako:2794
+#: gui/slick/views/config_notifications.mako:2678
 msgid "Get whole show"
 msgstr "Haal de volledige serie op"
 
-#: gui/slick/views/config_notifications.mako:2800
+#: gui/slick/views/config_notifications.mako:2684
 msgid "method in which to download episodes for new shows."
 msgstr "methode om afleveringen te downloaden voor nieuw toegevoegde series."
 
-#: gui/slick/views/config_notifications.mako:2808
+#: gui/slick/views/config_notifications.mako:2692
 msgid "Remove episode"
 msgstr "Verwijder aflevering"
 
-#: gui/slick/views/config_notifications.mako:2812
+#: gui/slick/views/config_notifications.mako:2696
 msgid "remove an episode from your watchlist after it is downloaded."
 msgstr "verwijder een aflevering van de volglijst nadat het is gedownload."
 
-#: gui/slick/views/config_notifications.mako:2818
+#: gui/slick/views/config_notifications.mako:2702
 msgid "Remove series"
 msgstr "Verwijder Serie(s)"
 
-#: gui/slick/views/config_notifications.mako:2822
+#: gui/slick/views/config_notifications.mako:2706
 msgid "remove the whole series from your watchlist after any download."
 msgstr "verwijder de hele serie van de volglijst na elke download."
 
-#: gui/slick/views/config_notifications.mako:2828
+#: gui/slick/views/config_notifications.mako:2712
 msgid "Remove watched show"
 msgstr "Verwijder gekeken series"
 
-#: gui/slick/views/config_notifications.mako:2832
+#: gui/slick/views/config_notifications.mako:2716
 msgid "remove the show from sickchill if it's ended and completely watched"
 msgstr "verwijder de serie uit SickChill als het zowel afgelopen als gezien is"
 
-#: gui/slick/views/config_notifications.mako:2838
+#: gui/slick/views/config_notifications.mako:2722
 msgid "Start paused"
 msgstr "Start gepauzeerd"
 
-#: gui/slick/views/config_notifications.mako:2842
+#: gui/slick/views/config_notifications.mako:2726
 msgid "shows grabbed from your trakt watchlist start paused."
 msgstr "series via Trakt verkregen krijgen de status gepauzeerd mee."
 
-#: gui/slick/views/config_notifications.mako:2850
+#: gui/slick/views/config_notifications.mako:2734
 msgid "Trakt blackList name"
 msgstr "Naam van de Trakt blacklist"
 
-#: gui/slick/views/config_notifications.mako:2860
+#: gui/slick/views/config_notifications.mako:2744
 msgid ""
 "name (slug) of list on Trakt for blacklisting show on 'Add Trending Show'"
 " & 'Add Recommended Shows' pages"
@@ -4522,71 +4747,71 @@ msgstr ""
 "naam (slug) van de lijst op Trakt om een serie te blacklisten in "
 "'Toevoegen Populaire Serie' & 'Toevoegen Aanbevolen Series' pagina's"
 
-#: gui/slick/views/config_notifications.mako:2889
+#: gui/slick/views/config_notifications.mako:2773
 msgid "Email"
 msgstr "Email"
 
-#: gui/slick/views/config_notifications.mako:2891
+#: gui/slick/views/config_notifications.mako:2775
 msgid "Allows configuration of email notifications on a per show basis."
 msgstr "Laat configuratie van e-mail meldingen per show toe."
 
-#: gui/slick/views/config_notifications.mako:2902
+#: gui/slick/views/config_notifications.mako:2786
 msgid "send email notifications?"
 msgstr "e-mail meldingen versturen?"
 
-#: gui/slick/views/config_notifications.mako:2940
+#: gui/slick/views/config_notifications.mako:2824
 msgid "SMTP host"
 msgstr "SMTP-host"
 
-#: gui/slick/views/config_notifications.mako:2950
+#: gui/slick/views/config_notifications.mako:2834
 msgid "hostname of your SMTP email server."
 msgstr "hostnaam van uw SMTP emailserver."
 
-#: gui/slick/views/config_notifications.mako:2958
+#: gui/slick/views/config_notifications.mako:2842
 msgid "SMTP port"
 msgstr "SMTP poort"
 
-#: gui/slick/views/config_notifications.mako:2968
+#: gui/slick/views/config_notifications.mako:2852
 msgid "port number used to connect to your SMTP host."
 msgstr "poort nummer om te verbinden met uw SMTP-host."
 
-#: gui/slick/views/config_notifications.mako:2976
+#: gui/slick/views/config_notifications.mako:2860
 msgid "SMTP from"
 msgstr "SMTP van"
 
-#: gui/slick/views/config_notifications.mako:2986
+#: gui/slick/views/config_notifications.mako:2870
 msgid "sender email address, some hosts require a real address."
 msgstr "e-mailadres van afzender, voor sommige hosts is een echt adres vereist."
 
-#: gui/slick/views/config_notifications.mako:2994
+#: gui/slick/views/config_notifications.mako:2878
 msgid "Use TLS"
 msgstr "Gebruik TLS"
 
-#: gui/slick/views/config_notifications.mako:2998
+#: gui/slick/views/config_notifications.mako:2882
 msgid "check to use TLS encryption."
 msgstr "selecteer om TLS-codering te gebruiken."
 
-#: gui/slick/views/config_notifications.mako:3004
+#: gui/slick/views/config_notifications.mako:2888
 msgid "SMTP user"
 msgstr "SMTP gebruiker"
 
-#: gui/slick/views/config_notifications.mako:3014
+#: gui/slick/views/config_notifications.mako:2898
 msgid "(optional) your SMTP server username."
 msgstr "(optioneel) uw SMTP server gebruikersnaam."
 
-#: gui/slick/views/config_notifications.mako:3022
+#: gui/slick/views/config_notifications.mako:2906
 msgid "SMTP password"
 msgstr "SMTP wachtwoord"
 
-#: gui/slick/views/config_notifications.mako:3035
+#: gui/slick/views/config_notifications.mako:2919
 msgid "(optional) your SMTP server password."
 msgstr "(optioneel) uw SMTP server wachtwoord."
 
-#: gui/slick/views/config_notifications.mako:3043
+#: gui/slick/views/config_notifications.mako:2927
 msgid "Global email list"
 msgstr "Globale e-maillijst"
 
-#: gui/slick/views/config_notifications.mako:3053
+#: gui/slick/views/config_notifications.mako:2937
 msgid ""
 "email addresses listed here, separated by commas if applicable, will<br> "
 "receive notifications for <b>all</b> shows."
@@ -4594,23 +4819,23 @@ msgstr ""
 "e-mailadressen die hier worden vermeld, gescheiden door komma's indien "
 "<br> van toepassing, zullen meldingen voor<b>alle</b> series ontvangen."
 
-#: gui/slick/views/config_notifications.mako:3053
+#: gui/slick/views/config_notifications.mako:2937
 msgid "(This field may be blank except when testing.)"
 msgstr "(Dit veld mag leeg zijn tenzij er getest wordt.)"
 
-#: gui/slick/views/config_notifications.mako:3061
+#: gui/slick/views/config_notifications.mako:2945
 msgid "Email Subject"
 msgstr "Emailonderwerp"
 
-#: gui/slick/views/config_notifications.mako:3072
+#: gui/slick/views/config_notifications.mako:2956
 msgid "use a custom subject for some privacy protection?"
 msgstr "een aangepast onderwerp gebruiken voor privacybescherming?"
 
-#: gui/slick/views/config_notifications.mako:3073
+#: gui/slick/views/config_notifications.mako:2957
 msgid "(leave blank for the default SickChill subject)"
 msgstr "(leeg laten voor het standaard onderwerp van SickChill)"
 
-#: gui/slick/views/config_notifications.mako:3100
+#: gui/slick/views/config_notifications.mako:2984
 msgid ""
 "configure per-show notifications here by entering email address(es), "
 "separated by commas,"
@@ -4618,7 +4843,7 @@ msgstr ""
 "configureer hier meldingen per serie door het invoeren van "
 "e-mailadres(sen), gescheiden door komma's,"
 
-#: gui/slick/views/config_notifications.mako:3101
+#: gui/slick/views/config_notifications.mako:2985
 msgid ""
 "after selecting a show in the drop-down box.  Be sure to activate the "
 "'Save for this show'"
@@ -4626,15 +4851,15 @@ msgstr ""
 "na het selecteren van een show in de drop-down box.  Zorg ervoor dat u "
 "\"opslaan voor deze show\" activeert"
 
-#: gui/slick/views/config_notifications.mako:3102
+#: gui/slick/views/config_notifications.mako:2986
 msgid "button below after each entry."
 msgstr "knop hieronder na elke entree."
 
-#: gui/slick/views/config_notifications.mako:3138
+#: gui/slick/views/config_notifications.mako:3022
 msgid "Slack"
 msgstr "Slack"
 
-#: gui/slick/views/config_notifications.mako:3140
+#: gui/slick/views/config_notifications.mako:3024
 msgid ""
 "Slack brings all your communication together in one place. It's real-time"
 " messaging, archiving and search for modern teams."
@@ -4642,19 +4867,19 @@ msgstr ""
 "Slack centraliseert al je communicatie. Het is real-time messaging, "
 "archivering en zoekt naar moderne teams."
 
-#: gui/slick/views/config_notifications.mako:3154
+#: gui/slick/views/config_notifications.mako:3038
 msgid "should SickChill post messages on Slack?"
 msgstr "mag SickChill berichten posten op Slack?"
 
-#: gui/slick/views/config_notifications.mako:3184
+#: gui/slick/views/config_notifications.mako:3078
 msgid "Slack Incoming Webhook"
 msgstr "Slack binnenkomende Webhook"
 
-#: gui/slick/views/config_notifications.mako:3215
+#: gui/slick/views/config_notifications.mako:3109
 msgid "Discord"
 msgstr "Discord"
 
-#: gui/slick/views/config_notifications.mako:3217
+#: gui/slick/views/config_notifications.mako:3111
 msgid ""
 "All-in-one voice and text chat for gamers that's free, secure, and works "
 "on both your desktop and phone."
@@ -4662,39 +4887,39 @@ msgstr ""
 "Alles-in-één spraak en chat voor gamers dat gratis en veilig is, en werkt"
 " op zowel desktops als smartphones."
 
-#: gui/slick/views/config_notifications.mako:3231
+#: gui/slick/views/config_notifications.mako:3125
 msgid "Should SickChill post messages on Discord?"
 msgstr "Moet SickChill berichten plaatsen op Discord?"
 
-#: gui/slick/views/config_notifications.mako:3261
+#: gui/slick/views/config_notifications.mako:3155
 msgid "Discord Incoming Webhook"
 msgstr "Discord binnenkomende Webhook"
 
-#: gui/slick/views/config_notifications.mako:3269
+#: gui/slick/views/config_notifications.mako:3163
 msgid "Create webhook under channel settings."
 msgstr "Aanmaken webhook onder web-kanaal instellingen."
 
-#: gui/slick/views/config_notifications.mako:3277
+#: gui/slick/views/config_notifications.mako:3171
 msgid "Discord Bot Name"
 msgstr "Discord Bot Naam"
 
-#: gui/slick/views/config_notifications.mako:3285
+#: gui/slick/views/config_notifications.mako:3179
 msgid "Blank will use webhook default Name."
 msgstr "Leeggelaten wordt de standaard webhook naam gebruikt."
 
-#: gui/slick/views/config_notifications.mako:3293
+#: gui/slick/views/config_notifications.mako:3187
 msgid "Discord Avatar URL"
 msgstr "Discord Avatar URL"
 
-#: gui/slick/views/config_notifications.mako:3301
+#: gui/slick/views/config_notifications.mako:3195
 msgid "Blank will use webhook default Avatar."
 msgstr "Leeggelaten wordt de standaard webhook Avatar gebruikt."
 
-#: gui/slick/views/config_notifications.mako:3309
+#: gui/slick/views/config_notifications.mako:3203
 msgid "Discord TTS"
 msgstr "Discord TTS"
 
-#: gui/slick/views/config_notifications.mako:3313
+#: gui/slick/views/config_notifications.mako:3207
 msgid "Send notifications using text-to-speech"
 msgstr "Meldingen versturen mbv text-to-speech"
 
