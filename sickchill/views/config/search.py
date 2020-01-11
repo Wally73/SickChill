@@ -16,14 +16,15 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with SickChill. If not, see <http://www.gnu.org/licenses/>.
-# pylint: disable=abstract-method,too-many-lines, R
+from __future__ import absolute_import, print_function, unicode_literals
 
-from __future__ import print_function, unicode_literals
-
+# Stdlib Imports
 import os
 
+# Third Party Imports
 from tornado.web import addslash
 
+# First Party Imports
 import sickbeard
 from sickbeard import config, filters, helpers, logger, ui
 from sickchill.helper import try_int
@@ -31,13 +32,8 @@ from sickchill.helper.encoding import ek
 from sickchill.views.common import PageTemplate
 from sickchill.views.routes import Route
 
+# Local Folder Imports
 from . import Config
-
-try:
-    import json
-except ImportError:
-    # noinspection PyPackageRequirements,PyUnresolvedReferences
-    import simplejson as json
 
 
 @Route('/config/search(/?.*)', name='config:search')
@@ -65,7 +61,7 @@ class ConfigSearch(Config):
                    torrent_complete_dir_deluge=None, torrent_verify_cert=None,
                    torrent_seed_time=None, torrent_paused=None, torrent_high_bandwidth=None,
                    torrent_rpcurl=None, torrent_auth_type=None, ignore_words=None, trackers_list=None, require_words=None, ignored_subs_list=None,
-                   syno_dsm_host=None, syno_dsm_user=None, syno_dsm_pass=None, syno_dsm_path=None, quality_allow_hevc=False):
+                   syno_dsm_host=None, syno_dsm_user=None, syno_dsm_pass=None, syno_dsm_path=None, quality_allow_hevc=False, prefer_words=None):
 
         results = []
 
@@ -90,6 +86,7 @@ class ConfigSearch(Config):
         sickbeard.IGNORE_WORDS = ignore_words if ignore_words else ""
         sickbeard.TRACKERS_LIST = trackers_list if trackers_list else ""
         sickbeard.REQUIRE_WORDS = require_words if require_words else ""
+        sickbeard.PREFER_WORDS = prefer_words if prefer_words else ""
         sickbeard.IGNORED_SUBS_LIST = ignored_subs_list if ignored_subs_list else ""
 
         sickbeard.RANDOMIZE_PROVIDERS = config.checkbox_to_value(randomize_providers)
