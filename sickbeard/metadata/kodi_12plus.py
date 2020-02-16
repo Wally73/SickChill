@@ -115,23 +115,25 @@ class KODI_12PlusMetadata(generic.GenericMetadata):
         myShow = sickchill.indexer.series(show_obj)
         if not myShow:
             logger.log("Unable to find show with id {} on {}, skipping it".format(
-                show_obj.indexerid, show_obj.idxr.name.name))
+                show_obj.indexerid, show_obj.idxr.name))
             return False
 
         # check for title and id
         if not (getattr(myShow, 'seriesName', None) and getattr(myShow, 'id', None)):
             logger.log("Incomplete info for show with id {} on {}, skipping it".format(
-                show_obj.indexerid, show_obj.idxr.name.name))
+                show_obj.indexerid, show_obj.idxr.name))
             return False
 
         title = etree.SubElement(tv_node, "title")
         title.text = myShow.seriesName
 
         if getattr(myShow, 'rating', None):
-            rating = etree.SubElement(tv_node, "rating")
-            rating.text = str(myShow.rating)
             mpaa = etree.SubElement(tv_node, "mpaa")
             mpaa.text = str(myShow.rating)
+
+        if getattr(myShow, 'siteRating', None):
+            rating = etree.SubElement(tv_node, "rating")
+            rating.text = str(myShow.siteRating)
 
         if getattr(myShow, 'firstAired', None):
             try:
@@ -149,7 +151,8 @@ class KODI_12PlusMetadata(generic.GenericMetadata):
         if getattr(myShow, 'id', None):
             episodeguide = etree.SubElement(tv_node, "episodeguide")
             episodeguideurl = etree.SubElement(episodeguide, "url")
-            episodeguideurl.text = show_obj.idxr.base_url + str(myShow.id) + '/all/en.zip'
+            episodeguideurl.attrib = {'post': 'yes', 'cache': 'auth.json'}
+            episodeguideurl.text = show_obj.idxr.episode_guide_url(show_obj)
 
             indexerid = etree.SubElement(tv_node, "id")
             indexerid.text = str(myShow.id)
@@ -218,7 +221,7 @@ class KODI_12PlusMetadata(generic.GenericMetadata):
         myShow = ep_obj.idxr.series_from_episode(ep_obj)
         if not myShow:
             logger.log("Unable to find {} on {} while creating meta files, skipping".format(
-                ep_obj.show.indexerid, ep_obj.idxr.name), logger.ERROR)
+                ep_obj.show.indexerid, ep_obj.idxr.name), logger.INFO)
             return
 
         if len(eps_to_write) > 1:

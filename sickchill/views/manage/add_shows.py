@@ -24,6 +24,7 @@ import os
 import re
 
 # Third Party Imports
+import dateutil
 import six
 from requests.compat import unquote_plus
 from tornado.escape import xhtml_unescape
@@ -160,6 +161,7 @@ class AddShows(Home):
 
                 cur_dir = {
                     'dir': cur_path,
+                    'existing_info': (None, None, None),
                     'display_dir': '<b>' + ek(os.path.dirname, cur_path) + os.sep + '</b>' + ek(
                         os.path.basename,
                         cur_path),
@@ -175,44 +177,16 @@ class AddShows(Home):
 
                 dir_list.append(cur_dir)
 
-                def find_on_indexers(i, n, idxr):
-                    if not n:
-                        n = ek(os.path.basename, cur_path)
-
-                    if idxr and i:
-                        __result = sickchill.indexer[idxr].get_series_by_id(indexerid=i)
-                        if __result:
-                            search_results = {idxr: [__result.info()]}
-                        else:
-                            search_results = []
-                    elif idxr and n:
-                        search_results = {idxr: sickchill.indexer[idxr].search(name=n, exact=True)}
-                    elif n and not (idxr and i):
-                        search_results = sickchill.indexer.search_indexers_for_series_name(n, exact=True)
-                    else:
-                        search_results = []
-
-                    for idxr in (search_results, [idxr])[idxr in search_results]:
-                        for r in search_results[idxr]:
-                            item = r.get('id'), r.get('seriesName'), idxr
-                            if all(item):
-                                return item
-
-                    return None, None, None
-
                 indexer_id = show_name = indexer = None
                 for cur_provider in sickbeard.metadata_provider_dict.values():
                     if not (indexer_id and show_name):
                         (indexer_id, show_name, indexer) = cur_provider.retrieveShowMetadata(cur_path)
-                        if show_name or (indexer_id and indexer):
+                        if all((indexer_id, show_name, indexer)):
                             break
 
-                if not (indexer_id and show_name and indexer):
-                    result = find_on_indexers(indexer_id, show_name, indexer)
-                    if all(result):
-                        indexer_id, show_name, indexer = result
+                if all((indexer_id, show_name, indexer)):
+                    cur_dir['existing_info'] = (indexer_id, show_name, indexer)
 
-                cur_dir['existing_info'] = (indexer_id, show_name, indexer)
                 if indexer_id and Show.find(sickbeard.showList, indexer_id):
                     cur_dir['added_already'] = True
         return t.render(dirList=dir_list)
@@ -342,7 +316,7 @@ class AddShows(Home):
 
     @staticmethod
     def getTrendingShowImage(indexerId):
-        image_url = sickchill.indexer.series_poster_by_id(indexerId)
+        image_url = sickchill.indexer.series_poster_url_by_id(indexerId)
         if image_url:
             image_path = trakt_trending.get_image_path(trakt_trending.get_image_name(indexerId))
             trakt_trending.cache_image(image_url, image_path)
@@ -525,7 +499,7 @@ class AddShows(Home):
         series_pieces = whichSeries.split('|')
         if (whichSeries and rootDir) or (whichSeries and fullShowPath and len(series_pieces) > 1):
             if len(series_pieces) < 6:
-                logger.log("Unable to add show due to show selection. Not anough arguments: {0}".format((repr(series_pieces))),
+                logger.log("Unable to add show due to show selection. Not enough arguments: {0}".format((repr(series_pieces))),
                            logger.ERROR)
                 ui.notifications.error(_("Unknown error. Unable to add show due to problem with show selection."))
                 return self.redirect('/addShows/existingShows/')
@@ -546,11 +520,23 @@ class AddShows(Home):
         # use the whole path if it's given, or else append the show name to the root dir to get the full show path
         if fullShowPath:
             show_dir = ek(os.path.normpath, xhtml_unescape(fullShowPath))
+            extra_check_dir = show_dir
         else:
-            show_dir = ek(os.path.join, rootDir, sanitize_filename(xhtml_unescape(show_name)))
+            folder_name = show_name
+            s = sickchill.indexer.series_by_id(indexerid=indexer_id, indexer=indexer, language=indexerLang)
+            if sickbeard.ADD_SHOWS_WITH_YEAR and s.firstAired:
+                try:
+                    year = '({0})'.format(dateutil.parser.parse(s.firstAired).year)
+                    if year not in folder_name:
+                        folder_name = '{0} {1}'.format(s.seriesName, year)
+                except (TypeError, ValueError):
+                    logger.log(_('Could not append the show year folder for the show: {0}').format(folder_name))
+
+            show_dir = ek(os.path.join, rootDir, sanitize_filename(xhtml_unescape(folder_name)))
+            extra_check_dir = ek(os.path.join, rootDir, sanitize_filename(xhtml_unescape(show_name)))
 
         # blanket policy - if the dir exists you should have used "add existing show" numbnuts
-        if ek(os.path.isdir, show_dir) and not fullShowPath:
+        if (ek(os.path.isdir, show_dir) or ek(os.path.isdir, extra_check_dir)) and not fullShowPath:
             ui.notifications.error(_("Unable to add show"), _("Folder {show_dir} exists already").format(show_dir=show_dir))
             return self.redirect('/addShows/existingShows/')
 
@@ -595,7 +581,7 @@ class AddShows(Home):
             indexer, indexer_id, showDir=show_dir, default_status=int(defaultStatus), quality=newQuality,
             season_folders=season_folders, lang=indexerLang, subtitles=subtitles, subtitles_sr_metadata=subtitles_sr_metadata,
             anime=anime, scene=scene, paused=None, blacklist=blacklist, whitelist=whitelist,
-            default_status_after=int(defaultStatusAfter), root_dir=None)
+            default_status_after=int(defaultStatusAfter), root_dir=rootDir)
         ui.notifications.message(_('Show added'), _('Adding the specified show into {show_dir}').format(show_dir=show_dir))
 
         return finishAddShow()

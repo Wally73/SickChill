@@ -109,44 +109,45 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="poster-container">
-                        <img src="${srRoot}/showPoster/?show=${show.indexerid}&amp;which=poster_thumb"
+                        <img src="${static_url(show.show_image_url('poster_thumb'))}"
                              class="tvshowImg" alt="${_('Poster for')} ${show.name}"
-                             onclick="location.href='${srRoot}/showPoster/?show=${show.indexerid}&amp;which=poster'"/>
+                             onclick="location.href='${static_url(show.show_image_url('poster'))}"/>
                     </div>
                     <div class="info-container">
                         <div class="row">
                             <div class="pull-right col-lg-4 col-md-4 hidden-sm hidden-xs">
-                                <img src="${srRoot}/showPoster/?show=${show.indexerid}&amp;which=banner" style="max-height:50px;border:1px solid black;" class="pull-right">
+                                <img src="${static_url(show.show_image_url('banner'))}"
+                                     style="max-height:50px;border:1px solid black;" class="pull-right">
                             </div>
                             <div class="pull-left col-lg-8 col-md-8 col-sm-12 col-xs-12">
                                 % if 'rating' in show.imdb_info:
-                                <% rating_tip = str(show.imdb_info['rating']) + " / 10" + _('Stars') + "<br>" + str(show.imdb_info['votes']) +  _('Votes') %>
+                                    <% rating_tip = str(show.imdb_info['rating']) + " / 10" + _('Stars') + "<br>" + str(show.imdb_info['votes']) +  _('Votes') %>
                                     <span class="imdbstars" qtip-content="${rating_tip}">${show.imdb_info['rating']}</span>
                                 % endif
 
-                                <% _show = show %>
                                 % if not show.imdbid:
                                     <span>(${show.startyear}) - ${show.runtime} ${_('minutes')} - </span>
                                 % else:
-                                % if 'country_codes' in show.imdb_info:
-                                    % for country in show.imdb_info['country_codes'].split('|'):
-                                        <img src="${static_url('images/blank.png')}" class="country-flag flag-${country}" width="16" height="11" style="margin-left: 3px; vertical-align:middle;" />
-                                    % endfor
-                                % endif
+                                    % if 'country_codes' in show.imdb_info:
+                                        % for country in show.imdb_info['country_codes'].split('|'):
+                                            <img src="${static_url('images/blank.png')}" class="country-flag flag-${country}" width="16" height="11" style="margin-left: 3px; vertical-align:middle;" />
+                                        % endfor
+                                    % endif
                                     <span>
-                                % if show.imdb_info.get('year'):
-                                    (${show.imdb_info['year']}) -
+                                    % if show.imdb_info.get('year'):
+                                        (${show.imdb_info['year']}) -
+                                    % endif
+                                            ${show.imdb_info['runtimes']} ${_('minutes')}
+                                    </span>
+                                    <a href="${anon_url('http://www.imdb.com/title/', show.imdbid)}" rel="noreferrer" onclick="window.open(this.href, '_blank'); return false;" title="http://www.imdb.com/title/${show.imdbid}"><span class="displayshow-icon-imdb" /></a>
+                                    <a href="${anon_url('https://trakt.tv/shows/', show.imdbid)}" rel="noreferrer" onclick="window.open(this.href, '_blank'); return false;" title="https://trakt.tv/shows/${show.imdbid}"><span class="displayshow-icon-trakt" /></a>
                                 % endif
-                                        ${show.imdb_info['runtimes']} ${_('minutes')}
-                            </span>
-                                    <a href="${anon_url('http://www.imdb.com/title/', _show.imdbid)}" rel="noreferrer" onclick="window.open(this.href, '_blank'); return false;" title="http://www.imdb.com/title/${show.imdbid}"><span class="displayshow-icon-imdb" /></a>
-                                % endif
-                                <a href="${anon_url(_show.idxr.show_url, _show.indexerid)}" onclick="window.open(this.href, '_blank'); return false;"
-                                   title="${_show.idxr.show_url + str(show.indexerid)}"><img alt="${show.idxr.name}" src="${static_url(show.idxr.icon)}" style="margin-top: -1px; vertical-align:middle;"/></a>
+                                <a href="${anon_url(show.idxr.show_url, show.indexerid)}" onclick="window.open(this.href, '_blank'); return false;"
+                                   title="${show.idxr.show_url + str(show.indexerid)}"><img alt="${show.idxr.name}" src="${static_url(show.idxr.icon)}" style="margin-top: -1px; vertical-align:middle;"/></a>
                                 % if xem_numbering or xem_absolute_numbering:
-                                    <a href="${anon_url('http://thexem.de/search?q=', _show.name)}" rel="noreferrer" onclick="window.open(this.href, '_blank'); return false;" title="http://thexem.de/search?q-${show.name}"><span alt="" class="displayshow-icon-xem" /></a>
+                                    <a href="${anon_url('http://thexem.de/search?q=', show.name)}" rel="noreferrer" onclick="window.open(this.href, '_blank'); return false;" title="http://thexem.de/search?q-${show.name}"><span alt="" class="displayshow-icon-xem" /></a>
                                 % endif
-                                <a href="${anon_url('https://fanart.tv/series/', _show.indexerid)}" rel="noreferrer" onclick="window.open(this.href, '_blank'); return false;" title="https://fanart.tv/series/${show.name}"><span class="displayshow-icon-fanart" /></a>
+                                <a href="${anon_url('https://fanart.tv/series/', show.indexerid)}" rel="noreferrer" onclick="window.open(this.href, '_blank'); return false;" title="https://fanart.tv/series/${show.name}"><span class="displayshow-icon-fanart" /></a>
                             </div>
                             <div class="pull-left col-lg-8 col-md-8 col-sm-12 col-xs-12">
                                 <ul class="tags">
@@ -440,8 +441,9 @@
                                             <th data-sorter="false" class="col-ep columnSelector-false size">${_('Size')}</th>
                                             <th data-sorter="false" class="col-airdate">${_('Airdate')}</th>
                                             <th data-sorter="false" ${("class=\"col-ep columnSelector-false\"", "class=\"col-ep\"")[bool(sickbeard.DOWNLOAD_URL)]}>${_('Download')}</th>
+                                            <th data-sorter="false" ${("class=\"col-ep columnSelector-false\"", "class=\"col-ep\"")[bool(sickbeard.KODI_HOST and sickbeard.USE_KODI)]}>${_('Play')}</th>
                                             <th data-sorter="false" ${("class=\"col-ep columnSelector-false\"", "class=\"col-ep\"")[bool(sickbeard.USE_SUBTITLES)]}>${_('Subtitles')}</th>
-                                            <th data-sorter="false" class="col-status">${_('Status')}</th>
+                                            <th data-sorter="false" class="col-ep">${_('Status')}</th>
                                             <th data-sorter="false" class="col-search">${_('Search')}</th>
                                         </tr>
                                     </thead>
@@ -521,17 +523,24 @@
                                                 Never
                                             % endif
                                         </td>
-                                        <td>
+                                        <td class="col-download">
                                             % if sickbeard.DOWNLOAD_URL and epResult[b'location']:
-                                            <%
-                                                filename = epResult[b'location']
-                                                for rootDir in sickbeard.ROOT_DIRS.split('|'):
-                                                    if rootDir.startswith('/'):
-                                                        filename = filename.replace(rootDir, "")
-                                                filename = sickbeard.DOWNLOAD_URL + urllib.quote(filename.encode('utf8'))
-                                            %>
-                                                <center><a href="${filename}">${_('Download')}</a></center>
+                                                <%
+                                                    filename = epResult[b'location']
+                                                    for rootDir in sickbeard.ROOT_DIRS.split('|'):
+                                                        if rootDir.startswith('/'):
+                                                            filename = filename.replace(rootDir, "")
+                                                    filename = sickbeard.DOWNLOAD_URL + urllib.quote(filename.encode('utf8'))
+                                                %>
+                                                <a href="${filename}">${_('Download')}</a>
                                             % endif
+                                        </td>
+                                        <td class="col-play">
+                                            <a class="play-on-kodi${(' hidden', '')[bool(epResult[b'location'])]}"
+                                               href="playOnKodi?show=${show.indexerid}&amp;season=${epResult[b"season"]}&amp;episode=${epResult[b"episode"]}"
+                                            >
+                                                <span class="displayshow-play-icon-kodi" title="KODI"></span>
+                                            </a>
                                         </td>
                                         <td class="col-subtitles" align="center">
                                             % for flag in (epResult[b"subtitles"] or '').split(','):
@@ -627,6 +636,33 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-info" data-dismiss="modal">${_('No')}</button>
                     <button type="button" class="btn btn-success" data-dismiss="modal">${_('Yes')}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="playOnKodiModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                         <span class="sr-only">${_('Close')}</span>
+                    </button>
+                    <h4 class="modal-title">${_('Select Kodi Player')}</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group col-md-12">
+                        <select id="kodi-play-host" name="kodi-play-host" class="form-control">
+                            % for index, connection in enumerate(sickbeard.notifiers.kodi_notifier.connections):
+                                <option value="${index}">${connection.name} (${connection.host})</option>
+                            % endfor
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">${_('Play')}</button>
+                    <button type="button" class="btn btn-info" data-dismiss="modal">${_('Cancel')}</button>
                 </div>
             </div>
         </div>

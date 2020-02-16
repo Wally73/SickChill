@@ -19,6 +19,8 @@
 from __future__ import absolute_import, print_function, unicode_literals
 
 # Stdlib Imports
+import cgi
+import json
 import re
 
 # Third Party Imports
@@ -45,21 +47,30 @@ class TVDB(Indexer):
         self.icon = 'images/indexers/thetvdb16.png'
         tvdbsimple.KEYS.API_KEY = self.api_key
         self._search = tvdbsimple.search.Search().series
-        self.series = tvdbsimple.Series
+        self._series = tvdbsimple.Series
         self.series_episodes = tvdbsimple.Series_Episodes
         self.series_images = tvdbsimple.Series_Images
         self.updates = tvdbsimple.Updates
 
     @ExceptionDecorator(default_return=None)
+    def series(self, *args, **kwargs):
+        result = self._series(*args, **kwargs)
+        if result:
+            result.info(language=kwargs.get('language'))
+        return result
+
+    @ExceptionDecorator(default_return=None)
     def get_series_by_id(self, indexerid, language=None):
-        result = self.series(indexerid, language)
-        result.info(language=language)
+        result = self._series(indexerid, language)
+        if result:
+            result.info(language=language)
         return result
 
     @ExceptionDecorator(default_return=None)
     def series_from_show(self, show):
-        result = self.series(show.indexerid, show.lang)
-        result.info(language=show.lang)
+        result = self._series(show.indexerid, show.lang)
+        if result:
+            result.info(language=show.lang)
         return result
 
     def series_from_episode(self, episode):
@@ -70,8 +81,9 @@ class TVDB(Indexer):
             return self.get_series_by_id(indexerid, language)
 
         # Just return the first result for now
-        result = self.series(self.search(name, language)[0]['id'])
-        result.info(language=language)
+        result = self._series(self.search(name, language)[0]['id'])
+        if result:
+            result.info(language=language)
         return result
 
     @ExceptionDecorator()
@@ -110,12 +122,14 @@ class TVDB(Indexer):
         """
         language = language or self.language
         result = []
-        if indexer_id:
+        if re.match(r'^t?t?\d{7,8}$', str(name)) or re.match(r'^\d{6}$', str(name)):
             try:
                 if re.match(r'^t?t?\d{7,8}$', str(name)):
                     result = self._search(imdbId='tt{}'.format(name.strip('t')), language=language)
                 elif re.match(r'^\d{6}$', str(name)):
-                    result = [self.series(name, language=language)]
+                    series = self._series(name, language=language)
+                    if series:
+                        result = [series.info(language)]
             except HTTPError:
                 pass
         else:
@@ -166,9 +180,9 @@ class TVDB(Indexer):
             return location
         return 'https://artworks.thetvdb.com/banners/{path}'.format(path=location)
 
-    @ExceptionDecorator(default_return='', catch=(HTTPError, KeyError))
-    def __call_images_api(self, show, thumb, keyType, subKey=None):
-        images = self.series_images(show.indexerid, show.lang, keyType=keyType, subKey=subKey)
+    @ExceptionDecorator(default_return='', catch=(HTTPError, KeyError), image_api=True)
+    def __call_images_api(self, show, thumb, keyType, subKey=None, lang=None):
+        images = self.series_images(show.indexerid, lang or show.lang, keyType=keyType, subKey=subKey)
         return self.complete_image_url(images.all()[0][('fileName', 'thumbnail')[thumb]])
 
     @staticmethod
@@ -193,6 +207,11 @@ class TVDB(Indexer):
     def season_banner_url(self, show, season, thumb=False):
         return self.__call_images_api(show, thumb, 'seasonwide', season)
 
-    @ExceptionDecorator(default_return='', catch=(HTTPError, KeyError))
+    @ExceptionDecorator(default_return='', catch=(HTTPError, KeyError, TypeError))
     def episode_image_url(self, episode):
         return self.complete_image_url(self.episode(episode)['filename'])
+
+    def episode_guide_url(self, show):
+        # https://forum.kodi.tv/showthread.php?tid=323588
+        data = cgi.escape(json.dumps({'apikey': self.api_key, 'id': show.indexerid}), True).replace(' ', '')
+        return tvdbsimple.base.TVDB(key=self.api_key)._get_complete_url('login') + '?' + data + '|Content-Type=application/json'
