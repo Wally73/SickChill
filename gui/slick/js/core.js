@@ -394,28 +394,12 @@ var SICKCHILL = {
                 });
             });
 
-            // GitHub Auth Types
-            function setupGithubAuthTypes() {
-                const selected = parseInt($('input[name="git_auth_type"]').filter(':checked').val(), 10);
-
-                $('div[name="content_github_auth_type"]').each(function(index) {
-                    if (index === selected) {
-                        $(this).show();
-                    } else {
-                        $(this).hide();
-                    }
-                });
-            }
-
-            setupGithubAuthTypes();
-
-            $('input[name="git_auth_type"]').on('click', setupGithubAuthTypes);
-
             $('#git_token').on('click', $('#git_token').select());
 
             $('#create_access_token').on('click', function() {
                 notifyModal(
                     '<p>Copy the generated token and paste it in the token input box.</p>' +
+                    '<p>Provide permissions for repo:status, public_repo, write:discussion, read:discussion, user, gist, and notifications</p>' +
                     '<p><a href="' + anonURL + 'https://github.com/settings/tokens/new?description=SickChill&scopes=user,gist,public_repo" target="_blank">' +
                     '<input class="btn" type="button" value="Continue to Github..."></a></p>');
                 $('#git_token').select();
@@ -2324,10 +2308,11 @@ var SICKCHILL = {
             });
 
             $('.show-grid').imagesLoaded(function() {
+                var sort = getMeta('sickbeard.POSTER_SORTBY') === 'date' ? ['status', 'date', 'name'] : getMeta('sickbeard.POSTER_SORTBY');
                 $('.loading-spinner').hide();
                 $('.show-grid').show().isotope({
                     itemSelector: '.show-container',
-                    sortBy: getMeta('sickbeard.POSTER_SORTBY'),
+                    sortBy: sort,
                     sortAscending: getMeta('sickbeard.POSTER_SORTDIR'),
                     layoutMode: 'masonry',
                     masonry: {
@@ -2346,7 +2331,8 @@ var SICKCHILL = {
                         progress: function(itemElem) {
                             const progress = $(itemElem).attr('data-progress');
                             return (progress.length && parseInt(progress, 10)) || Number.NEGATIVE_INFINITY;
-                        }
+                        },
+                        status: '[data-status]'
                     }
                 });
 
@@ -2419,7 +2405,7 @@ var SICKCHILL = {
             });
 
             $('#postersort').on('change', function() {
-                $('.show-grid').isotope({sortBy: $(this).val()});
+                $('.show-grid').isotope({sortBy: $(this).val() === 'date' ? ['status', 'date', 'name'] : $(this).val()});
                 $.post($(this).find('option[value=' + $(this).val() + ']').attr('data-sort'));
             });
 
@@ -2442,7 +2428,7 @@ var SICKCHILL = {
         },
         displayShow: function() {
             if (metaToBool('sickbeard.FANART_BACKGROUND')) {
-                $.backstretch(srRoot + '/showPoster/?show=' + $('#showID').attr('value') + '&which=fanart');
+                $.backstretch(srRoot + '/cache/images/' + $('#showID').attr('value') + '.fanart.jpg');
                 $('.backstretch').css('opacity', getMeta('sickbeard.FANART_BACKGROUND_OPACITY')).fadeIn('500');
             }
 
@@ -2470,6 +2456,43 @@ var SICKCHILL = {
                 link.prop('enableClick', '0');
                 link.fadeTo('fast', 0.5);
             }
+
+            $('.play-on-kodi').on('click', function() {
+                if ($(this).prop('enableClick') === '0') {
+                    return false;
+                }
+
+                const selectedEpisode = $(this);
+                const playModal = $('#playOnKodiModal');
+
+                $('#playOnKodiModal .btn.btn-success').on('click', function() {
+                    disableLink(selectedEpisode);
+                    playModal.modal('hide');
+
+                    const img = selectedEpisode.children('img');
+                    img.hide();
+
+                    selectedEpisode.append($('<span/>').attr({class: 'loading-spinner16', title: 'Playing'}));
+                    const icon = selectedEpisode.children('span');
+
+                    const host = $('#kodi-play-host').val();
+                    $.getJSON(selectedEpisode.prop('href') + '&host=' + host, function(data) {
+                        if (data.result.toLowerCase() === 'failure') {
+                            icon.prop('class', 'displayshow-icon-disable');
+                            icon.prop('title', 'Failed');
+                        } else {
+                            img.prop('title', 'Success');
+                            img.prop('alt', 'Success');
+                            icon.hide();
+                            img.show();
+                        }
+                    });
+                    enableLink(selectedEpisode);
+                    return false;
+                });
+                playModal.modal('show');
+                return false;
+            });
 
             $('.epSubtitlesSearch').on('click', function() {
                 if ($(this).prop('enableClick') === '0') {
@@ -3885,15 +3908,16 @@ var SICKCHILL = {
                 let table =
                     '<div class="row">' +
                     '<div class="col-lg-6 col-md-12">' +
-                    '<table class="sickbeardTable new-show-table">' +
+                    '<table class="sickbeardTable new-show-table tablesorter">' +
                     '<thead>' +
                     '<tr>' +
-                    '<th style="width:40px;">&nbsp;</th>' +
+                    '<th></th>' +
                     '<th>Show Name</th>' +
                     '<th>Premiere</th>' +
                     '<th>Indexer</th>' +
                     '</tr>' +
-                    '<thead>';
+                    '</thead>' +
+                    '<tbody>';
 
                 const selectedIndex = shows.indexOf(function(show) {
                     return !show.inShowList;
@@ -3925,6 +3949,7 @@ var SICKCHILL = {
                 });
 
                 table +=
+                    '</tbody>' +
                     '</table>' +
                     '</div>' +
                     '</div>';
@@ -3995,6 +4020,11 @@ var SICKCHILL = {
 
                         $('#searchResults').html(resultStr);
                         updateSampleText();
+                        $('.new-show-table').tablesorter(
+                            {
+                                widgets: ['stickyHeaders', 'zebra', 'saveSort'],
+                                headers: {0: {sorter: false}}
+                            });
                     }
                 });
             };

@@ -25,6 +25,7 @@ import traceback
 from collections import namedtuple
 
 # Third Party Imports
+import dateutil
 import six
 from imdb import _exceptions as imdb_exceptions
 from trakt import TraktAPI
@@ -206,13 +207,13 @@ class ShowQueueActions(object):
     REMOVE = 7
 
     names = {
-        REFRESH: 'Refresh',
-        ADD: 'Add',
-        UPDATE: 'Update',
-        FORCEUPDATE: 'Force Update',
-        RENAME: 'Rename',
-        SUBTITLE: 'Subtitle',
-        REMOVE: 'Remove Show'
+        REFRESH: _('Refresh'),
+        ADD: _('Add'),
+        UPDATE: _('Update'),
+        FORCEUPDATE: _('Force Update'),
+        RENAME: _('Rename'),
+        SUBTITLE: _('Subtitle'),
+        REMOVE: _('Remove Show')
     }
 
 
@@ -286,7 +287,7 @@ class QueueItemAdd(ShowQueueItem):
         Returns the show name if there is a show object created, if not returns
         the dir that the show is being added to.
         """
-        return self.show.name if self.show else self.showDir.rsplit(os.sep)[-1] if self.showDir else "Loading"
+        return self.show.name if self.show else self.showDir.rsplit(os.sep)[-1] if self.showDir else _("Loading")
 
     @property
     def is_loading(self):
@@ -298,11 +299,14 @@ class QueueItemAdd(ShowQueueItem):
 
     @property
     def info(self):
-        info = namedtuple('LoadingShowInfo', 'id name sort_name network quality')
+        info = namedtuple('LoadingShowInfo', 'id name sort_name network network_image_url show_image_url quality')
         if self.show:
-            return info(id=self.show.indexerid, name=self.show.name, sort_name=self.show.sort_name, network=self.show.network, quality=self.show.quality)
+            return info(id=self.show.indexerid, name=self.show.name, sort_name=self.show.sort_name, network=self.show.network,
+                        network_image_url=self.show.network_image_url, show_image_url=self.show.show_image_url, quality=self.show.quality)
         # noinspection PyUnresolvedReferences
-        return info(id=self.show_name, name=self.show_name, sort_name=sortable_name(self.show_name), network=_('Loading'), quality=0)
+        return info(id=0, name=self.show_name, sort_name=sortable_name(self.show_name), network=_('Loading'),
+                    network_image_url='images/network/nonetwork.png', show_image_url=lambda x: 'images/{}.png'.format(('poster', 'banner')['banner' in x]),
+                    quality=0)
 
     def run(self):
 
@@ -316,48 +320,59 @@ class QueueItemAdd(ShowQueueItem):
                 self._finish_early()
                 return
 
-        logger.log('Starting to add show {0}'.format('by ShowDir: {0}'.format(self.showDir) if self.showDir else 'by Indexer Id: {0}'.format(self.indexer_id)))
+        logger.log(_('Starting to add show {0}').format(_('by ShowDir: {0}').format(self.showDir) if self.showDir else _('by Indexer Id: {0}').format(
+            self.indexer_id)))
         # make sure the Indexer IDs are valid
         try:
             s = sickchill.indexer.series_by_id(indexerid=self.indexer_id, indexer=self.indexer, language=self.lang)
+            if not s:
+                error_string = _('Could not find show with id:{0} on {1}, skipping').format(
+                    self.indexer_id, sickchill.indexer.name(self.indexer))
 
-            # Let's try to create the show Dir if it's not provided. This way we force the show dir to build build using the
-            # Indexers provided series name
-            if self.root_dir and not self.showDir:
-                if not s.title:
-                    logger.log('Unable to get a show {0}, can\'t add the show'.format(self.showDir))
-                    self._finish_early()
-                    return
-
-                self.showDir = ek(os.path.join, self.root_dir, sanitize_filename(s.title))
-
-                dir_exists = makeDir(self.showDir)
-                if not dir_exists:
-                    logger.log('Unable to create the folder {0}, can\'t add the show'.format(self.showDir))
-                    self._finish_early()
-                    return
-
-                chmodAsParent(self.showDir)
-
-            # this usually only happens if they have an NFO in their show dir which gave us a Indexer ID that has no proper english version of the show
-            if getattr(s, 'seriesName', None) is None:
-                # noinspection PyPep8
-                error_string = 'Show in {0} has no name on {1}, probably searched with the wrong language. Delete .nfo and add manually in the correct language.'.format(
-                    self.showDir, sickchill.indexer.name(self.indexer))
-
-                logger.log(error_string, logger.WARNING)
-                ui.notifications.error('Unable to add show', error_string)
+                logger.log(error_string)
+                ui.notifications.error(_('Unable to add show'), error_string)
 
                 self._finish_early()
                 return
 
-            # if the show has no episodes/seasons
-            if not s:
-                error_string = 'Show {0} is on {1} but contains no season/episode data.'.format(
-                    s.seriesName, sickchill.indexer.name(self.indexer))
+            # Let's try to create the show Dir if it's not provided. This way we force the show dir to build build using the
+            # Indexers provided series name
+            if self.root_dir and not self.showDir:
+                if not s.seriesName:
+                    logger.log(_('Unable to get a show {0}, can\'t add the show').format(self.showDir))
+                    self._finish_early()
+                    return
 
-                logger.log(error_string)
-                ui.notifications.error('Unable to add show', error_string)
+                show_dir = s.seriesName
+                if sickbeard.ADD_SHOWS_WITH_YEAR and s.firstAired:
+                    try:
+                        year = '({0})'.format(dateutil.parser.parse(s.firstAired).year)
+                        if year not in show_dir:
+                            show_dir = '{0} {1}'.format(s.seriesName, year)
+                    except (TypeError, ValueError):
+                        logger.log(_('Could not append the show year folder for the show: {0}').format(show_dir))
+
+                self.showDir = ek(os.path.join, self.root_dir, sanitize_filename(show_dir))
+
+                if sickbeard.ADD_SHOWS_WO_DIR:
+                    logger.log(_("Skipping initial creation of {0} due to config.ini setting").format(self.showDir))
+                else:
+                    dir_exists = makeDir(self.showDir)
+                    if not dir_exists:
+                        logger.log(_('Unable to create the folder {0}, can\'t add the show').format(self.showDir))
+                        self._finish_early()
+                        return
+
+                    chmodAsParent(self.showDir)
+
+            # this usually only happens if they have an NFO in their show dir which gave us a Indexer ID that has no proper english version of the show
+            if getattr(s, 'seriesName', None) is None:
+                # noinspection PyPep8
+                error_string = _('Show in {0} has no name on {1}, probably searched with the wrong language. Delete .nfo and add manually in the correct language.').format(
+                    self.showDir, sickchill.indexer.name(self.indexer))
+
+                logger.log(error_string, logger.WARNING)
+                ui.notifications.error(_('Unable to add show'), error_string)
 
                 self._finish_early()
                 return
@@ -366,8 +381,7 @@ class QueueItemAdd(ShowQueueItem):
                 self.showDir, sickchill.indexer.name(self.indexer), self.indexer_id)
 
             logger.log('{0}: {1}'.format(error_string, error), logger.ERROR)
-            ui.notifications.error(
-                'Unable to add show', error_string)
+            ui.notifications.error(_('Unable to add show'), error_string)
 
             if sickbeard.USE_TRAKT:
                 trakt_api = TraktAPI(sickbeard.SSL_VERIFY, sickbeard.TRAKT_TIMEOUT)
@@ -413,7 +427,7 @@ class QueueItemAdd(ShowQueueItem):
             self.show.paused = self.paused if self.paused is not None else False
 
             # set up default new/missing episode status
-            logger.log('Setting all episodes to the specified default status: {0}' .format(self.show.default_ep_status))
+            logger.log(_('Setting all episodes to the specified default status: {0}') .format(self.show.default_ep_status))
             self.show.default_ep_status = self.default_status
 
             if self.show.anime:
@@ -440,24 +454,24 @@ class QueueItemAdd(ShowQueueItem):
             logger.log('Error trying to add show: {0}'.format(error), logger.ERROR)
             logger.log(traceback.format_exc(), logger.DEBUG)
 
-            ui.notifications.error('Unable to add show', error_string)
+            ui.notifications.error(_('Unable to add show'), error_string)
 
             self._finish_early()
             return
 
         except MultipleShowObjectsException:
-            error_string = 'The show in {0} is already in your show list, skipping'.format(self.showDir)
+            error_string = _('The show in {0} is already in your show list, skipping').format(self.showDir)
             logger.log(error_string, logger.WARNING)
-            ui.notifications.error('Show skipped', error_string)
+            ui.notifications.error(_('Show skipped'), error_string)
 
             self._finish_early()
             return
 
-        logger.log('Retrieving show info from IMDb', logger.DEBUG)
+        logger.log(_('Retrieving show info from IMDb'), logger.DEBUG)
         try:
             self.show.loadIMDbInfo()
         except imdb_exceptions.IMDbError as error:
-            logger.log(' Something wrong on IMDb api: {0}'.format(error), logger.WARNING)
+            logger.log(_('Something wrong on IMDb api: {0}').format(error), logger.WARNING)
         except Exception as error:
             logger.log('Error loading IMDb info: {0}'.format(error), logger.ERROR)
 
@@ -670,11 +684,7 @@ class QueueItemUpdate(ShowQueueItem):
                        (self.show.idxr.name, error), logger.ERROR)
             IndexerEpList = None
 
-        if not IndexerEpList:
-            logger.log('No data returned from {0}, unable to update this show.'.format
-                       (self.show.idxr.name), logger.ERROR)
-        else:
-            # for each ep we found on the Indexer delete it from the DB list
+        if IndexerEpList is not None:
             for curSeason in IndexerEpList:
                 for curEpisode in IndexerEpList[curSeason]:
                     curEp = self.show.getEpisode(curSeason, curEpisode)

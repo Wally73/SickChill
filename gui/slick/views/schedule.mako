@@ -170,7 +170,10 @@
                                     </td>
                                     <td class="banner">
                                         <a href="${srRoot}/home/displayShow?show=${cur_result[b'showid']}">
-                                            <img alt="" class="bannerThumb" src="${srRoot}/showPoster/?show=${cur_result[b'showid']}&amp;which=banner" />
+                                            <img alt="" class="bannerThumb"
+                                                 src="${static_url("images/banner.png")}"
+                                                 data-src="${static_url(sickbeard.IMAGE_CACHE.image_url(cur_result[b'showid'], 'banner_thumb'))}"
+                                            />
                                         </a>
                                     </td>
                                     <td nowrap="nowrap" align="center">
@@ -201,6 +204,11 @@
                                                title="http://www.imdb.com/title/${cur_result[b'imdb_id']}">
                                                 <span class="displayshow-icon-imdb"></span>
                                             </a>
+                                            <a href="${anon_url('https://trakt.tv/shows/', cur_result[b'imdb_id'])}" rel="noreferrer"
+                                               onclick="window.open(this.href, '_blank'); return false;"
+                                               title="https://trakt.tv/shows/${cur_result[b'imdb_id']}">
+                                                <span class="displayshow-icon-trakt" />
+                                            </a>
                                         % endif
                                         <a href="${anon_url(show_indexer.show_url(cur_indexer), cur_result[b'showid'])}"
                                            rel="noreferrer" onclick="window.open(this.href, '_blank'); return false"
@@ -222,7 +230,7 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th rowspan="1" colspan="10" align="center">&nbsp</th>
+                                <th rowspan="1" colspan="11" align="center">&nbsp</th>
                             </tr>
                         </tfoot>
                     </table>
@@ -273,7 +281,9 @@
                                                 <td class="calendarShow">
                                                     <div class="poster">
                                                         <a title="${cur_result[b'show_name']}" href="${srRoot}/home/displayShow?show=${cur_result[b'showid']}">
-                                                            <img alt="" src="${srRoot}/showPoster/?show=${cur_result[b'showid']}&amp;which=poster_thumb"/>
+                                                            <img alt=""
+                                                                 src="${static_url(sickbeard.IMAGE_CACHE.image_url(cur_result[b'showid'], 'poster_thumb'))}"
+                                                            />
                                                         </a>
                                                     </div>
                                                     <div class="text">
@@ -420,7 +430,8 @@
                                     <th ${('class="nobg"', 'rowspan="3"')[layout == 'poster']} valign="top">
                                         <a href="${srRoot}/home/displayShow?show=${cur_result[b'showid']}">
                                             <img alt="" class="${('posterThumb', 'bannerThumb')[layout == 'banner']}"
-                                                 src="${srRoot}/showPoster/?show=${cur_result[b'showid']}&amp;which=${(layout, 'poster_thumb')[layout == 'poster']}"/>
+                                                 src="${static_url(sickbeard.IMAGE_CACHE.image_url(cur_result[b'showid'], (layout, 'poster_thumb')[layout == 'poster']))}"
+                                            />
                                         </a>
                                     </th>
                                 </tr>
@@ -438,6 +449,10 @@
                                                 <a href="${anon_url('http://www.imdb.com/title/', cur_result[b'imdb_id'])}" rel="noreferrer"
                                                    onclick="window.open(this.href, '_blank'); return false" title="http://www.imdb.com/title/${cur_result[b'imdb_id']}">
                                                     <span class="displayshow-icon-imdb"></span>
+                                                </a>
+                                                <a href="${anon_url('https://trakt.tv/shows/', cur_result[b'imdb_id'])}" rel="noreferrer"
+                                                   onclick="window.open(this.href, '_blank'); return false;" title="https://trakt.tv/shows/${cur_result[b'imdb_id']}">
+                                                    <span class="displayshow-icon-trakt" />
                                                 </a>
                                             % endif
                                             <a href="${anon_url(show_indexer.show_url(cur_indexer), cur_result[b'showid'])}"

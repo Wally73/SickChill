@@ -45,7 +45,7 @@ from sickchill.helper.exceptions import ex
 from sickchill.system.Shutdown import Shutdown
 
 # Local Folder Imports
-from . import (auto_postprocessor, clients, dailysearcher, db, helpers, logger, metadata, naming, post_processing_queue, properFinder, providers,
+from . import (auto_postprocessor, clients, dailysearcher, db, helpers, image_cache, logger, metadata, naming, post_processing_queue, properFinder, providers,
                scene_exceptions, scheduler, search_queue, searchBacklog, show_queue, subtitles, traktChecker, versionChecker)
 from .common import ARCHIVED, IGNORED, MULTI_EP_STRINGS, SD, SKIPPED, WANTED
 from .config import check_section, check_setting_bool, check_setting_float, check_setting_int, check_setting_str, ConfigMigrator
@@ -82,6 +82,8 @@ CONFIG_VERSION = 8
 # Default encryption version (0 for None)
 ENCRYPTION_VERSION = 0
 ENCRYPTION_SECRET = None
+
+IMAGE_CACHE = None
 
 PROG_DIR = '.'
 MY_FULLNAME = None
@@ -137,9 +139,7 @@ GIT_REMOTE_URL = ''
 CUR_COMMIT_BRANCH = ''
 GIT_ORG = 'SickChill'
 GIT_REPO = 'SickChill'
-GIT_AUTH_TYPE = 0
 GIT_USERNAME = None
-GIT_PASSWORD = None
 GIT_TOKEN = None
 GIT_PATH = None
 DEVELOPER = False
@@ -155,7 +155,6 @@ INIT_LOCK = Lock()
 MESSAGES_LOCK = Lock()
 started = {}
 
-ACTUAL_LOG_DIR = None
 LOG_DIR = None
 LOG_NR = 5
 LOG_SIZE = 10.0
@@ -197,7 +196,6 @@ INDEXER_DEFAULT_LANGUAGE = None
 EP_DEFAULT_DELETED_STATUS = None
 LAUNCH_BROWSER = False
 CACHE_DIR = None
-ACTUAL_CACHE_DIR = None
 ROOT_DIRS = None
 
 TRASH_REMOVE_SHOW = False
@@ -278,6 +276,7 @@ MIN_UPDATE_FREQUENCY = 1
 BACKLOG_DAYS = 7
 
 ADD_SHOWS_WO_DIR = False
+ADD_SHOWS_WITH_YEAR = False
 CREATE_MISSING_SHOW_DIRS = False
 RENAME_EPISODES = False
 AIRDATE_EPISODES = False
@@ -622,6 +621,8 @@ SUBSCENTER_USER = SUBSCENTER_PASS = None
 USE_FAILED_DOWNLOADS = False
 DELETE_FAILED = False
 
+BACKLOG_MISSING_ONLY = False
+
 EXTRA_SCRIPTS = []
 
 IGNORE_WORDS = "german,french,core2hd,dutch,swedish,reenc,MrLss"
@@ -672,6 +673,8 @@ UNPACK_DIR = ''
 UNRAR_TOOL = rarfile.UNRAR_TOOL
 ALT_UNRAR_TOOL = rarfile.ALT_TOOL
 
+ENDED_SHOWS_UPDATE_INTERVAL = 7
+
 
 def get_backlog_cycle_time():
     cycletime = DAILYSEARCH_FREQUENCY * 2 + 7
@@ -681,7 +684,7 @@ def get_backlog_cycle_time():
 def initialize(consoleLogging=True):
     with INIT_LOCK:
 
-        global BRANCH, GIT_RESET, GIT_REMOTE, GIT_REMOTE_URL, CUR_COMMIT_HASH, CUR_COMMIT_BRANCH, ACTUAL_LOG_DIR, LOG_DIR, LOG_NR, LOG_SIZE, WEB_PORT, WEB_LOG,\
+        global BRANCH, GIT_RESET, GIT_REMOTE, GIT_REMOTE_URL, CUR_COMMIT_HASH, CUR_COMMIT_BRANCH, LOG_DIR, LOG_NR, LOG_SIZE, WEB_PORT, WEB_LOG,\
             ENCRYPTION_VERSION, ENCRYPTION_SECRET, WEB_ROOT, WEB_USERNAME, WEB_PASSWORD, WEB_HOST, WEB_IPV6, WEB_COOKIE_SECRET, WEB_USE_GZIP, API_KEY,\
             ENABLE_HTTPS, HTTPS_CERT, HTTPS_KEY, HANDLE_REVERSE_PROXY, USE_NZBS, USE_TORRENTS, NZB_METHOD, NZB_DIR, DOWNLOAD_PROPERS, RANDOMIZE_PROVIDERS, \
             CHECK_PROPERS_INTERVAL, ALLOW_HIGH_PRIORITY, SAB_FORCED, TORRENT_METHOD, NOTIFY_ON_LOGIN, SAB_USERNAME, SAB_PASSWORD, SAB_APIKEY, SAB_CATEGORY, \
@@ -712,7 +715,7 @@ def initialize(consoleLogging=True):
             PUSHBULLET_NOTIFY_ONSNATCH, PUSHBULLET_NOTIFY_ONDOWNLOAD, PUSHBULLET_NOTIFY_ONSUBTITLEDOWNLOAD, PUSHBULLET_API, PUSHBULLET_DEVICE,\
             PUSHBULLET_CHANNEL, versionCheckScheduler, VERSION_NOTIFY, AUTO_UPDATE, NOTIFY_ON_UPDATE, PROCESS_AUTOMATICALLY, NO_DELETE, USE_ICACLS, UNPACK, \
             CPU_PRESET, UNPACK_DIR, UNRAR_TOOL, ALT_UNRAR_TOOL, KEEP_PROCESSED_DIR, PROCESS_METHOD, PROCESSOR_FOLLOW_SYMLINKS, DELRARCONTENTS, \
-            TV_DOWNLOAD_DIR, UPDATE_FREQUENCY, showQueueScheduler, searchQueueScheduler, postProcessorTaskScheduler, ROOT_DIRS, CACHE_DIR, ACTUAL_CACHE_DIR, \
+            TV_DOWNLOAD_DIR, UPDATE_FREQUENCY, showQueueScheduler, searchQueueScheduler, postProcessorTaskScheduler, ROOT_DIRS, CACHE_DIR, \
             TIMEZONE_DISPLAY, NAMING_PATTERN, NAMING_MULTI_EP, NAMING_ANIME_MULTI_EP, NAMING_FORCE_FOLDERS, NAMING_ABD_PATTERN, NAMING_CUSTOM_ABD, \
             NAMING_SPORTS_PATTERN, NAMING_CUSTOM_SPORTS, NAMING_ANIME_PATTERN, NAMING_CUSTOM_ANIME, NAMING_STRIP_YEAR, RENAME_EPISODES, AIRDATE_EPISODES, \
             FILE_TIMESTAMP_TIMEZONE, properFinderScheduler, PROVIDER_ORDER, autoPostProcessorScheduler, providerList, newznabProviderList, \
@@ -734,14 +737,15 @@ def initialize(consoleLogging=True):
             SUBTITLES_INCLUDE_SPECIALS, SUBTITLES_LANGUAGES, SUBTITLES_DIR, SUBTITLES_SERVICES_LIST, SUBTITLES_SERVICES_ENABLED, SUBTITLES_HISTORY, \
             SUBTITLES_FINDER_FREQUENCY, SUBTITLES_MULTI, SUBTITLES_KEEP_ONLY_WANTED, EMBEDDED_SUBTITLES_ALL, SUBTITLES_EXTRA_SCRIPTS, SUBTITLES_PERFECT_MATCH,\
             subtitlesFinderScheduler, SUBTITLES_HEARING_IMPAIRED, ADDIC7ED_USER, ADDIC7ED_PASS, ITASA_USER, ITASA_PASS, LEGENDASTV_USER, LEGENDASTV_PASS, \
-            OPENSUBTITLES_USER, OPENSUBTITLES_PASS, SUBSCENTER_USER, SUBSCENTER_PASS, USE_FAILED_DOWNLOADS, DELETE_FAILED, ANON_REDIRECT, LOCALHOST_IP, \
+            OPENSUBTITLES_USER, OPENSUBTITLES_PASS, SUBSCENTER_USER, SUBSCENTER_PASS, USE_FAILED_DOWNLOADS, DELETE_FAILED, BACKLOG_MISSING_ONLY, ANON_REDIRECT, LOCALHOST_IP, \
             DEBUG, DBDEBUG, DEFAULT_PAGE, PROXY_SETTING, PROXY_INDEXERS, AUTOPOSTPROCESSOR_FREQUENCY, SHOWUPDATE_HOUR, ANIME_DEFAULT, NAMING_ANIME, \
             ANIMESUPPORT, USE_ANIDB, ANIDB_USERNAME, ANIDB_PASSWORD, ANIDB_USE_MYLIST, ANIME_SPLIT_HOME, ANIME_SPLIT_HOME_IN_TABS, SCENE_DEFAULT, \
-            DOWNLOAD_URL, BACKLOG_DAYS, GIT_AUTH_TYPE, GIT_USERNAME, GIT_PASSWORD, GIT_TOKEN, DEVELOPER, DISPLAY_ALL_SEASONS, SSL_VERIFY, NEWS_LAST_READ, \
+            DOWNLOAD_URL, BACKLOG_DAYS, GIT_USERNAME, GIT_TOKEN, DEVELOPER, DISPLAY_ALL_SEASONS, SSL_VERIFY, NEWS_LAST_READ, ADD_SHOWS_WITH_YEAR, \
             NEWS_LATEST, SOCKET_TIMEOUT, SYNOLOGY_DSM_HOST, SYNOLOGY_DSM_USERNAME, SYNOLOGY_DSM_PASSWORD, SYNOLOGY_DSM_PATH, GUI_LANG, SICKCHILL_BACKGROUND, \
             SICKCHILL_BACKGROUND_PATH, FANART_BACKGROUND, FANART_BACKGROUND_OPACITY, CUSTOM_CSS, CUSTOM_CSS_PATH, USE_SLACK, SLACK_NOTIFY_SNATCH, \
             SLACK_NOTIFY_DOWNLOAD, SLACK_NOTIFY_SUBTITLEDOWNLOAD, SLACK_WEBHOOK, SLACK_ICON_EMOJI, USE_DISCORD, DISCORD_NOTIFY_SNATCH, DISCORD_NOTIFY_DOWNLOAD, DISCORD_WEBHOOK,\
-            USE_MATRIX, MATRIX_NOTIFY_SNATCH, MATRIX_NOTIFY_DOWNLOAD, MATRIX_NOTIFY_SUBTITLEDOWNLOAD, MATRIX_API_TOKEN, MATRIX_SERVER, MATRIX_ROOM
+            USE_MATRIX, MATRIX_NOTIFY_SNATCH, MATRIX_NOTIFY_DOWNLOAD, MATRIX_NOTIFY_SUBTITLEDOWNLOAD, MATRIX_API_TOKEN, MATRIX_SERVER, MATRIX_ROOM, \
+            ENDED_SHOWS_UPDATE_INTERVAL, IMAGE_CACHE
 
         if __INITIALIZED__:
             return False
@@ -776,9 +780,7 @@ def initialize(consoleLogging=True):
         ENCRYPTION_SECRET = check_setting_str(CFG, 'General', 'encryption_secret', helpers.generateCookieSecret(), censor_log=True)
 
         # git login info
-        GIT_AUTH_TYPE = check_setting_int(CFG, 'General', 'git_auth_type', min_val=0, max_val=1)
         GIT_USERNAME = check_setting_str(CFG, 'General', 'git_username')
-        GIT_PASSWORD = check_setting_str(CFG, 'General', 'git_password', censor_log=True)
         GIT_TOKEN = check_setting_str(CFG, 'General', 'git_token_password', censor_log=True)  # encryption needed
         DEVELOPER = check_setting_bool(CFG, 'General', 'developer')
 
@@ -790,8 +792,7 @@ def initialize(consoleLogging=True):
         if DEFAULT_PAGE not in ('home', 'schedule', 'history', 'news', 'IRC'):
             DEFAULT_PAGE = 'home'
 
-        ACTUAL_LOG_DIR = check_setting_str(CFG, 'General', 'log_dir', 'Logs')
-        LOG_DIR = ek(os.path.normpath, ek(os.path.join, DATA_DIR, ACTUAL_LOG_DIR))
+        LOG_DIR = ek(os.path.normpath, ek(os.path.join, DATA_DIR, 'Logs'))
         LOG_NR = check_setting_int(CFG, 'General', 'log_nr', 5, min_val=1)  # Default to 5 backup file (sickchill.log.x)
         LOG_SIZE = check_setting_float(CFG, 'General', 'log_size', 10.0, min_val=0.5)  # Default to max 10MB per logfile
 
@@ -829,21 +830,17 @@ def initialize(consoleLogging=True):
         # current commit branch
         CUR_COMMIT_BRANCH = check_setting_str(CFG, 'General', 'cur_commit_branch')
 
-        ACTUAL_CACHE_DIR = check_setting_str(CFG, 'General', 'cache_dir', 'cache')
+        GUI_NAME = check_setting_str(CFG, 'GUI', 'gui_name', 'slick')
+        GUI_LANG = check_setting_str(CFG, 'GUI', 'language')
 
-        # fix bad configs due to buggy code
-        if ACTUAL_CACHE_DIR == 'None':
-            ACTUAL_CACHE_DIR = 'cache'
-
-        # unless they specify, put the cache dir inside the data dir
-        if not ek(os.path.isabs, ACTUAL_CACHE_DIR):
-            CACHE_DIR = ek(os.path.join, DATA_DIR, ACTUAL_CACHE_DIR)
+        if GUI_LANG:
+            gettext.translation('messages', LOCALE_DIR, languages=[GUI_LANG], codeset='UTF-8').install(unicode=1, names=["ngettext"])
         else:
-            CACHE_DIR = ACTUAL_CACHE_DIR
+            gettext.install('messages', LOCALE_DIR, unicode=1, codeset='UTF-8', names=["ngettext"])
 
-        if not helpers.makeDir(CACHE_DIR):
-            logger.log("!!! Creating local cache dir failed, using system default", logger.ERROR)
-            CACHE_DIR = None
+        load_gettext_translations(LOCALE_DIR, 'messages')
+
+        CACHE_DIR = ek(os.path.normpath, ek(os.path.join, PROG_DIR, "gui", GUI_NAME, "cache"))
 
         # Check if we need to perform a restore of the cache folder
         try:
@@ -882,6 +879,7 @@ def initialize(consoleLogging=True):
                         if cleanupDir not in ['rss', 'sessions', 'indexers']:
                             logger.log("Restore: Unable to remove the cache/{0} directory: {1}".format(cleanupDir, ex(e)), logger.WARNING)
 
+        IMAGE_CACHE = image_cache.ImageCache()
         THEME_NAME = check_setting_str(CFG, 'GUI', 'theme_name', 'dark')
         SICKCHILL_BACKGROUND = check_setting_bool(CFG, 'GUI', 'sickchill_background')
         SICKCHILL_BACKGROUND_PATH = check_setting_str(CFG, 'GUI', 'sickchill_background_path')
@@ -889,16 +887,6 @@ def initialize(consoleLogging=True):
         FANART_BACKGROUND_OPACITY = check_setting_float(CFG, 'GUI', 'fanart_background_opacity', 0.4, min_val=0.1, max_val=1.0)
         CUSTOM_CSS = check_setting_bool(CFG, 'GUI', 'custom_css')
         CUSTOM_CSS_PATH = check_setting_str(CFG, 'GUI', 'custom_css_path')
-
-        GUI_NAME = check_setting_str(CFG, 'GUI', 'gui_name', 'slick')
-        GUI_LANG = check_setting_str(CFG, 'GUI', 'language')
-
-        if GUI_LANG:
-            gettext.translation('messages', LOCALE_DIR, languages=[GUI_LANG], codeset='UTF-8').install(unicode=1, names=["ngettext"])
-        else:
-            gettext.install('messages', LOCALE_DIR, unicode=1, codeset='UTF-8', names=["ngettext"])
-
-        load_gettext_translations(LOCALE_DIR, 'messages')
 
         SOCKET_TIMEOUT = check_setting_int(CFG, 'General', 'socket_timeout', 30, min_val=0)
         socket.setdefaulttimeout(SOCKET_TIMEOUT)
@@ -1080,6 +1068,7 @@ def initialize(consoleLogging=True):
         NFO_RENAME = check_setting_bool(CFG, 'General', 'nfo_rename', True)
         CREATE_MISSING_SHOW_DIRS = check_setting_bool(CFG, 'General', 'create_missing_show_dirs')
         ADD_SHOWS_WO_DIR = check_setting_bool(CFG, 'General', 'add_shows_wo_dir')
+        ADD_SHOWS_WITH_YEAR = check_setting_bool(CFG, 'General', 'add_shows_with_year')
         USE_FREE_SPACE_CHECK = check_setting_bool(CFG, 'General', 'use_free_space_check', True)
 
         NZBS = check_setting_bool(CFG, 'NZBs', 'nzbs')
@@ -1377,6 +1366,8 @@ def initialize(consoleLogging=True):
         USE_FAILED_DOWNLOADS = check_setting_bool(CFG, 'FailedDownloads', 'use_failed_downloads')
         DELETE_FAILED = check_setting_bool(CFG, 'FailedDownloads', 'delete_failed')
 
+        BACKLOG_MISSING_ONLY = check_setting_bool(CFG, 'General', 'backlog_missing_only')
+
         GIT_PATH = check_setting_str(CFG, 'General', 'git_path')
 
         IGNORE_WORDS = check_setting_str(CFG, 'General', 'ignore_words', IGNORE_WORDS)
@@ -1429,6 +1420,7 @@ def initialize(consoleLogging=True):
         POSTER_SORTBY = check_setting_str(CFG, 'GUI', 'poster_sortby', 'name')
         POSTER_SORTDIR = check_setting_int(CFG, 'GUI', 'poster_sortdir', 1, min_val=0, max_val=1)
         DISPLAY_ALL_SEASONS = check_setting_bool(CFG, 'General', 'display_all_seasons', True)
+        ENDED_SHOWS_UPDATE_INTERVAL = check_setting_int(CFG, 'General', 'ended_shows_update_interval', 7)
 
         if check_section(CFG, 'Shares'):
             WINDOWS_SHARES.update(CFG['Shares'])
@@ -1815,9 +1807,7 @@ def save_config():
 
     new_config.update({
         'General': {
-            'git_auth_type': int(GIT_AUTH_TYPE),
             'git_username': GIT_USERNAME,
-            'git_password': helpers.encrypt(GIT_PASSWORD, ENCRYPTION_VERSION),
             'git_token_password': helpers.encrypt(GIT_TOKEN, ENCRYPTION_VERSION),
             'git_reset': int(GIT_RESET),
             'branch': BRANCH,
@@ -1828,7 +1818,6 @@ def save_config():
             'config_version': CONFIG_VERSION,
             'encryption_version': int(ENCRYPTION_VERSION),
             'encryption_secret': ENCRYPTION_SECRET,
-            'log_dir': ACTUAL_LOG_DIR if ACTUAL_LOG_DIR else 'Logs',
             'log_nr': int(LOG_NR),
             'log_size': float(LOG_SIZE),
             'socket_timeout': SOCKET_TIMEOUT,
@@ -1915,8 +1904,8 @@ def save_config():
             'metadata_mede8er': METADATA_MEDE8ER,
 
             'backlog_days': int(BACKLOG_DAYS),
+            'backlog_missing_only': int(BACKLOG_MISSING_ONLY),
 
-            'cache_dir': ACTUAL_CACHE_DIR if ACTUAL_CACHE_DIR else 'cache',
             'root_dirs': ROOT_DIRS if ROOT_DIRS else '',
             'tv_download_dir': TV_DOWNLOAD_DIR,
             'keep_processed_dir': int(KEEP_PROCESSED_DIR),
@@ -1940,6 +1929,7 @@ def save_config():
             'file_timestamp_timezone': FILE_TIMESTAMP_TIMEZONE,
             'create_missing_show_dirs': int(CREATE_MISSING_SHOW_DIRS),
             'add_shows_wo_dir': int(ADD_SHOWS_WO_DIR),
+            'add_shows_with_year': int(ADD_SHOWS_WITH_YEAR),
             'use_free_space_check': int(USE_FREE_SPACE_CHECK),
 
             'extra_scripts': '|'.join(EXTRA_SCRIPTS),
@@ -1954,6 +1944,7 @@ def save_config():
             'no_restart': int(NO_RESTART),
             'developer': int(DEVELOPER),
             'display_all_seasons': int(DISPLAY_ALL_SEASONS),
+            'ended_shows_update_interval': int(ENDED_SHOWS_UPDATE_INTERVAL),
             'news_last_read': NEWS_LAST_READ,
         },
 

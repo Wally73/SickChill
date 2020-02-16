@@ -1394,6 +1394,10 @@ td.col-search {
     background-position: -439px 0;
 }
 
+.displayshow-icon-trakt {
+    background-position: -456px 0;
+}
+
 /* =======================================================================
 schedule.mako
 ========================================================================== */
@@ -3699,4 +3703,17 @@ input.tablesorter-filter.disabled {
 
 #episodeDir {
     width: 100%;
+}
+
+[class^="displayshow-play-icon-"], [class*=" displayshow-play-icon-"] {
+    background: url("../images/16px_sprite_colored_display-show-players.png");
+    height: 16px;
+    width: 16px;
+    display: inline-block;
+    position: unset;
+    top: 3px;
+}
+
+.displayshow-play-icon-kodi {
+    background-position: 0 0;
 }
